@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 590px;
+
+}
+
+.Rectangle-Large {
+    z-index: 0;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 390px;
+    height: 701px;
+    flex-shrink: 0;
+    border-radius: 500px;
+    background: linear-gradient(180deg, #21ECC7 0%, rgba(134, 114, 243, 0.00) 81.81%);
+    transition: opacity 3s ease;
+}
+
+.Rectangle-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 60px;
+    border: 1px solid #FFF;
+    background: rgba(217, 217, 217, 0.00);
+    margin-top: 88px;
+    margin-bottom: 22px;
+}
+
+.Rectangle-small p {
+    color: #FFF;
+    font-family: "PaytoneOne";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.firstex {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.firstex>div {
+    color: #FFF;
+    font-family: 'Pretendard-ExtraLight';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.firstex>div span {
+    display: inline;
+}
+
+
+
+.firstex #bold {
+    color: #FFF;
+    text-align: center;
+    font-family: Pretendard-ExtraLight;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.firstex p br {
+    content: "\00a0";
+    display: block;
+    margin: 9px 0;
+    /* 간격을 조절하려는 값으로 수정 */
+}
+
+.secondex {
+    height: 126px;
+    width: 336px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.secondex p {
+    color: #FFF;
+    text-align: center;
+    font-family: Pretendard-ExtraLight;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0 23px;
+    line-height: 1.8;
+
+}

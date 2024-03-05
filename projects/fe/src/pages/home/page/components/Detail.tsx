@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import '@/pages/home/page/css/Detail.css';
 
-function Detail() {
+const Detail = () => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const rectangleLarge = document.querySelector('.Rectangle-Large');
-            const rectangleLargeRect = rectangleLarge.getBoundingClientRect();
+            const rectangleLargeRect = rectangleLarge!.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
             // 도형이 화면에 70% 이상 들어왔을 때 opacity를 1로 설정

@@ -3,7 +3,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "@/pages/home/page/css/DetailDes.css";
 
-function DetailDes({ title, Ntitle, Nimage }) {
+interface DetailDosProps {
+    title: string;
+    Ntitle: string[];
+    Nimage: string[];
+}
+
+const DetailDes: React.FC<DetailDosProps> = ({ title, Ntitle, Nimage }) => {
     // Carousel 설정
     const settings = {
         dots: true,

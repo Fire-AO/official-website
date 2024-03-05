@@ -22,14 +22,20 @@ const modalStyles = {
         borderRadius: '8px',
         padding: '20px',
         zIndex: 1001,
-
     },
-
-
 };
 
+interface Activity {
+    id: number;
+    title: string;
+    detail: string;
+    image: string;
+    Ntitle: string[];
+    Nimage: string[];
+}
+
 function MainActivity() {
-    const [selectedActivity, setSelectedActivity] = useState(null);
+    const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
     const [modalIsOpen, setModalIsOpen] = useState(false); 
     useEffect(() => {
         // 모달이 열릴 때 body에 스크롤 숨김 스타일 적용
@@ -91,7 +97,7 @@ function MainActivity() {
             Nimage: ['asset/meeting1.jpg','asset/meeting2.jpg', 'asset/meeting3.jpg'],
         },
     ];
-    const handleActivityClick = (activity) => {
+    const handleActivityClick = (activity: Activity) => {
         setSelectedActivity(activity);
         setModalIsOpen(true); // 모달을 엽니다.
     };

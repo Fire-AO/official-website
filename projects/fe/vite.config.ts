@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from "path";
+
 const __dirname = path.resolve();
 
 // https://vitejs.dev/config/
@@ -13,12 +14,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/register": {
-        target: "https://localhost:3000/",
+      "/api": {
+        target: "https://localhost:7130",
         secure: false,
         changeOrigin: true,
-      },
-    },
-    port: 3002,
-  },
-});
+      }
+    }
+  }
+})

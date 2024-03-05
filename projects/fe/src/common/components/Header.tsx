@@ -1,15 +1,20 @@
-import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from "@/common/redux/store";
+import { setIsDarkMode } from '../redux/themeSlice';
 
 const Header = () => {
+    const dispatch = useDispatch();
+    const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
+
     const handleDarkModeButtonClicked = () => {
-        console.log('Dark mode button clicked');
+        dispatch(setIsDarkMode(!isDarkMode));
     }
 
     return (
         <>
             <div
-                className="flex justify-between items-center w-screen relative overflow-hidden px-5 py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
+                className="flex fixed justify-between items-center w-full relative px-5 h-[50px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
             >
                 <button onClick={handleDarkModeButtonClicked}>
                     <svg
@@ -107,17 +112,20 @@ const Header = () => {
                 </button>
 
                 <Link to="/">
-                    <p className="flex-grow-0 flex-shrink-0 text-3xl text-left">
+                    <p className="flex-grow-0 flex-shrink-0 text-[20px]">
                         <span
-                            className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-3xl text-left text-[#0d0d0d] dark:text-white"
+                            className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-left text-[#0d0d0d] dark:text-white"
                         >Fire
                         </span>
                         <span
-                            className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-3xl text-left text-black dark:text-white"
+                            className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-left text-black dark:text-white"
                         >AO
                         </span>
                     </p>
                 </Link>
+
+                {/* dummy tag */}
+                <div className='w-[27px] h-full'>dummy</div>
 
                 {/* <button onClick={toggleMenu} className=" z-[100]">
                     <div

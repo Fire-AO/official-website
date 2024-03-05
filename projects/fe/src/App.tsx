@@ -1,10 +1,15 @@
 import Modal from "react-modal"; // 추가
 import Root from "@/pages/home/page/index";
 import Form from "@/pages/apply/page"
-import History from "@/pages/history/page/index"
+import About from "@/pages/about/page/index"
+import Archive from "@/pages/archive/page/index"
+import Members from "@/pages/members/page/index"
+import History from "@/common/components/History"
+
 import { store } from '@/common/redux/store';
 
 import "@/App.css";
+import "@/common/assets/css/scrollbar.css"
 
 import {
   Route,
@@ -35,9 +40,23 @@ const App = () => {
           />
 
           <Route
-            path="/History"
             element={<History />}
-          />
+          >
+            <Route
+              path="/about"
+              element={<About />}
+            />
+
+            <Route
+              path="/archive"
+              element={<Archive />}
+            />
+
+            <Route
+              path="/members"
+              element={<Members />}
+            />
+          </Route>
 
         </Route>
       </>

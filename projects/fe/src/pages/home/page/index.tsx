@@ -1,7 +1,7 @@
 import Header from "@/pages/home/page/components/Header";
 import FirstIntro from "@/pages/home/page/components/FirstIntro";
 import Detail from "@/pages/home/page/components/Detail";
-import Footer from "@/pages/home/page/components/Footer";
+import Footer from "@/common/components/Footer";
 import MainActivity from "@/pages/home/page/components/MainActivity";
 import Executives from "@/pages/home/page/components/Executives";
 

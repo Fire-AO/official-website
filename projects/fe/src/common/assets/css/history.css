@@ -1,0 +1,13 @@
+.history-bg {
+  background-color: black;
+  flex-direction: column;
+  position: relative;
+  background-image: url("/asset/ellipse23.png"), url("/asset/ellipse22.png"),
+    url("/asset/ellipse31.png"), url("/asset/ellipse24.png"),
+    url("/asset/ellipse25.png"), url("/asset/ellipse25.png"),
+    url("/asset/ellipse32.png"), url("/asset/ellipse29.png"),
+    url("/asset/ellipse33.png"), url("/asset/ellipse28.png");
+  background-position: 10% 1%, 30% 15%, 80% 3%, 7% 38%, 95% 30%, 88% 40%, 1% 53%,
+    7% 97%, 30% 86%, 88% 90%;
+  background-repeat: no-repeat;
+}

@@ -1,4 +1,4 @@
-import About from "@/pages/history/page/components/About"
+import About from "@/pages/about/page/components/About"
 
 const index = () => {
     return (

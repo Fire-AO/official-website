@@ -38,9 +38,9 @@
   background-repeat: no-repeat;
   animation: moveUpDown 3s infinite;
   position: absolute;
-  z-index: 0;
   right: 0;
   top: 20px;
+  pointer-events: none;
 }
 .figure2 {
   height: 200px;
@@ -50,9 +50,9 @@
   background-repeat: no-repeat;
   animation: moveUpDown 4s infinite;
   position: absolute;
-  z-index: 0;
   left: 0;
   top: 0;
+  pointer-events: none;
 }
 .figure3 {
   height: 50px;
@@ -62,9 +62,9 @@
   background-repeat: no-repeat;
   animation: moveUpDown 2.5s infinite;
   position: absolute;
-  z-index: 0;
   left: 100px;
   top: 30px;
+  pointer-events: none;
 }
 @keyframes moveUpDown {
   0% {

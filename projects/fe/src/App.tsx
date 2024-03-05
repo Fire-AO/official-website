@@ -2,6 +2,7 @@ import Modal from "react-modal"; // 추가
 import Root from "@/pages/home/page/index";
 import Form from "@/pages/apply/page"
 import History from "@/pages/history/page/index"
+import { store } from '@/common/redux/store';
 
 import "@/App.css";
 
@@ -12,6 +13,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import InitialSetup from "@/common/components/InitialSetup";
+import { Provider } from "react-redux";
 
 Modal.setAppElement("#root"); // 추가
 
@@ -41,7 +43,11 @@ const App = () => {
       </>
     ));
 
-  return <RouterProvider router={router} />
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  )
 };
 
 export default App;

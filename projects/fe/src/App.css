@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,7 +27,7 @@
   .paragraph p {
     color: #d9d9d9;
   }
-  
+
   #omega {
     color: #8672f3;
   }
@@ -179,9 +181,10 @@
     font-size: 16px;
   }
 
+  /* fonts from team1 */
   @font-face {
     font-family: "PaytoneOne";
-    src: url("@/common/assets/fonts/AnyConv.com__PaytoneOne-Regular.woff")
+    src: url("@/common/assets/fonts/team1/AnyConv.com__PaytoneOne-Regular.woff")
       format("woff");
   }
 
@@ -189,49 +192,91 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: normal;
-    src: url("@/common/assets/fonts/AnyConv.com__NotoSansKR-Regular.woff")
+    src: url("@/common/assets/fonts/team1/AnyConv.com__NotoSansKR-Regular.woff")
       format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraBold;
-    src: url("@/common/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff") format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraLight;
-    src: url("@/common/assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff") format("woff");
   }
 
   @font-face {
     font-family: Pretendard-Light;
-    src: url("@/common/assets/fonts/Pretendard-Light.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-Light.woff") format("woff");
   }
 
   @font-face {
     font-family: "PaytoneOne";
-    src: url("@/common/assets/fonts/AnyConv.com__PaytoneOne-Regular.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/AnyConv.com__PaytoneOne-Regular.woff")
+      format("woff");
   }
 
   @font-face {
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: normal;
-    src: url("@/common/assets/fonts/AnyConv.com__NotoSansKR-Regular.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/AnyConv.com__NotoSansKR-Regular.woff")
+      format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraBold;
-    src: url("@/common/assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff") format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraLight;
-    src: url("@/common/assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff") format("woff");
   }
 
   @font-face {
     font-family: Pretendard-Light;
-    src: url("@/common/assets/fonts/Pretendard-Light.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-Light.woff") format("woff");
+  }
+
+  /* fonts from team2 */
+  html > body {
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  @font-face {
+    font-family: "5MAL6LAMPEN";
+    src: url("@/common/assets/fonts/team2/5MAL6LAMPEN.TTF") format("truetype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-BLACK";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-BLACK.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-BOLD";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-BOLD.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-SEMIBOLD";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-SEMIBOLD.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-MEDIUM";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-MEDIUM.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-LIGHT";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-LIGHT.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: "PRETENDARD-REGULAR";
+    src: url("@/common/assets/fonts/team2/PRETENDARD-REGULAR.OTF") format("opentype");
   }
 }

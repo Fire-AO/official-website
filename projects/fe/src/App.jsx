@@ -1,8 +1,8 @@
 import Modal from "react-modal"; // 추가
-import Root from "./pages/Root";
-import Form from "./components/Form"
+import Root from "@/pages/home/page/index";
+import Form from "@/pages/apply/page"
 
-import "./App.css";
+import "@/App.css";
 
 import {
   Route,

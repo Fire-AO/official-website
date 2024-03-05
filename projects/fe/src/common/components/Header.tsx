@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { RootState } from "@/common/redux/store";
 import { setIsDarkMode } from '../redux/themeSlice';
 import { useEffect, useRef, useState } from 'react';
+import Menu from './Menu';
 
 const Header = () => {
     const dispatch = useDispatch();
     const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
     const prevScrollY = useRef<number>(0);
     const [headerTop, setHeaderTop] = useState<number>(0);
+    const [menuVisible, setMenuVisible] = useState<boolean>(false);
 
     const handleDarkModeButtonClicked = () => {
         dispatch(setIsDarkMode(!isDarkMode));
@@ -169,9 +171,9 @@ const Header = () => {
                     </Link>
 
                     {/* dummy tag */}
-                    <div className='w-[27px] h-full' />
+                    {/* <div className='w-[27px] h-full' /> */}
 
-                    {/* <button onClick={toggleMenu} className=" z-[100]">
+                    <button onClick={() => {setMenuVisible(!menuVisible)}} className="z-[100]">
                     <div
                         className="relative w-[23px] h-[18px] gap-[4.7px] flex flex-col justify-between items-center"
                     >
@@ -192,15 +194,13 @@ const Header = () => {
                                 }`}
                         ></div>
                     </div>
-                </button> */}
+                </button>
                 </div>
-                {/* <Menu {menuVisible} /> */}
+                <Menu menuVisible={menuVisible} toggleMenuVisible={() => setMenuVisible(!menuVisible)} />
             </div>
 
             <div className='h-[50px] w-full' />
-
         </>
-
     )
 }
 

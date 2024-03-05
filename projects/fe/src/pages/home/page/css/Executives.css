@@ -1,5 +1,4 @@
 .executive-container {
-  background-color: black;
   height: 855px;
   display: flex;
   flex-direction: column;
@@ -94,7 +93,6 @@
 
 #Exbut p {
   z-index: 1;
-  color: #000;
   font-family: Pretendard-ExtraBold;
   font-size: 16px;
   font-style: normal;

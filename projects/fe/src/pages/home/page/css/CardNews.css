@@ -20,7 +20,6 @@
 }
 
 #cardname {
-  color: #fff;
   font-family: Pretendard-ExtraBold;
   font-size: 20px;
   font-style: normal;
@@ -30,12 +29,10 @@
 
 .card-news p {
   margin-bottom: 8px;
-  color: #fff;
   text-align: center;
   font-family: Pretendard-ExtraLight;
   font-size: 13px;
   font-style: normal;
-  font-weight: 300;
   line-height: normal;
   width: 292px;
 }

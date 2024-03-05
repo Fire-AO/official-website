@@ -1,7 +1,7 @@
 import "@/pages/home/page/css/MainActivity.css";
-import DetailDes from './DetailDes';
+// import DetailDes from './DetailDes';
 // import Modal from 'react-modal';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
@@ -132,7 +132,7 @@ function MainActivity() {
     return (
 
         <>
-            <div className='main-container'>
+            <div className='main-container dark:bg-black'>
                 <div className="animation">
                     <div className="marquee-container">
                         <p className="marquee-text">FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -145,12 +145,12 @@ function MainActivity() {
                 <div className='figure6'></div>
                 {activities.map((activity: Activity) => (
 
-                    <button key={activity.id} className="activity" onClick={() => handleActivityClick(activity)}>
+                    <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919]" onClick={() => handleActivityClick(activity)}>
                         {
                             activity.image ?
                                 <>
                                     <img src={activity.image} alt={activity.title} id="activitypic" />
-                                    <div className="actext">
+                                    <div className="actext text-black dark:text-white">
                                         <p id="actitle">{activity.title}</p>
                                         <p id="acdetail">{activity.detail}</p>
                                     </div>
@@ -159,7 +159,7 @@ function MainActivity() {
                                 :
                                 <>
                                     <div className="actext ml-6">
-                                        <p id="actitle" className="">{activity.title}</p>
+                                        <p id="actitle" className="text-black dark:text-white">{activity.title}</p>
                                     </div>
                                     <img src="asset/vector.png" alt="vector" id="vector"></img>
                                 </>

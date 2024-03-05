@@ -50,7 +50,7 @@ const Header = () => {
                 }}
             >
                 <div
-                    className="flex justify-between items-center w-full relative px-5 h-[50px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
+                    className="flex justify-between items-center w-full relative px-5 h-[50px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 dark:border-[#0d0d0d]"
                 >
                     <button onClick={handleDarkModeButtonClicked}>
                         <svg
@@ -148,15 +148,23 @@ const Header = () => {
                     </button>
 
                     <Link to="/">
-                        <p className="flex-grow-0 flex-shrink-0 text-[20px]">
-                            <span
-                                className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-left text-[#0d0d0d] dark:text-white"
-                            >Fire
-                            </span>
-                            <span
-                                className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-left text-black dark:text-white"
-                            >AO
-                            </span>
+                        <p className="flex-grow-0 flex-shrink-0 text-[24px] flex flex-row font-['Montserrat'] text-[rgb(33,236,222)] dark:text-white font-bold">
+                            <p>Fire</p>
+                            &nbsp;
+                            <p style={{
+                                background: "linear-gradient(101deg, #21ecc7 59.41%, #8672f3 82.47%)",
+                                backgroundClip: "text",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: 'transparent',
+                            }}>A</p>
+                            <p
+                                style={{
+                                    background: "linear-gradient(180deg, #21ecc7 0%, #8672f3 100%)",
+                                    backgroundClip: "text",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: 'transparent',
+                                }}
+                            >O</p>
                         </p>
                     </Link>
 

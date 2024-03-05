@@ -2,8 +2,17 @@ import "@/pages/home/page/css/Executives.css";
 import { useState, useEffect } from "react";
 import CardNews from "@/pages/home/page/components/CardNews";
 import { Link } from "react-router-dom";
+
+interface Executive {
+  name: string;
+  id: string;
+  description: React.ReactNode;
+  image: string;
+  big_image: string;
+}
+
 function Executives() {
-  const [selectedExecutive, setSelectedExecutive] = useState(null);
+  const [selectedExecutive, setSelectedExecutive] = useState<Executive | null>(null);
 
   const executivesData = [
     {
@@ -94,7 +103,7 @@ function Executives() {
     // 다른 임원들에 대한 정보도 추가할 수 있습니다.
   ];
 
-  const handleExecutiveClick = (executive) => {
+  const handleExecutiveClick = (executive: Executive) => {
     setSelectedExecutive(executive);
   };
   useEffect(() => {
@@ -104,7 +113,7 @@ function Executives() {
 
   return (
     <>
-      <div className="executive-container">
+      <div className="executive-container dark:bg-black">
         <div className="exeEng">
           <p>Fire AO</p>
         </div>
@@ -137,7 +146,7 @@ function Executives() {
           )}
         </div>
         <div className="Exbutton">
-          <Link id="Exbut" to="/apply">
+          <Link id="Exbut" to="/apply" className="text-white dark:text-black">
             <p>Fire Ao 지원하기</p>
           </Link>
         </div>

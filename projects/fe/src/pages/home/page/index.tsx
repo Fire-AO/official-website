@@ -1,4 +1,4 @@
-import Header from "@/pages/home/page/components/Header";
+import Header from "@/common/components/Header";
 import FirstIntro from "@/pages/home/page/components/FirstIntro";
 import Detail from "@/pages/home/page/components/Detail";
 import Footer from "@/common/components/Footer";

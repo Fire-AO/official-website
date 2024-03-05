@@ -1,0 +1,75 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "publish-fe", "publish-be", "publish-all" ]
+    paths: ['.github/workflows/**', 'Projects/**']
+  workflow_dispatch:
+
+jobs:
+  build-fe:
+    if: |
+      github.event_name == 'push' && (github.ref == 'refs/heads/publish-fe' || github.ref == 'refs/heads/publish-all') || 
+      github.event_name == 'workflow_dispatch'
+    runs-on: [self-hosted]
+    defaults:
+      run:
+        working-directory: ./Projects/fe
+    strategy:
+      matrix:
+        node-version: [18.13.0]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: Projects/fe/package-lock.json
+      - run: npm ci
+      - run: npm run build --if-present
+
+  build-be:
+    if: | 
+      github.event_name == 'push' && (github.ref == 'refs/heads/publish-be' || github.ref == 'refs/heads/publish-all') || 
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Projects/be
+    strategy:
+      matrix:
+        node-version: [18.13.0]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: Projects/fe/package-lock.json
+      - name: Login to docker hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build docker image
+        run: docker build -t jeheecheon/fireao .
+      - name: Publish image to docker hub
+        run: docker push jeheecheon/fireao:latest
+
+  deploy-be:
+    if: | 
+      github.event_name == 'push' && (github.ref == 'refs/heads/publish-be' || github.ref == 'refs/heads/publish-all') || 
+      github.event_name == 'workflow_dispatch'
+    needs: build-be
+    runs-on: [self-hosted]
+    defaults:
+      run:
+        working-directory: ./Projects/be
+    steps:
+      - name: Login to docker hub
+        run: sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Pull image from docker hub
+        run: sudo docker pull jeheecheon/fireao:latest
+      - name: Delete old container
+        run: sudo docker rm -f fireao-be
+      - name: Run docker container
+        run: sudo docker run -d -p 3000:3000 --name fireao-be -e "DB_CONNECT=${{ secrets.MONGO_DB_CONNECTION_STRING }}" jeheecheon/fireao

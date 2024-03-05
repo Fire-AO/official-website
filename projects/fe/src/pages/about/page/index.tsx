@@ -8,11 +8,9 @@ import Image1 from "@/pages/about/page/assets/images/1.png";
 import Image2 from "@/pages/about/page/assets/images/2.png";
 import Image3 from "@/pages/about/page/assets/images/3.png";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "@/common/redux/store";
+
 
 const About = () => {
-    const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,

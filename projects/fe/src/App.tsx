@@ -1,6 +1,5 @@
 import Modal from "react-modal"; // 추가
 import Root from "@/pages/home/page/index";
-import Form from "@/pages/apply/page"
 import About from "@/pages/about/page/index"
 import Archive from "@/pages/archive/page/index"
 import Intro from "@/pages/intro/page/index"
@@ -34,10 +33,10 @@ const App = () => {
             element={<Root />}
           />
 
-          <Route
+          {/* <Route
             path="/apply"
             element={<Form />}
-          />
+          /> */}
 
           <Route
             element={<History />}

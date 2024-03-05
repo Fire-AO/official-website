@@ -3,7 +3,7 @@ import Root from "@/pages/home/page/index";
 import Form from "@/pages/apply/page"
 import About from "@/pages/about/page/index"
 import Archive from "@/pages/archive/page/index"
-import Members from "@/pages/members/page/index"
+import Intro from "@/pages/intro/page/index"
 import History from "@/common/components/History"
 
 import { store } from '@/common/redux/store';
@@ -53,8 +53,8 @@ const App = () => {
             />
 
             <Route
-              path="/members"
-              element={<Members />}
+              path="/intro"
+              element={<Intro />}
             />
           </Route>
 

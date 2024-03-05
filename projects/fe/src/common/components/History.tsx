@@ -29,7 +29,7 @@ const History = () => {
             setTitle("Archive AO");
             setExplanation("Fire AO 의 활동 모음집입니다.");
         }
-        else if (location.pathname === "/members") {
+        else if (location.pathname === "/intro") {
             setTitle("AO Members");
             setExplanation("Fire AO 와 함께하는 임원진을 소개합니다.");
         }
@@ -75,20 +75,12 @@ const History = () => {
                     <div className='z-50 flex w-full justify-around px-8 text-center gap-4 pt-5'>
                         <NavLink className={handleNavClass} to="/about">About</NavLink>
                         <NavLink className={handleNavClass} to="/archive">Archive</NavLink>
-                        <NavLink className={handleNavClass} to="/members">Members</NavLink>
+                        <NavLink className={handleNavClass} to="/intro">Intro</NavLink>
                     </div>
 
                     <div className='px-5'>
                         <Outlet />
                     </div>
-
-                    {/* <div className='flex flex-col md:flex-col-reverse'>
-                        <div className='fixed bottom-0 z-50 flex dark:bg-slate-800 py-3 w-full justify-between px-5'>
-                            <NavLink to="/about">About</NavLink>
-                            <NavLink to="/archive">Archive</NavLink>
-                            <NavLink to="/members">Members</NavLink>
-                        </div>
-                    </div> */}
                 </div>
 
                 {/* Footer */}

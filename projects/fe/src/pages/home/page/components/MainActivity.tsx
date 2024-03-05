@@ -114,7 +114,7 @@ function MainActivity() {
             image: '',
             // Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
             Nimage: ['asset/meeting1.jpg', 'asset/meeting2.jpg', 'asset/meeting3.jpg'],
-            next: "/members"
+            next: "/intro"
         },
     ];
 

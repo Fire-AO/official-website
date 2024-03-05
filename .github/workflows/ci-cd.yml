@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches: [ "publish-fe", "publish-be", "publish-all" ]
-    paths: ['.github/workflows/**', 'Projects/**']
+    paths: ['.github/workflows/**', 'projects/**']
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     runs-on: [self-hosted]
     defaults:
       run:
-        working-directory: ./Projects/fe
+        working-directory: ./projects/fe
     strategy:
       matrix:
         node-version: [18.13.0]
@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: Projects/fe/package-lock.json
+          cache-dependency-path: projects/fe/package-lock.json
       - run: npm ci
       - run: npm run build --if-present
 
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Projects/be
+        working-directory: ./projects/be
     strategy:
       matrix:
         node-version: [18.13.0]
@@ -47,7 +47,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: Projects/fe/package-lock.json
+          cache-dependency-path: projects/fe/package-lock.json
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
@@ -63,7 +63,7 @@ jobs:
     runs-on: [self-hosted]
     defaults:
       run:
-        working-directory: ./Projects/be
+        working-directory: ./projects/be
     steps:
       - name: Login to docker hub
         run: sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}

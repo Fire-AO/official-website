@@ -8,6 +8,12 @@ import Header from "@/common/components/Header"
 
 import "@/common/assets/css/history.css"
 
+type NavLinkRenderProps = {
+    isActive: boolean;
+    isPending: boolean;
+    isTransitioning: boolean;
+};
+
 const History = () => {
     const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
     const [title, setTitle] = useState<string>("");
@@ -29,38 +35,50 @@ const History = () => {
         }
     }, [location.pathname]);
 
+    const handleNavClass = (props: NavLinkRenderProps) => {
+        const { isActive } = props;
+
+        return isActive
+            ? "border-b-[2px] border-b-cyan-700 w-full text-cyan-800 font-bold pb-1"
+            : "border-b-[2px] border-b-slate-500 text-slate-700 w-full pb-3 font-bold"
+    }
+
     return (
         <>
             <Header />
 
-            <div className="bg-white dark:bg-black overflow-hidden min-h-screen flex flex-col items-center z-[50] history-bg">
+            <div className="bg-white dark:bg-black overflow-hidden min-h-[100vh] flex flex-col items-center z-[50] history-bg pt-[30px]">
                 <div className="figure1 -z-[1]"></div>
                 <div className="figure2 -z-[1]"></div>
                 <div className="figure3 -z-[1]"></div>
 
-                <div className="mt-[53.67px] flex-grow mb-[50px] flex flex-col justify-center max-w-[1000px] w-full h-auto text-left pl-[19px] box-border
-                bg-slate-200 bg-opacity-40 dark:bg-[#f3f3f3] dark:bg-opacity-75 rounded-2xl px-[20px] py-[15px] dark:text-slate-700">
-                    <p className="flex-grow-0 flex-shrink-0 text-2xl mb-[10px] font-['Montserrat'] font-bold text-left text-[#0d0d0d]">
-                        {title}
-                    </p>
-                    <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black">
-                        {explanation}
-                    </p>
+                <div className=''>
+                    <div className="flex-grow flex flex-col justify-center max-w-[1000px] w-[100vw] text-left pl-[19px] 
+                        bg-slate-200 bg-opacity-40 dark:bg-[#f3f3f3] dark:bg-opacity-75 rounded-2xl px-[20px] py-[15px] dark:text-slate-700">
+                        <h1 className="flex-grow-0 flex-shrink-0 text-2xl font-['Montserrat'] font-bold text-left text-[#0d0d0d]">
+                            {title}
+                        </h1>
+                        <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black">
+                            {explanation}
+                        </p>
+                    </div>
+
                 </div>
 
                 <div
-                    className="max-w-[1024px] w-full h-full dark:bg-[#f3f3f3] dark:bg-opacity-85 bg-opacity-55 bg-[#f6f6f6] rounded-[30px] min-h-[80vh] mt-5 shadow-xl mb-10
-                    px-5"
+                    className="max-w-[1024px] w-full h-full dark:bg-[#f3f3f3] dark:bg-opacity-85 bg-opacity-55 bg-[#f6f6f6] rounded-[30px] mt-5 shadow-xl mb-10"
                 >
                     {/* Nav buttons */}
-                    <div>
-                        <div className='z-50 flex py-3 w-full justify-between px-5'>
-                            <NavLink to="/about">About</NavLink>
-                            <NavLink to="/archive">Archive</NavLink>
-                            <NavLink to="/members">Members</NavLink>
-                        </div>
+
+                    <div className='z-50 flex w-full justify-around px-8 text-center gap-4 pt-5'>
+                        <NavLink className={handleNavClass} to="/about">About</NavLink>
+                        <NavLink className={handleNavClass} to="/archive">Archive</NavLink>
+                        <NavLink className={handleNavClass} to="/members">Members</NavLink>
                     </div>
-                    <Outlet />
+
+                    <div className='px-5'>
+                        <Outlet />
+                    </div>
 
                     {/* <div className='flex flex-col md:flex-col-reverse'>
                         <div className='fixed bottom-0 z-50 flex dark:bg-slate-800 py-3 w-full justify-between px-5'>
@@ -70,8 +88,9 @@ const History = () => {
                         </div>
                     </div> */}
                 </div>
+
                 {/* Footer */}
-                <div className="max-w-[1024px] w-full h-[138px] bg-white dark:bg-black text-left">
+                <div className="max-w-[1024px] w-full h-[138px] bg-white dark:bg-black text-left mt-auto">
                     <Link to="/">
                         <p className="text-xl font-['Montserrat'] font-black text-black dark:text-white mt-[25px] ml-[19px] mb-[6px]">
                             Fire AO

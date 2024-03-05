@@ -6,8 +6,8 @@ interface TagProps {
 
 const Tag: React.FC<TagProps> = ({ tag }) => {
     return (
-        <div className="rounded-full border border-[#2c2c2c] dark:border-[#d9d9d9] px-1 py-0.5" >
-            <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-center text-[#191919] dark:text-[#d9d9d9] text-nowrap" >
+        <div className="rounded-full border border-[#2c2c2c] dark:border-[#121212] px-1 py-0.5" >
+            <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-center text-[#191919] dark:text-[#121212] text-nowrap px-1 py-[2px] flex flex-row flex-nowrap" >
                 {tag}
             </p>
         </div>

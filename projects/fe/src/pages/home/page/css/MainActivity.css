@@ -28,17 +28,17 @@
   line-height: normal;
   font-size: 24px;
   color: #fff;
-  animation: marqueeAnimation 15s linear infinite;
+  animation: marqueeAnimation 13s linear infinite;
   animation-delay: -5s;
 }
 
 @keyframes marqueeAnimation {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100vw);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-75vw);
   }
 }
 

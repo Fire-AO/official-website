@@ -1,10 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
+  .mask-slider {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #fff 5%,
+      #fff 95%,
+      transparent
+    );
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
   .paragraph {
     height: 750px;
     background-color: black;
@@ -198,12 +210,14 @@
 
   @font-face {
     font-family: Pretendard-ExtraBold;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff")
+      format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraLight;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff")
+      format("woff");
   }
 
   @font-face {
@@ -227,12 +241,14 @@
 
   @font-face {
     font-family: Pretendard-ExtraBold;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff")
+      format("woff");
   }
 
   @font-face {
     font-family: Pretendard-ExtraLight;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff") format("woff");
+    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff")
+      format("woff");
   }
 
   @font-face {
@@ -252,31 +268,37 @@
 
   @font-face {
     font-family: "PRETENDARD-BLACK";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-BLACK.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-BLACK.OTF")
+      format("opentype");
   }
 
   @font-face {
     font-family: "PRETENDARD-BOLD";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-BOLD.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-BOLD.OTF")
+      format("opentype");
   }
 
   @font-face {
     font-family: "PRETENDARD-SEMIBOLD";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-SEMIBOLD.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-SEMIBOLD.OTF")
+      format("opentype");
   }
 
   @font-face {
     font-family: "PRETENDARD-MEDIUM";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-MEDIUM.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-MEDIUM.OTF")
+      format("opentype");
   }
 
   @font-face {
     font-family: "PRETENDARD-LIGHT";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-LIGHT.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-LIGHT.OTF")
+      format("opentype");
   }
 
   @font-face {
     font-family: "PRETENDARD-REGULAR";
-    src: url("@/common/assets/fonts/team2/PRETENDARD-REGULAR.OTF") format("opentype");
+    src: url("@/common/assets/fonts/team2/PRETENDARD-REGULAR.OTF")
+      format("opentype");
   }
 }

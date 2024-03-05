@@ -37,7 +37,7 @@ const index = () => {
             <main className="mb-[43px] flex-grow pt-[93.67px]">
 
                 <div
-                    className="embla overflow-hidden"
+                    className="embla overflow-hidden mask-slider"
                     ref={emblaRef}
                 >
                     <div className="embla__container flex whitespace-nowrap gap-[10px]">

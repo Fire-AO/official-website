@@ -38,18 +38,19 @@ const History = () => {
                 <div className="figure2 -z-[1]"></div>
                 <div className="figure3 -z-[1]"></div>
 
-                <div className="mt-[93.67px] flex-grow mb-[10px] flex flex-col justify-center max-w-[1000px] w-full h-auto text-left pl-[19px] box-border
-                bg-stone-700 bg-opacity-45 rounded-2xl px-[20px] py-[15px]">
-                    <p className="flex-grow-0 flex-shrink-0 text-2xl mb-[10px] font-['Montserrat'] font-bold text-left text-[#0d0d0d] dark:text-neutral-200">
+                <div className="mt-[53.67px] flex-grow mb-[50px] flex flex-col justify-center max-w-[1000px] w-full h-auto text-left pl-[19px] box-border
+                bg-slate-200 bg-opacity-40 dark:bg-[#f3f3f3] dark:bg-opacity-75 rounded-2xl px-[20px] py-[15px] dark:text-slate-700">
+                    <p className="flex-grow-0 flex-shrink-0 text-2xl mb-[10px] font-['Montserrat'] font-bold text-left text-[#0d0d0d]">
                         {title}
                     </p>
-                    <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-neutral-200">
+                    <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black">
                         {explanation}
                     </p>
                 </div>
 
                 <div
-                    className="max-w-[1024px] w-full h-full dark:bg-[#EEEEEE] bg-[#E4E4E4] rounded-[30px] min-h-[80vh] "
+                    className="max-w-[1024px] w-full h-full dark:bg-[#f3f3f3] dark:bg-opacity-85 bg-opacity-55 bg-[#f6f6f6] rounded-[30px] min-h-[80vh] mt-5 shadow-xl mb-10
+                    px-5"
                 >
                     {/* Nav buttons */}
                     <div>

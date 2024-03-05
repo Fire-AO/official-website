@@ -161,7 +161,7 @@ const Header = () => {
                     </Link>
 
                     {/* dummy tag */}
-                    <div className='w-[27px] h-full'>dummy</div>
+                    <div className='w-[27px] h-full' />
 
                     {/* <button onClick={toggleMenu} className=" z-[100]">
                     <div

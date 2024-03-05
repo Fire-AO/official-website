@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, ScrollRestoration, useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { useSelector } from "react-redux";
@@ -39,12 +39,14 @@ const History = () => {
         const { isActive } = props;
 
         return isActive
-            ? "border-b-[2px] border-b-cyan-700 w-full text-cyan-800 font-bold pb-1"
-            : "border-b-[2px] border-b-slate-500 text-slate-700 w-full pb-3 font-bold"
+            ? "border-b-[2px] border-b-black w-full text-black dark:text-white font-bold pb-1 dark:border-b-white"
+            : "border-b-[2px] border-b-black/40 darl:border-b-white/50 text-black/60 dark:text-white/60 w-full pb-3 font-bold"
     }
 
     return (
         <>
+            <ScrollRestoration />
+
             <Header />
 
             <div className="bg-white dark:bg-black overflow-hidden min-h-[100vh] flex flex-col items-center z-[50] history-bg pt-[30px]">
@@ -54,7 +56,7 @@ const History = () => {
 
                 <div className=''>
                     <div className="flex-grow flex flex-col justify-center max-w-[1000px] w-[100vw] text-left pl-[19px] 
-                        bg-slate-200 bg-opacity-40 dark:bg-[#f3f3f3] dark:bg-opacity-75 rounded-2xl px-[20px] py-[15px] dark:text-slate-700">
+                        bg-black/10 bg-opacity-60 dark:bg-[#f3f3f3] dark:bg-opacity-55 rounded-2xl px-[20px] py-[15px] dark:text-slate-700">
                         <h1 className="flex-grow-0 flex-shrink-0 text-2xl font-['Montserrat'] font-bold text-left text-[#0d0d0d]">
                             {title}
                         </h1>
@@ -66,7 +68,7 @@ const History = () => {
                 </div>
 
                 <div
-                    className="max-w-[1024px] w-full h-full dark:bg-[#f3f3f3] dark:bg-opacity-85 bg-opacity-55 bg-[#f6f6f6] rounded-[30px] mt-5 shadow-xl mb-10"
+                    className="max-w-[1024px] w-full h-full dark:bg-[#303030] dark:bg-opacity-25 bg-opacity-75 bg-white rounded-[30px] mt-5 shadow-xl mb-10"
                 >
                     {/* Nav buttons */}
 

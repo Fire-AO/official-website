@@ -136,7 +136,7 @@ function Executives() {
           {executivesData.map((executive) => (
             <div
               key={executive.id}
-              className="executive"
+              className="executive cursor-pointer"
               onClick={() => handleExecutiveClick(executive)}
             >
               <img

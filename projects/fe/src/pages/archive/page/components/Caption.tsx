@@ -1,10 +1,12 @@
+import React from "react";
+
 interface CaptionProps {
     title: string;
     explanation: string;
     image: string;
 }
 
-const Slide: React.FC<CaptionProps> = ({ title, explanation, image }) => {
+const Slide: React.FC<CaptionProps> = React.memo(({ title, explanation, image }) => {
     return (
         <div
             className="embla__slide flex-shrink-0 flex-grow-0 min-w-0 w-[250px] h-[360px] flex flex-col items-center"
@@ -23,6 +25,6 @@ const Slide: React.FC<CaptionProps> = ({ title, explanation, image }) => {
             </div>
         </div>
     )
-}
+});
 
 export default Slide

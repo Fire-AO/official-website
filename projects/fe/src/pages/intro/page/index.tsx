@@ -340,23 +340,23 @@ const index = () => {
         </p>
 
         <div className="flex flex-row items-center justify-center flex-wrap gap-4 mt-4">
-          <ExecutiveAvatar active={selectedProfile.id === 1} profile={profiles[0]} onClick={() => {
+          <ExecutiveAvatar active={selectedProfile.id === 5} profile={profiles[0]} onClick={() => {
             setSelectedProfile(profiles[0]);
             setIsFlipped(false);
           }} />
-          <ExecutiveAvatar active={selectedProfile.id === 2} profile={profiles[1]} onClick={() => {
+          <ExecutiveAvatar active={selectedProfile.id === 1} profile={profiles[1]} onClick={() => {
             setSelectedProfile(profiles[1]);
             setIsFlipped(false);
           }} />
-          <ExecutiveAvatar active={selectedProfile.id === 3} profile={profiles[2]} onClick={() => {
+          <ExecutiveAvatar active={selectedProfile.id === 2} profile={profiles[2]} onClick={() => {
             setSelectedProfile(profiles[2]);
             setIsFlipped(false);
           }} />
-          <ExecutiveAvatar active={selectedProfile.id === 4} profile={profiles[3]} onClick={() => {
+          <ExecutiveAvatar active={selectedProfile.id === 3} profile={profiles[3]} onClick={() => {
             setSelectedProfile(profiles[3]);
             setIsFlipped(false);
           }} />
-          <ExecutiveAvatar active={selectedProfile.id === 5} profile={profiles[4]} onClick={() => {
+          <ExecutiveAvatar active={selectedProfile.id === 4} profile={profiles[4]} onClick={() => {
             setSelectedProfile(profiles[4]);
             setIsFlipped(false);
           }} />

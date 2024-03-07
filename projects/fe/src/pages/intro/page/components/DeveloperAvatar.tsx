@@ -4,7 +4,7 @@ interface DeveloperAvatarProps {
     src: string
 }
 
-const DeveloperAvatar:React.FC<DeveloperAvatarProps> = ({src}) => {
+const DeveloperAvatar:React.FC<DeveloperAvatarProps> = React.memo(({src}) => {
     return (
         <img
             src={src}
@@ -12,6 +12,6 @@ const DeveloperAvatar:React.FC<DeveloperAvatarProps> = ({src}) => {
             // style="box-shadow: 0px 0px 15px 0 rgba(0,0,0,0.2);"
             style={{ boxShadow: "0px 0px 15px 0 rgba(0,0,0,0.2)" }}
         />)
-}
+});
 
 export default DeveloperAvatar

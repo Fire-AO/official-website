@@ -17,7 +17,7 @@ interface ExecutiveAvatarProps {
     active: boolean;
 }
 
-const ExecutiveAvatar:React.FC<ExecutiveAvatarProps> = ({profile, onClick, active}) => {
+const ExecutiveAvatar:React.FC<ExecutiveAvatarProps> = React.memo(({profile, onClick, active}) => {
     return (
         <div
             className={`flex flex-col justify-center items-center flex-grow-0 flex-shrink-0
@@ -48,6 +48,6 @@ const ExecutiveAvatar:React.FC<ExecutiveAvatarProps> = ({profile, onClick, activ
                 </p>
             </div>
         </div>)
-}
+});
 
 export default ExecutiveAvatar

@@ -10,11 +10,16 @@
   flex-direction: column;
   position: relative;
   z-index: 10;
-  background-image: url("/asset/ellipse23.png"), url("/asset/ellipse22.png"),
-    url("/asset/ellipse31.png"), url("/asset/ellipse24.png"),
-    url("/asset/ellipse25.png"), url("/asset/ellipse25.png"),
-    url("/asset/ellipse32.png"), url("/asset/ellipse29.png"),
-    url("/asset/ellipse33.png"), url("/asset/ellipse28.png");
+  background-image: url("@/pages/home/page/assets/images/ellipse23.png"),
+    url("@/pages/home/page/assets/images/ellipse22.png"),
+    url("@/pages/home/page/assets/images/ellipse31.png"),
+    url("@/pages/home/page/assets/images/ellipse24.png"),
+    url("@/pages/home/page/assets/images/ellipse25.png"),
+    url("@/pages/home/page/assets/images/ellipse25.png"),
+    url("@/pages/home/page/assets/images/ellipse32.png"),
+    url("@/pages/home/page/assets/images/ellipse29.png"),
+    url("@/pages/home/page/assets/images/ellipse33.png"),
+    url("@/pages/home/page/assets/images/ellipse28.png");
   background-position: 10% 1%, 30% 15%, 80% 3%, 7% 38%, 95% 30%, 88% 40%, 1% 53%,
     7% 97%, 30% 86%, 88% 90%;
   background-repeat: no-repeat;
@@ -32,7 +37,7 @@
 .figure1 {
   height: 500px;
   width: 350px;
-  background-image: url("/asset/figure1.png");
+  background-image: url("@/pages/home/page/assets/images/figure1.png");
   background-position: right center;
   background-repeat: no-repeat;
   animation: moveUpDown 3s infinite;
@@ -44,7 +49,7 @@
 .figure2 {
   height: 200px;
   width: 200px;
-  background-image: url("/asset/figure2.png");
+  background-image: url("@/pages/home/page/assets/images/figure2.png");
   background-position: left center;
   background-repeat: no-repeat;
   animation: moveUpDown 4s infinite;
@@ -56,7 +61,7 @@
 .figure3 {
   height: 50px;
   width: 50px;
-  background-image: url("/asset/figure3.png");
+  background-image: url("@/pages/home/page/assets/images/figure3.png");
   background-position: left center;
   background-repeat: no-repeat;
   animation: moveUpDown 2.5s infinite;

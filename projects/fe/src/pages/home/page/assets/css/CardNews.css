@@ -1,7 +1,7 @@
 /* CardNews.css */
 
 .card-news {
-  background-image: url("/asset/group001.png");
+  background-image: url("@/pages/home/page/assets/images/group001.png");
   width: 335px;
   height: 334px;
   flex-shrink: 0;

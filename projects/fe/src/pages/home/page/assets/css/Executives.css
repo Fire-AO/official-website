@@ -11,6 +11,7 @@
   white-space: nowrap; /* 줄 바꿈 방지 */
   width: 100%; /* 부모 컨테이너의 가로 너비를 100%로 설정 */
   scrollbar-color: transparent transparent;
+  justify-content: center;
 }
 
 /* 화면이 모바일 크기일 때 */

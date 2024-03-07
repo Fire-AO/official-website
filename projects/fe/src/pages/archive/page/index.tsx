@@ -4,15 +4,15 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useEffect } from 'react';
 
 
-import Mt1Image from "@/common/assets/images/MT1.png";
-import Mt2Image from "@/common/assets/images/MT2.png";
-import Study1Image from "@/common/assets/images/서버파트1.png";
-import Study2Image from "@/common/assets/images/서버파트2.png";
-import Dinner1Image from "@/common/assets/images/전체회식1.png";
-import Dinner2Image from "@/common/assets/images/전체회식2.png";
-import Meeting1Image from "@/common/assets/images/총회1.png";
-import Meeting2Image from "@/common/assets/images/총회2.png";
-import Meeting3Image from "@/common/assets/images/총회3.png";
+import Mt1Image from "@/pages/archive/page/assets/images/MT1.png";
+import Mt2Image from "@/pages/archive/page/assets/images/MT2.png";
+import Study1Image from "@/pages/archive/page/assets/images/서버파트1.png";
+import Study2Image from "@/pages/archive/page/assets/images/서버파트2.png";
+import Dinner1Image from "@/pages/archive/page/assets/images/전체회식1.png";
+import Dinner2Image from "@/pages/archive/page/assets/images/전체회식2.png";
+import Meeting1Image from "@/pages/archive/page/assets/images/총회1.png";
+import Meeting2Image from "@/pages/archive/page/assets/images/총회2.png";
+import Meeting3Image from "@/pages/archive/page/assets/images/총회3.png";
 import Slide from './components/Caption';
 import Tag from './components/Tag';
 
@@ -87,7 +87,6 @@ const index = () => {
                         />
                     </div>
                 </div>
-
 
                 <div className="flex justify-end items-center gap-[10px] flex-wrap mb-5">
                     <Tag tag="#AO 전체 회식" />

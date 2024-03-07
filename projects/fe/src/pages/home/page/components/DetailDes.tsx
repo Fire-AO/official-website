@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import "@/pages/home/page/css/DetailDes.css";
+import "@/pages/home/pageassets/css/DetailDes.css";
 
 interface DetailDosProps {
     title: string;
@@ -24,7 +24,7 @@ const DetailDes: React.FC<DetailDosProps> = ({ title, Ntitle, Nimage }) => {
         return (
             <div className="DetailBes-container">
                 <div id='Deheader'>
-                    <img src='asset/fire.png' alt='firepic' className='firepic'></img>
+                    <img src='@/common/assets/images/fire.png' alt='firepic' className='firepic'></img>
                     <p id='large-title'>&nbsp;{title}</p>
                 </div>
                 <div>
@@ -40,7 +40,7 @@ const DetailDes: React.FC<DetailDosProps> = ({ title, Ntitle, Nimage }) => {
     return (
         <div className="DetailBes-container">
             <div id='Deheader'>
-                <img src='asset/fire.png' alt='firepic' className='firepic'></img>
+                <img src='@/common/assets/images/fire.png' alt='firepic' className='firepic'></img>
                 <p id='large-title'>&nbsp;{title}</p>
             </div>
             <Slider {...settings}>

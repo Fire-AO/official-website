@@ -1,7 +1,19 @@
-import "@/pages/home/page/css/Executives.css";
+import "@/pages/home/page/assets/css/Executives.css";
 import { useState, useEffect } from "react";
 import CardNews from "@/pages/home/page/components/CardNews";
 import { Link } from "react-router-dom";
+
+import jongChanBae from "@/pages/home/page/assets/images/smallbea.png";
+import jeHeeChun from "@/pages/home/page/assets/images/smallchun.png";
+import seJinPark from "@/pages/home/page/assets/images/smallpark.png";
+import choEunShin from "@/pages/home/page/assets/images/smallshin.png";
+import yunAChoi from "@/pages/home/page/assets/images/smallyun.png";
+
+import bigJongChanBae from "@/pages/home/page/assets/images/beabea.png";
+import bigJeHeeChun from "@/pages/home/page/assets/images/chun.png";
+import bigSeJinPark from "@/pages/home/page/assets/images/park.png";
+import bigChoEunShin from "@/pages/home/page/assets/images/shin.png";
+import bigYunAChoi from "@/pages/home/page/assets/images/yun.png";
 
 interface Executive {
   name: string;
@@ -14,7 +26,7 @@ interface Executive {
 function Executives() {
   const [selectedExecutive, setSelectedExecutive] = useState<Executive | null>(null);
 
-  const executivesData = [
+  const executivesData: Executive[] = [
     {
       name: "배종찬",
       id: "1",
@@ -29,8 +41,8 @@ function Executives() {
           바라왔던 대학생활 보내시면 좋겠습니다.
         </>
       ),
-      image: "asset/smallbea.png",
-      big_image: "asset/beabea.png",
+      image: jongChanBae,
+      big_image: bigJongChanBae,
     },
     {
       name: "천제희",
@@ -47,8 +59,8 @@ function Executives() {
           <br />
         </>
       ),
-      image: "asset/smallchun.png",
-      big_image: "asset/chun.png",
+      image: jeHeeChun,
+      big_image: bigJeHeeChun,
     },
     {
       name: "박세진",
@@ -64,8 +76,8 @@ function Executives() {
           스터디 AO에서 같이 성장해 보아요!
         </>
       ),
-      image: "asset/smallpark.png",
-      big_image: "asset/park.png",
+      image: seJinPark,
+      big_image: bigSeJinPark,
     },
     {
       name: "신초은",
@@ -79,8 +91,8 @@ function Executives() {
           <br />밥 잘 사주는 스터디 AO에서 슬기로운 대학생활 해보아요.
         </>
       ),
-      image: "asset/smallshin.png",
-      big_image: "asset/shin.png",
+      image: choEunShin,
+      big_image: bigChoEunShin,
     },
     {
       name: "최윤아",
@@ -96,8 +108,8 @@ function Executives() {
           해요!🍀
         </>
       ),
-      image: "asset/smallyun.png",
-      big_image: "asset/yun.png",
+      image: yunAChoi,
+      big_image: bigYunAChoi,
     },
 
     // 다른 임원들에 대한 정보도 추가할 수 있습니다.

@@ -1,9 +1,9 @@
-import "@/pages/home/page/css/MainActivity.css";
+import "@/pages/home/page/assets/css/MainActivity.css";
 // import DetailDes from './DetailDes';
 // import Modal from 'react-modal';
 // import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import nextButton from "@/pages/home/page/assets/images/vector.png";
 
 // const modalStyles = {
 //     overlay: {
@@ -25,6 +25,14 @@ import { useNavigate } from "react-router-dom";
 //         zIndex: 1001,
 //     },
 // };
+
+import ico1 from "@/pages/home/page/assets/images/group6.png";
+import ico2 from "@/pages/home/page/assets/images/group7.png";
+import ico3 from "@/pages/home/page/assets/images/group21.png";
+import ico4 from "@/pages/home/page/assets/images/group22.png";
+import ico5 from "@/pages/home/page/assets/images/group23.png";
+import ico6 from "@/pages/home/page/assets/images/group24.png";
+
 
 interface Activity {
     id: number;
@@ -57,54 +65,54 @@ function MainActivity() {
             id: 1,
             title: '스터디 활동',
             detail: '알고리즘, 책 스터디 등',
-            image: 'asset/group6.png',
+            image: ico1,
             Ntitle: ['깃허브로 관리되는 체계적인 스터디', '깃허브로 관리되는 체계적인 스터디', '서버파트 스터디', '서버파트 스터디', '알고리즘 스터디'],
-            Nimage: ['asset/github1.png', 'asset/github2.png', 'asset/serverstudy.jpg', 'asset/serverstudy2.png', 'asset/study3.png'],
+            Nimage: ['@/common/assets/images/github1.png', '@/common/assets/images/github2.png', '@/common/assets/images/serverstudy.jpg', '@/common/assets/images/serverstudy2.png', '@/common/assets/images/study3.png'],
             next: "/about"
         },
         {
             id: 2,
             title: '세미나',
             detail: '개발 관련 주제 선정 후 발표',
-            image: 'asset/group7.png',
+            image: ico2,
             Ntitle: ['깃허브 세미나'],
-            Nimage: ['asset/seminar.png'],
+            Nimage: ['@/common/assets/images/seminar.png'],
             next: "/about"
         },
         {
             id: 3,
             title: '프로젝트',
             detail: '직접 앱이나 웹을 멘토링 받으면서 만들어보기',
-            image: 'asset/group21.png',
+            image: ico3,
             Ntitle: ['웹 프로젝트', '경쟁식 프로젝트'],
-            Nimage: ['asset/webproject.png', 'asset/webproject2.png'],
+            Nimage: ['@/common/assets/images/webproject.png', '@/common/assets/images/webproject2.png'],
             next: "/about"
         },
         {
             id: 4,
             title: '파티',
             detail: '학기별 개강파티 + 종강파티',
-            image: 'asset/group22.png',
+            image: ico4,
             Ntitle: ['개강파티', '종강파티'],
-            Nimage: ['asset/drink1.jpg', 'asset/drink2.png'],
+            Nimage: ['@/common/assets/images/drink1.jpg', '@/common/assets/images/drink2.png'],
             next: "/archive"
         },
         {
             id: 5,
             title: 'MT',
             detail: '4월 중순 쯤',
-            image: 'asset/group23.png',
+            image: ico5,
             Ntitle: ['단체 사진', '게임', '바베큐'],
-            Nimage: ['asset/mt2.png', 'asset/mt1.jpg', 'asset/mt3.png'],
+            Nimage: ['@/common/assets/images/mt2.png', '@/common/assets/images/mt1.jpg', '@/common/assets/images/mt3.png'],
             next: "/archive"
         },
         {
             id: 6,
             title: '총회',
             detail: '11월 말 쯤',
-            image: 'asset/group24.png',
+            image: ico6,
             Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
-            Nimage: ['asset/meeting1.jpg', 'asset/meeting2.jpg', 'asset/meeting3.jpg'],
+            Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
             next: "/archive"
         },
         {
@@ -113,7 +121,7 @@ function MainActivity() {
             detail: '',
             image: '',
             // Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
-            Nimage: ['asset/meeting1.jpg', 'asset/meeting2.jpg', 'asset/meeting3.jpg'],
+            Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
             next: "/intro"
         },
     ];
@@ -154,14 +162,14 @@ function MainActivity() {
                                         <p id="actitle">{activity.title}</p>
                                         <p id="acdetail">{activity.detail}</p>
                                     </div>
-                                    <img src="asset/vector.png" alt="vector" id="vector"></img>
+                                    <img src={nextButton} alt="vector" id="vector"></img>
                                 </>
                                 :
                                 <>
                                     <div className="actext ml-6">
                                         <p id="actitle" className="text-black dark:text-white">{activity.title}</p>
                                     </div>
-                                    <img src="asset/vector.png" alt="vector" id="vector"></img>
+                                    <img src={nextButton} alt="vector" id="vector"></img>
                                 </>
                         }
                     </button>

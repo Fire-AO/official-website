@@ -1,4 +1,5 @@
-import "@/pages/home/page/css/Footer.css";
+import "@/pages/home/page/assets/css/Footer.css";
+import call from "@/pages/home/page/assets/images/call.png";
 
 function Footer() {
     return (
@@ -9,7 +10,7 @@ function Footer() {
                         <p>Fire</p>&nbsp;<p id="fotfro">A</p><p id="fotback">O</p>
                     </div>
                     <div className="call">
-                        <img className="callimg" src="asset/call.png" />
+                        <img className="callimg" src={call} />
                         &nbsp;
                         <p id="number" className="text-black dark:text-white">010-4939-1971</p>
                     </div>

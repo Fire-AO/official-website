@@ -65,7 +65,7 @@
 .figure4 {
   height: 250px;
   width: 200px;
-  background-image: url("/asset/figure4.png");
+  background-image: url("@/pages/home/page/assets/images/figure4.png");
   background-position: left center;
   background-repeat: no-repeat;
   animation: moveUpDown 3s infinite;
@@ -78,7 +78,7 @@
 .figure5 {
   height: 100px;
   width: 100px;
-  background-image: url("/asset/figure5.png");
+  background-image: url("@/pages/home/page/assets/images/figure5.png");
   background-position: left center;
   background-repeat: no-repeat;
   animation: moveUpDown 2s infinite;
@@ -91,7 +91,7 @@
 .figure6 {
   height: 200px;
   width: 100px;
-  background-image: url("/asset/figure6.png");
+  background-image: url("@/pages/home/page/assets/images/figure6.png");
   background-position: right center;
   background-repeat: no-repeat;
   animation: moveUpDown 5s infinite;
@@ -164,7 +164,7 @@
   z-index: 0;
   height: 300px;
   width: 300px;
-  background-image: url("/asset/figure7.png");
+  background-image: url("@/pages/home/page/assets/images/figure7.png");
   background-position: right center;
   background-repeat: no-repeat;
   animation: moveUpDown 4s infinite;
@@ -178,7 +178,7 @@
   z-index: 0;
   height: 300px;
   width: 300px;
-  background-image: url("/asset/figure8.png");
+  background-image: url("@/pages/home/page/assets/images/figure8.png");
   background-position: left center;
   background-repeat: no-repeat;
   animation: moveUpDown 5s infinite;

@@ -1,4 +1,4 @@
-import "@/pages/home/page/css/FirstIntro.css";
+import "@/pages/home/page/assets/css/FirstIntro.css";
 import { Link } from "react-router-dom";
 
 function FirstIntro() {

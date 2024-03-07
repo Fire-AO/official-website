@@ -1,6 +1,6 @@
 // CardNews.js
 
-import "@/pages/home/page/css/CardNews.css";
+import "@/pages/home/page/assets/css/CardNews.css";
 
 interface CardNewsProps {
     name: string;

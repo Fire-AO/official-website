@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '@/pages/home/page/css/Detail.css';
+import '@/pages/home/page/assets/css/Detail.css';
 
 const Detail = () => {
     const [opacity, setOpacity] = useState(0);

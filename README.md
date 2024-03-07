@@ -3,13 +3,15 @@
 </div>
 
 # AO Official Website
-Url: https://fireao.com/ (unavailable link for now)
 
-2024년 1월~ 2024 2월 말까지 약 두 달간 두 팀으로 나뉘어 각각 다른 디자인 및 컨셉을 가지고 개발되었습니다.
-[Team 1의 Repo](https://github.com/AO-PROJECT-TEAM-1/FIRE-AO-SITE)
-[Team 2의 Repo](https://github.com/AO-WEB-TEAM-2/AO-official-website)
+### Url: https://fireao.com/ (unavailable link for now)  
+  
+2024-01-01 ~ 2024-02-29  
+두 팀으로 나뉘어 서로 다른 컨셉, 디자인을 바탕으로 프로젝트 진행됨 
+현재 Repository는 두 웹사이트를 하나로 병합한 결과  
 
-현재 Repo는 두 팀의 웹사이트를 최종적으로 병합한 결과.
+[Team 1의 Repo](https://github.com/AO-PROJECT-TEAM-1/FIRE-AO-SITE)  
+[Team 2의 Repo](https://github.com/AO-WEB-TEAM-2/AO-official-website)  
 
 ## Contributers
 Led by [박세진 Sejin Park](https://github.com/sejineer)

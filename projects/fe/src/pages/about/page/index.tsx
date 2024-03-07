@@ -194,7 +194,7 @@ const About = () => {
                         </p>
                     </div>
                     <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/60 px-[25px] py-[12px]"
+                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
                         // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
                         style={{
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",

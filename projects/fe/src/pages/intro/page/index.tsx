@@ -400,8 +400,9 @@ const index = () => {
               <p
                 className="w-[135px] ml-[57px] flex flex-col justify-start text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
               >
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">배종찬 Jongchan Bae</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">박세진 Sejin Park</span>
                 <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">천제희 Jehee Cheon</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">배종찬 Jongchan Bae</span>
               </p>
             </div>
 

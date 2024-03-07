@@ -4,7 +4,10 @@ import About from "@/pages/about/page/index"
 import Archive from "@/pages/archive/page/index"
 import Intro from "@/pages/intro/page/index"
 import History from "@/common/components/History"
+import Apply from "@/pages/apply/page/index"
+import InitialSetup from "@/common/components/InitialSetup";
 
+import { Provider } from "react-redux";
 import { store } from '@/common/redux/store';
 
 import "@/App.css";
@@ -16,8 +19,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import InitialSetup from "@/common/components/InitialSetup";
-import { Provider } from "react-redux";
+
+
 
 Modal.setAppElement("#root"); // 추가
 
@@ -33,10 +36,10 @@ const App = () => {
             element={<Root />}
           />
 
-          {/* <Route
+          <Route
             path="/apply"
-            element={<Form />}
-          /> */}
+            element={<Apply />}
+          />
 
           <Route
             element={<History />}

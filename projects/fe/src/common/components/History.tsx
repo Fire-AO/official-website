@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { useSelector } from "react-redux";
 import { RootState } from "@/common/redux/store";
 import { useEffect, useState } from 'react';
-import Header from "@/common/components/Header"
+import Header from '@/common/components/Header';
 
 import "@/common/assets/css/history.css"
 
@@ -46,7 +46,6 @@ const History = () => {
     return (
         <>
             <ScrollRestoration />
-
             <Header />
 
             <div className="bg-white dark:bg-black overflow-hidden min-h-[100vh] flex flex-col items-center z-[50] history-bg pt-[30px]">

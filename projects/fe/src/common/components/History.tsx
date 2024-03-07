@@ -39,8 +39,8 @@ const History = () => {
         const { isActive } = props;
 
         return isActive
-            ? "border-b-[2px] border-b-black w-full text-black dark:text-white font-bold pb-1 dark:border-b-white"
-            : "border-b-[2px] border-b-white/60 darl:border-b-white/50 text-black/60 dark:text-white/60 w-full pb-3 font-bold"
+            ? "border-b-[2px] border-b-black/50 w-full text-black dark:text-white/90 font-bold pb-1 dark:border-b-white/70"
+            : "border-b-[2px] border-b-black/10 dark:border-b-white/20 text-black/60 dark:text-white/60 w-full pb-3 font-bold"
     }
 
     return (

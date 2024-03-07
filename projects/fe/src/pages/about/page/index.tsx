@@ -72,7 +72,7 @@ const About = () => {
                             <span
                                 className="flex-grow-0 flex-shrink-0 text-xs text-center text-[#191919]"
                             >
-                                1987년부터 2024년까지 이어져 온 전통있는 스터디이며</span
+                                AO는 85, 86학번 주축으로 1986년 부터 2024년까지 이어져 온 전통있는 스터디이며</span
                             ><br /><span
                                 className="flex-grow-0 flex-shrink-0 text-xs text-center text-[#191919]"
                             >아직까지도 80, 90, 00, 10년대 선배님들과 교류를 왕성히</span

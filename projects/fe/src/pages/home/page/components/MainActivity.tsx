@@ -108,7 +108,7 @@ function MainActivity() {
             next: "/archive"
         },
         {
-            id: 6,
+            id: 7,
             title: '스터디원 소개',
             detail: '',
             image: '',

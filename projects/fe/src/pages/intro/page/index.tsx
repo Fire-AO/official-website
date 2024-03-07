@@ -1,23 +1,29 @@
-import AoJc from "@/common/assets/images/new종찬형님.png";
-import Aosj from "@/common/assets/images/ao 세진형님.jpg";
-import Aojh from "@/common/assets/images/ao 제희형님.jpg";
-import Aoce from "@/common/assets/images/ao신초은.jpg";
-import Aoyn from "@/common/assets/images/ao최윤아.jpg";
+import AoJc from "@/pages/intro/page/assets/images/new종찬형님.png";
+import Aosj from "@/pages/intro/page/assets/images/ao 세진형님.jpg";
+import Aojh from "@/pages/intro/page/assets/images/ao 제희형님.jpg";
+import Aoce from "@/pages/intro/page/assets/images/ao신초은.jpg";
+import Aoyn from "@/pages/intro/page/assets/images/ao최윤아.jpg";
 
-import JcIcon from "@/common/assets/images/ao김종찬아바타.jpg";
-import SjIcon from "@/common/assets/images/ao박세진아바타.jpg";
-import JhIcon from "@/common/assets/images/ao천제희아바타.jpg";
-import CeIcon from "@/common/assets/images/ao신초은아바타.jpg";
-import YnIcon from "@/common/assets/images/ao최윤아아바타.jpg";
+import JcIcon from "@/pages/intro/page/assets/images/ao김종찬아바타.jpg";
+import SjIcon from "@/pages/intro/page/assets/images/ao박세진아바타.jpg";
+import JhIcon from "@/pages/intro/page/assets/images/ao천제희아바타.jpg";
+import CeIcon from "@/pages/intro/page/assets/images/ao신초은아바타.jpg";
+import YnIcon from "@/pages/intro/page/assets/images/ao최윤아아바타.jpg";
 
-import Aokh from "@/common/assets/images/박기현사진.jpg";
-import Aoys from "@/common/assets/images/유용석사진.jpg";
-import Aojm from "@/common/assets/images/송정민사진.jpg";
-import Aoij from "@/common/assets/images/정익재사진.jpg";
+import Aokh from "@/pages/intro/page/assets/images/박기현사진.jpg";
+import Aoys from "@/pages/intro/page/assets/images/유용석사진.jpg";
+import Aojm from "@/pages/intro/page/assets/images/송정민사진.jpg";
+import Aoij from "@/pages/intro/page/assets/images/정익재사진.jpg";
+import AoChangminLee from "@/pages/intro/page/assets/images/Changmin-Lee.jpg";
+import AoChoeunKim from "@/pages/intro/page/assets/images/Choeun-Kim.jpg";
+import AoJunghyukBang from "@/pages/intro/page/assets/images/Junhyuk-Bang.jpg";
+import AoSeohyunBang from "@/pages/intro/page/assets/images/Seohyun-An.jpg";
+import AoYuminNo from "@/pages/intro/page/assets/images/Yunin-No.jpg";
+
+import ExecutiveAvatar from "@/pages/intro/page/components/ExecutiveAvatar";
+import DeveloperAvatar from "@/pages/intro/page/components/DeveloperAvatar";
 
 import { useState } from "react";
-import ExecutiveAvatar from "./components/ExecutiveAvatar";
-import DeveloperAvatar from "./components/DeveloperAvatar";
 
 interface Profile {
   id: number;
@@ -369,11 +375,16 @@ const index = () => {
           </p>
         </div>
 
-        <div className="flex justify-around items-center flex-wrap mt-[15px] gap-[12px]">
+        <div className="flex justify-center items-center flex-wrap mt-[15px] gap-[12px]">
           <DeveloperAvatar src={Aokh} />
+          <DeveloperAvatar src={AoChoeunKim} />
           <DeveloperAvatar src={Aoys} />
+          <DeveloperAvatar src={AoChangminLee} />
           <DeveloperAvatar src={Aojm} />
+          <DeveloperAvatar src={AoYuminNo} />
           <DeveloperAvatar src={Aoij} />
+          <DeveloperAvatar src={AoJunghyukBang} />
+          <DeveloperAvatar src={AoSeohyunBang} />
         </div>
 
         <div className="px-[15%] justify-center flex">
@@ -389,12 +400,8 @@ const index = () => {
               <p
                 className="w-[135px] ml-[57px] flex flex-col justify-start text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
               >
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">배종찬 Bae Jongchan</span>
-                <span
-                  className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >
-                  천제희 Cheon Jehee
-                </span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">배종찬 Jongchan Bae</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">천제희 Jehee Cheon</span>
               </p>
             </div>
 
@@ -407,12 +414,10 @@ const index = () => {
               <div
                 className="w-[135px] ml-[57px] flex flex-col justify-start text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
               >
-                <span
-                  className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >박기현 Park Kihyun</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">유용석 Yoo Yongseok</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">유용석 Yoo Yongseok</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">유용석 Yoo Yongseok</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">박기현 Kihyun Park</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">김초은 Choeun Kim</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">유용석 Yongseok Yoo</span>
+                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">이창민 Changmin Lee</span>
               </div>
             </div>
 
@@ -425,26 +430,11 @@ const index = () => {
               <div
                 className="flex flex-col ml-[57px] justify-start w-[135px] text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
               >
-                <span
-                  className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >
-                  송정민 Song Jeongmin
-                </span>
-                <span
-                  className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >
-                  정익재 Jeong Ikjae
-                </span>
-                <span
-                  className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >
-                  정익재 Jeong Ikjae
-                </span>
-                <span
-                  className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200"
-                >
-                  정익재 Jeong Ikjae
-                </span>
+                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">송정민 Jeongmin Song</span>
+                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">노유빈 Yunin No</span>
+                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">정익재 Ikjae Jeong</span>
+                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">방준혁 Junhyuk Bang</span>
+                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">안서현 Seohyun An</span>
               </div>
             </div>
           </div>

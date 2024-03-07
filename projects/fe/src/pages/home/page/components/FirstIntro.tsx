@@ -12,7 +12,7 @@ function FirstIntro() {
           <p id="A">Alpha</p>&nbsp;<p>부터</p>&nbsp;<p id="O">Omega</p>&nbsp;
           <p>까지!</p>
         </div>
-        <div className="ex">
+        <div className="ex font-bold">
           <p>대학생활의 처음부터 끝까지 함께해 줄 Fire AO입니다.</p>
         </div>
         <div className="FIbutton ">

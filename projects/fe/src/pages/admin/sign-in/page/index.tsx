@@ -15,7 +15,7 @@ const index = () => {
 
     return (
         <>
-            <h1 className="text-2xl font-bold text-white mb-7">관리자 전용</h1>
+            <h1 className="text-2xl font-bold  dark:text-white mb-7">관리자 전용</h1>
             <form
                 className="flex flex-col gap-3 w-full max-w-[250px]"
                 onSubmit={handleSubmit}
@@ -23,13 +23,13 @@ const index = () => {
                 <input
                     type="text"
                     placeholder="이름을 입려해주세요."
-                    className="rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-[rgb(13,192,222)]"
+                    className="rounded-md py-1 px-2 focus:outline-none bg-black/10 dark:bg-white/10 focus:ring-2 focus:ring-[rgb(13,192,222)]"
                     onInput={(e) => setName(e.currentTarget.value)}
                 />
                 <input
                     type="password"
                     placeholder="비밀번호를 입력해주세요."
-                    className="rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-[rgb(13,192,222)]"
+                    className="rounded-md py-1 px-2 focus:outline-none bg-black/10 dark:bg-white/10 focus:ring-2 focus:ring-[rgb(13,192,222)]"
                     onInput={(e) => setPw(e.currentTarget.value)}
                 />
                 <button

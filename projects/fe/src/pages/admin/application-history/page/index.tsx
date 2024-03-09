@@ -37,7 +37,7 @@ const index = () => {
     return (
         <>
             <table
-                className="table-auto w-full text-white dark:text-black/90 text-center bg-black/10 dark:bg-white/90 rounded-2xl overflow-hidden shadow-lg mt-10"
+                className="table-auto w-full text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
             >
                 <thead>
                     <tr>

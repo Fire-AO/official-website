@@ -1,8 +1,8 @@
 import asyncHandler from "express-async-handler";
-import Applyer from "../models/applyerModel.js"; // 지원자 모델
+import Application from "../models/applicationModel.js"; // 지원자 모델
 
 // /apply에 post 요청
-const postApply = asyncHandler(async (req, res) => {
+export const postApplication = asyncHandler(async (req, res) => {
     try {
         // 바디에서 정보 받기
         const { id, name, phoneNum, aWord } = req.body;
@@ -31,16 +31,16 @@ const postApply = asyncHandler(async (req, res) => {
         if (!/^(\d{3}-?\d{3,4}-?\d{4})$/.test(phoneNum)) {
             errors.phoneNumErrorMessage = "전화번호를 확인해 주세요.";
         }
-        
+
         // 중복지원 확인
         // 학번 중복 확인
-        const existingApplyerWithId = await Applyer.findOne({ id });
+        const existingApplyerWithId = await Application.findOne({ id });
         if (existingApplyerWithId) {
             errors.stuIdErrorMessage = "중복된 학번입니다.";
         }
 
         // 전화번호 중복 확인
-        const existingApplyerWithPhoneNum = await Applyer.findOne({ phoneNum });
+        const existingApplyerWithPhoneNum = await Application.findOne({ phoneNum });
         if (existingApplyerWithPhoneNum) {
             errors.phoneNumErrorMessage = "중복된 전화번호입니다.";
         }
@@ -50,9 +50,9 @@ const postApply = asyncHandler(async (req, res) => {
         if (Object.keys(errors).length !== 0) {
             return res.status(400).json(errors);
         }
-        
+
         // DB에 저장
-        const applyer = await Applyer.create({
+        const applyer = await Application.create({
             id, name, phoneNum, aWord
         });
 
@@ -63,5 +63,3 @@ const postApply = asyncHandler(async (req, res) => {
         res.status(500).json({ serverErrorMessage: "서버 오류입니다." });
     }
 });
-
-export default postApply;

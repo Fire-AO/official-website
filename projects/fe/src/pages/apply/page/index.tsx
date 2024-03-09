@@ -28,7 +28,7 @@ const index = () => {
     console.log("전화번호:", phoneNum);
     console.log("한 마디:", aWord);
 
-    fetch("/api/apply", {
+    fetch("/api/application", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

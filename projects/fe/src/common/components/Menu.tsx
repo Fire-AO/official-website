@@ -56,11 +56,12 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
                         ><p className="active:font-semibold">AO Intro</p>
                         </Link>
                     </div>
-                    <p
+                    <Link
                         className="absolute bottom-0 w-full text-[13px] font-['PRETENDARD-REGULAR'] mx-[67px]= mb-[23px] text-center text-neutral-200"
+                        to="/admin/sign-in"
                     >
                         ⓒ Fire AO. 2024 All rights reserved
-                    </p>
+                    </Link>
                 </div>
             }
 

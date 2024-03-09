@@ -11,14 +11,16 @@ server.use(cors());
 dbConnect();
 
 server.use(express.json());
-server.use(express.urlencoded({extended: true}));
+server.use(express.urlencoded({ extended: true }));
 
 //apply 
-import applyRoutes from "./routes/applyRoutes.js";
+import applicationRoutes from "./routes/applicationRoutes.js";
+import applicationsRoutes from "./routes/applicationsRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
-server.use("/api/apply", applyRoutes);
+server.use("/api/application", applicationRoutes);
+server.use("/api/applications", applicationsRoutes);
 server.use("/api/auth", authRoutes);
 
-server.listen(3000, ()=>{
+server.listen(3000, () => {
     console.log('서버 실행 중');
 });

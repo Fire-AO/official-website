@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // 스키마
-const applyerSchema = new mongoose.Schema({
+const applicationSchema = new mongoose.Schema({
     id: {
         type: String,
         required: true
@@ -20,5 +20,5 @@ const applyerSchema = new mongoose.Schema({
     }
 });
 
-const Applyer = mongoose.model("Applyer", applyerSchema);
-export default Applyer;
+const Application = mongoose.model("Application", applicationSchema);
+export default Application;

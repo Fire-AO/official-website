@@ -1,9 +1,9 @@
 import express from "express";
-import postApply from "../controllers/applyController.js";
+import { postApplication } from "../controllers/applicationController.js";
 
 const router = express.Router();
 
 router.route("/")
-      .post(postApply);
+      .post(postApplication)
 
 export default router;

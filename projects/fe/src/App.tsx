@@ -6,6 +6,9 @@ import Intro from "@/pages/intro/page/index"
 import History from "@/common/components/History"
 import Apply from "@/pages/apply/page/index"
 import InitialSetup from "@/common/components/InitialSetup";
+import Admin from "@/pages/admin/page/index"
+import AdminSignIn from "@/pages/admin/sign-in/page/index"
+import ApplicationHistory from "@/pages/admin/application-history/page/index"
 
 import { Provider } from "react-redux";
 import { store } from '@/common/redux/store';
@@ -40,6 +43,20 @@ const App = () => {
             path="/apply"
             element={<Apply />}
           />
+
+          <Route
+            element={<Admin />}
+          >
+            <Route
+              path="/admin/sign-in"
+              element={<AdminSignIn />}
+            />
+
+            <Route
+              path="/admin/application-history"
+              element={<ApplicationHistory />}
+            />
+          </Route>
 
           <Route
             element={<History />}

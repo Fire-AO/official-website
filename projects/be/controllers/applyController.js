@@ -56,8 +56,8 @@ const postApply = asyncHandler(async (req, res) => {
             id, name, phoneNum, aWord
         });
 
-        // 성공시 201 반환
-        res.status(201).json({ message: "지원이 완료되었습니다." });
+        // 성공시 200 반환
+        res.status(200).json({ message: "지원이 완료되었습니다." });
     } catch (err) {
         console.log(err);
         res.status(500).json({ serverErrorMessage: "서버 오류입니다." });

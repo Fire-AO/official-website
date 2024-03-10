@@ -31,14 +31,14 @@ const InitialSetup = () => {
             {
                 isDarkMode
                     ? <Helmet>
-                        <meta name='theme-color' content='rgb(0, 0, 0)' />
-                        <meta name='apple-mobile-web-app-status-bar-style' content='rgb(0, 0, 0)' />
-                        <meta name='msapplication-navbutton-color' content='rgb(0, 0, 0)' />
+                        <meta name='theme-color' content='#ffffff' />
+                        <meta name='apple-mobile-web-app-status-bar-style' content='#ffffff' />
+                        <meta name='msapplication-navbutton-color' content='#ffffff' />
                     </Helmet>
                     : <Helmet>
-                        <meta name='theme-color' content='rgb(255, 255, 255)' />
-                        <meta name='apple-mobile-web-app-status-bar-style' content='rgb(255, 255, 255)' />
-                        <meta name='msapplication-navbutton-color' content='rgb(255, 255, 255)' />
+                        <meta name='theme-color' content='#000000' />
+                        <meta name='apple-mobile-web-app-status-bar-style' content='#000000' />
+                        <meta name='msapplication-navbutton-color' content='#000000' />
                     </Helmet>
             }
         </>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import CompleteModal from "./components/CompleteModal"
 import { useState } from "react";
+import { Helmet } from "react-helmet";
+import ao from "@/common/assets/images/AO-symbol.png";
 
 const index = () => {
   const [studentId, setStudentId] = useState('');
@@ -89,135 +91,158 @@ const index = () => {
 
 
   return (
-    <div className="bg-white dark:bg-black h-screen">
-      <div
-        className="w-full overflow-hidden pr-4 pl-4 bg-white dark:bg-black mx-auto"
-      >
-        <div className="mb-[42px] flex justify-center">
-          {/* <ApplyMain /> */}
-          <div
-            className="flex justify-center items-center w-screen relative overflow-hidden py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
-          >
-            <p className="font-['Montserrat'] font-black text-3xl">
-              <Link to="/">
-                <span className="text-black dark:text-white">Fire AO</span>
-              </Link>
-            </p>
-          </div>
-
-        </div>
-        <div className="mb-[34px] flex justify-center">
-          {/* <ApplyForm /> */}
-
-          <form
-            onSubmit={handleSubmit}>
-            <label
-              className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-              htmlFor="studentId">학번</label>
+    <>
+      <div className="bg-white dark:bg-black h-screen">
+        <div
+          className="w-full overflow-hidden pr-4 pl-4 bg-white dark:bg-black mx-auto"
+        >
+          <div className="mb-[42px] flex justify-center">
+            {/* <ApplyMain /> */}
             <div
-              className={`mt-[10px] 
+              className="flex justify-center items-center w-screen relative overflow-hidden py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
+            >
+              <p className="font-['Montserrat'] font-black text-3xl">
+                <Link to="/">
+                  <span className="text-black dark:text-white">Fire AO</span>
+                </Link>
+              </p>
+            </div>
+
+          </div>
+          <div className="mb-[34px] flex justify-center">
+            {/* <ApplyForm /> */}
+
+            <form
+              onSubmit={handleSubmit}>
+              <label
+                className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+                htmlFor="studentId">학번</label>
+              <div
+                className={`mt-[10px] 
               mb-[${stuIdErrorMessage ? '3px' : '26px'}]
               flex justify-start items-center w-[339px] h-[47px] relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0d0d0d]`}
-            >
-              <input
-                type="text"
-                id="studentId"
-                onInput={(e) => setStudentId(e.currentTarget.value)}
-                className="flex-grow-0 w-full flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                placeholder="학번을 입력해주세요."
-              />
-            </div>
-            <p
-              className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
-            >
-              {stuIdErrorMessage}
-            </p>
-            <label
-              className=" font-['PRETENDARD-SEMIBOLD'] w-[32px] text-base text-left text-[#000] dark:text-[#CCC]"
-              htmlFor="name">이름</label>
-            <div
-              className={`mt-[10px] 
+              >
+                <input
+                  type="text"
+                  id="studentId"
+                  onInput={(e) => setStudentId(e.currentTarget.value)}
+                  className="flex-grow-0 w-full flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
+                  placeholder="학번을 입력해주세요."
+                />
+              </div>
+              <p
+                className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
+              >
+                {stuIdErrorMessage}
+              </p>
+              <label
+                className=" font-['PRETENDARD-SEMIBOLD'] w-[32px] text-base text-left text-[#000] dark:text-[#CCC]"
+                htmlFor="name">이름</label>
+              <div
+                className={`mt-[10px] 
                 mb-[${nameErrorMessage ? '3px' : '26px'}]
                flex justify-start items-center w-[339px] h-[47px] [relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-            >
-              <input
-                type="text"
-                id="name"
-                onInput={(e) => setName(e.currentTarget.value)}
-                className="flex-grow-0 flex-shrink-0 w-full font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                placeholder="이름을 입력해주세요."
-              />
-            </div>
-            <p
-              className="mb-[10px] font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]"
-            >
-              {nameErrorMessage}
-            </p>
-            <label
-              className=" w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-              htmlFor="phoneNumber">전화번호</label
-            >
-            <div
-              className={`mt-[10px] 
+              >
+                <input
+                  type="text"
+                  id="name"
+                  onInput={(e) => setName(e.currentTarget.value)}
+                  className="flex-grow-0 flex-shrink-0 w-full font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
+                  placeholder="이름을 입력해주세요."
+                />
+              </div>
+              <p
+                className="mb-[10px] font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]"
+              >
+                {nameErrorMessage}
+              </p>
+              <label
+                className=" w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+                htmlFor="phoneNumber">전화번호</label
+              >
+              <div
+                className={`mt-[10px] 
               mb-[${phoneErrorMessage ? '3px' : '26px'}] 
               flex justify-start items-center w-[339px] h-[47px] relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-            >
-              <input
-                type="tel"
-                onInput={(event) => {
-                  setPhoneNum(
-                    event.currentTarget.value
-                      .replace(/[^0-9]/g, "")
-                      .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
-                  );
-                }}
-                maxLength={13}
-                id="phoneNumber"
-                className="w-full flex-grow-0 flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                placeholder="전화번호를 입력해주세요."
-              />
-            </div>
-            <p
-              className="mb-[10px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
-            >
-              {phoneErrorMessage}
-            </p>
+              >
+                <input
+                  type="tel"
+                  onInput={(event) => {
+                    setPhoneNum(
+                      event.currentTarget.value
+                        .replace(/[^0-9]/g, "")
+                        .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
+                    );
+                  }}
+                  maxLength={13}
+                  id="phoneNumber"
+                  className="w-full flex-grow-0 flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
+                  placeholder="전화번호를 입력해주세요."
+                />
+              </div>
+              <p
+                className="mb-[10px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
+              >
+                {phoneErrorMessage}
+              </p>
 
-            <label
-              className=" w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-              htmlFor="message">한 마디 남기기</label
-            >
-            <div
-              className={`mt-[10px] 
+              <label
+                className=" w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+                htmlFor="message">한 마디 남기기</label
+              >
+              <div
+                className={`mt-[10px] 
               mb-[${awordErrorMessage ? '3px' : '26px'}] 
               flex justify-start items-start w-[339px] h-24 relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-            >
-              <textarea
-                id="message"
-                onInput={(e) => setAWord(e.currentTarget.value)}
-                className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none resize-none"
-                placeholder="자유롭게 한 마디를 남겨주세요."
-              ></textarea>
-            </div>
-            <p className="font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]">
-              {awordErrorMessage}
-            </p>
-            <button
-              type="submit"
-              className="mt-[63px] flex justify-center items-center relative overflow-hidden px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
-            >
-              지원하기
-            </button>
-          </form>
+              >
+                <textarea
+                  id="message"
+                  onInput={(e) => setAWord(e.currentTarget.value)}
+                  className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none resize-none"
+                  placeholder="자유롭게 한 마디를 남겨주세요."
+                ></textarea>
+              </div>
+              <p className="font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]">
+                {awordErrorMessage}
+              </p>
+              <button
+                type="submit"
+                className="mt-[63px] flex justify-center items-center relative overflow-hidden px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
+              >
+                지원하기
+              </button>
+            </form>
+          </div>
+
+          <CompleteModal
+            isVisible={modalOpen}
+            onClose={() => setModalOpen(false)}
+          />
+
         </div>
+      </div >
 
-        <CompleteModal
-          isVisible={modalOpen}
-          onClose={() => setModalOpen(false)}
-        />
+      <Helmet>
+        <title>Apply | Fire AO</title>
+        <link rel="canonical" href={`/apply`} />
+        <meta name="description" content="Fire AO apply" />
+        <meta name="keywords" content={`fire, AO, Myongji, Univ., MJ, computer, science, major, apply`} />
+        <meta name="author" content="FireAO" />/
 
-      </div>
-    </div >
+        <meta property="og:title" content="apply | Fire AO" />
+        <meta property="og:description" content="Fire AO apply" />
+        <meta property="og:image" content={ao} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Fire AO" />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:url" content={`/apply`} />
+
+        <meta name="twitter:title" content={`apply | Fire AO`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content={'Fire AO apply'} />
+        <meta name="twitter:image" content={ao} />
+      </Helmet>
+    </>
   )
 }
 

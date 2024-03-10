@@ -150,7 +150,7 @@ const Header = () => {
                     </button>
 
                     <Link to="/">
-                        <div className="flex-grow-0 flex-shrink-0 text-[24px] flex flex-row font-['Montserrat'] text-[rgb(33,236,222)] dark:text-white font-bold">
+                        <div className="flex-grow-0 flex-shrink-0 text-[24px] flex flex-row font-['PaytoneOne'] text-[rgb(33,236,222)] dark:text-white font-bold">
                             <p>Fire</p>
                             &nbsp;
                             <p style={{

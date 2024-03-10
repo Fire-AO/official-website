@@ -11,6 +11,14 @@ export default {
         '0%': { transform: 'rotate(0deg)' },
         '100%': { transform: 'rotate(360deg)' }
       },
+      'fade-in': {
+        '0%': { opacity: '0%' },
+        '100%': { opacity: '100%' }
+      },
+      'fade-out': {
+        '0%': { opacity: '100%' },
+        '100%': { opacity: '0%' }
+      },
       'rotate': {
         '0%': { transform: 'rotateY(0deg)' },
         '100%': { transform: 'rotateY(360deg)' }
@@ -30,7 +38,9 @@ export default {
     animation: {
       'spin': 'spin 0.7s ease-in-out infinite',
       'flipped': 'rotate 0.4s ease-in-out 1',
-      'bounce': 'bounce 1s infinite'
+      'bounce': 'bounce 1s infinite',
+      'fade-in': 'fade-in 0.5s ease-in-out forwards',
+      'fade-out': 'fade-out 0.5s ease-in-out forwards'
     }
   },
   plugins: [],

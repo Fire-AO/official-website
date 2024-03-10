@@ -7,8 +7,6 @@ import Autoplay from 'embla-carousel-autoplay'
 import Image1 from "@/pages/about/page/assets/images/1.png";
 import Image2 from "@/pages/about/page/assets/images/2.png";
 import Image3 from "@/pages/about/page/assets/images/3.png";
-import { Link } from "react-router-dom";
-
 
 const About = () => {
 
@@ -65,7 +63,7 @@ const About = () => {
                     }}
                 >
                     <p
-                        className="text-xs font-['PRETENDARD-REGULAR'] text-[#191919] flex flex-col justify-center items-center leading-5"
+                        className="text-xs font-['PRETENDARD-REGULAR'] font-semibold text-black/70 flex flex-col justify-center items-center leading-5"
                     >
                         AO는 85, 86학번 주축으로 1986년 부터 2024년까지 이어져 온 전통있는 스터디이며
                         아직까지도 80, 90, 00, 10년대 선배님들과 교류를 왕성히
@@ -125,7 +123,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             1. 스터디 활동
                         </p>
                         <p
@@ -141,7 +139,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             2. 세미나
                         </p>
                         <p
@@ -157,7 +155,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             3. 프로젝트
                         </p>
                         <p
@@ -173,7 +171,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             4. 학기 별 개강 파티 및 종강 파티
                         </p>
                     </div>
@@ -184,7 +182,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             5. MT
                         </p>
                         <p
@@ -200,7 +198,7 @@ const About = () => {
                             boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                         }}
                     >
-                        <p className="font-['PRETENDARD-BOLD'] text-[20px] text-left text-black">
+                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
                             6. 총회
                         </p>
                         <p
@@ -212,34 +210,8 @@ const About = () => {
                 </div>
 
             </div>
-            <div className="mt-[51px]">
-                {/* <ApplyButton /> */}
-                <Link
-                    to="/apply"
-                    className="flex justify-center items-center w-[337px] mx-auto gap-2.5"
-                >
-                    <div
-                        className="active:bg-blue-700 active:scale-95 transition duration-100 ease-in-out flex flex-grow relative overflow-hidden gap-2.5 px-5 py-3.5 rounded-[50px] bg-[#684DFF] dark:bg-[#ff4a3f]"
-                    >
-                        <p className="flex-grow-0 flex-shrink-0 text-base text-center mx-auto">
-                            <span
-                                className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-base text-center text-white dark:text-white"
-                            >Fire AO
-                            </span>
-                            <span
-                                className="flex-grow-0 flex-shrink-0 text-base font-['PRETENDARD-BOLD'] text-center text-white dark:text-white"
-                            >지원하러 가기</span
-                            >
-                        </p>
-                    </div>
-                </Link>
-            </div>
+
             <div className="mt-[65px]"></div>
-
-            {/* <NewFooter /> */}
-
-
-            {/* <div className="fixed -z-10 bg-white dark:bg-black w-screen h-screen"></div> */}
         </>
     )
 }

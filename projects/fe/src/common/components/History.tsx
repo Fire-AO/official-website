@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Header from '@/common/components/Header';
 
 import "@/common/assets/css/history.css"
+import ApplyButton from './ApplyButton';
 
 type NavLinkRenderProps = {
     isActive: boolean;
@@ -55,11 +56,11 @@ const History = () => {
 
                 <div className=''>
                     <div className="flex-grow flex flex-col justify-center max-w-[1000px] w-[100vw] text-left pl-[19px] 
-                        bg-black/10 bg-opacity-60 dark:bg-[#f3f3f3] dark:bg-opacity-35 rounded-2xl px-[20px] py-[15px] dark:text-white">
-                        <h1 className="flex-grow-0 flex-shrink-0 text-2xl font-['Montserrat'] font-bold text-left text-[#0d0d0d] dark:text-white/90">
+                        bg-black/5 bg-opacity-100 dark:bg-[#303030] dark:bg-opacity-75 rounded-xl px-[20px] py-[15px]">
+                        <h1 className="flex-grow-0 flex-shrink-0 text-2xl font-['Montserrat'] font-bold text-left text-[#0d0d0d] dark:text-white/85">
                             {title}
                         </h1>
-                        <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-white/70">
+                        <p className="text-sm font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-white/80">
                             {explanation}
                         </p>
                     </div>
@@ -79,6 +80,8 @@ const History = () => {
 
                     <div className='px-5'>
                         <Outlet />
+
+                        <ApplyButton />
                     </div>
                 </div>
 

@@ -14,6 +14,7 @@ import bigJeHeeChun from "@/pages/home/page/assets/images/chun.png";
 import bigSeJinPark from "@/pages/home/page/assets/images/park.png";
 import bigChoEunShin from "@/pages/home/page/assets/images/shin.png";
 import bigYunAChoi from "@/pages/home/page/assets/images/yun.png";
+import ApplyButton from "@/common/components/ApplyButton";
 
 interface Executive {
   name: string;
@@ -157,11 +158,7 @@ function Executives() {
             />
           )}
         </div>
-        <div className="Exbutton">
-          <Link id="Exbut" to="/apply" className="text-white dark:text-black">
-            <p>Fire Ao 지원하기</p>
-          </Link>
-        </div>
+        <ApplyButton />
       </div>
     </>
   );

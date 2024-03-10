@@ -76,27 +76,4 @@
   margin-bottom: 30px;
 }
 
-.Exbutton #Exbut {
-  border: none;
-  z-index: 1;
-  margin-top: 81px;
-  margin-bottom: 81px;
-  width: 330px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  background: #21ecc7;
-  backdrop-filter: blur(2px);
-  display: flex; /* Flex 컨테이너로 설정 */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center;
-}
 
-#Exbut p {
-  z-index: 1;
-  font-family: Pretendard-ExtraBold;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}

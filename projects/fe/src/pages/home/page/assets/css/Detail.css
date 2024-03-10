@@ -56,7 +56,7 @@
 }
 
 .firstex > div {
-  font-family: "Pretendard-ExtraLight";
+  font-family: "Pretendard-Light";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -69,7 +69,7 @@
 
 .firstex #bold {
   text-align: center;
-  font-family: Pretendard-ExtraLight;
+  font-family: "Pretendard-Light";
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -94,7 +94,7 @@
 
 .secondex p {
   text-align: center;
-  font-family: Pretendard-ExtraLight;
+  font-family: "Pretendard-Light";
   font-size: 13px;
   font-style: normal;
   font-weight: 300;

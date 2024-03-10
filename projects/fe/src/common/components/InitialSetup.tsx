@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom"
 import { RootState } from "@/common/redux/store";
+import { Helmet } from 'react-helmet';
 
 const InitialSetup = () => {
     const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
@@ -25,6 +26,21 @@ const InitialSetup = () => {
             <Outlet />
 
             <div className='fixed w-screen h-screen bg-white dark:bg-black -z-10' />
+
+
+            {
+                isDarkMode
+                    ? <Helmet>
+                        <meta name='theme-color' content='rgb(0, 0, 0)' />
+                        <meta name='apple-mobile-web-app-status-bar-style' content='rgb(0, 0, 0)' />
+                        <meta name='msapplication-navbutton-color' content='rgb(0, 0, 0)' />
+                    </Helmet>
+                    : <Helmet>
+                        <meta name='theme-color' content='rgb(255, 255, 255)' />
+                        <meta name='apple-mobile-web-app-status-bar-style' content='rgb(255, 255, 255)' />
+                        <meta name='msapplication-navbutton-color' content='rgb(255, 255, 255)' />
+                    </Helmet>
+            }
         </>
     )
 }

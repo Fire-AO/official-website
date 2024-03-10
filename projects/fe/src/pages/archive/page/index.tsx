@@ -16,6 +16,9 @@ import Meeting3Image from "@/pages/archive/page/assets/images/총회3.png";
 import Slide from './components/Caption';
 import Tag from './components/Tag';
 
+import ao from "@/common/assets/images/AO-symbol.png";
+import { Helmet } from 'react-helmet';
+
 const index = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,
@@ -97,6 +100,27 @@ const index = () => {
                     <Tag tag="Alpha부터 Omega까지!" />
                 </div>
             </main>
+
+            <Helmet>
+                <title>archive | Fire AO</title>
+                <link rel="canonical" href={`/archive`} />
+                <meta name="description" content="Fire AO archive" />
+                <meta name="keywords" content={`fire, AO, Myongji, Univ., MJ, computer, science, major, archive`} />
+                <meta name="author" content="FireAO" />/
+
+                <meta property="og:title" content="archive | Fire AO" />
+                <meta property="og:description" content="Fire AO archive" />
+                <meta property="og:image" content={ao} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Fire AO" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="og:url" content={`/archive`} />
+
+                <meta name="twitter:title" content={`archive | Fire AO`} />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:description" content={'Fire AO archive'} />
+                <meta name="twitter:image" content={ao} />
+            </Helmet>
         </>
     )
 }

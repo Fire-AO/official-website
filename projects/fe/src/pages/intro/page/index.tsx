@@ -25,6 +25,9 @@ import DeveloperAvatar from "@/pages/intro/page/components/DeveloperAvatar";
 
 import { useState } from "react";
 
+import ao from "@/common/assets/images/AO-symbol.png";
+import { Helmet } from "react-helmet";
+
 interface Profile {
   id: number;
   name: string;
@@ -442,6 +445,26 @@ const index = () => {
         </div>
       </div>
 
+      <Helmet>
+        <title>Intro | Fire AO</title>
+        <link rel="canonical" href={`/intro`} />
+        <meta name="description" content="Fire AO intro" />
+        <meta name="keywords" content={`fire, AO, Myongji, Univ., MJ, computer, science, major, intro`} />
+        <meta name="author" content="FireAO" />/
+
+        <meta property="og:title" content="intro | Fire AO" />
+        <meta property="og:description" content="Fire AO intro" />
+        <meta property="og:image" content={ao} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Fire AO" />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:url" content={`/intro`} />
+
+        <meta name="twitter:title" content={`intro | Fire AO`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content={'Fire AO intro'} />
+        <meta name="twitter:image" content={ao} />
+      </Helmet>
     </>
   )
 }

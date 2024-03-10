@@ -8,6 +8,9 @@ import Image1 from "@/pages/about/page/assets/images/1.png";
 import Image2 from "@/pages/about/page/assets/images/2.png";
 import Image3 from "@/pages/about/page/assets/images/3.png";
 
+import ao from "@/common/assets/images/AO-symbol.png";
+import { Helmet } from "react-helmet";
+
 const About = () => {
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -212,6 +215,27 @@ const About = () => {
             </div>
 
             <div className="mt-[65px]"></div>
+
+            <Helmet>
+                <title>About | Fire AO</title>
+                <link rel="canonical" href={`/about`} />
+                <meta name="description" content="Fire AO about" />
+                <meta name="keywords" content={`fire, AO, Myongji, Univ., MJ, computer, science, major, about`} />
+                <meta name="author" content="FireAO" />/
+
+                <meta property="og:title" content="about | Fire AO" />
+                <meta property="og:description" content="Fire AO about" />
+                <meta property="og:image" content={ao} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Fire AO" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="og:url" content={`/about`} />
+
+                <meta name="twitter:title" content={`about | Fire AO`} />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:description" content={'Fire AO about'} />
+                <meta name="twitter:image" content={ao} />
+            </Helmet>
         </>
     )
 }

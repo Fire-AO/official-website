@@ -93,7 +93,7 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
                 </Link>
             </div>
             <Link
-                className="absolute bottom-0 w-full text-[13px] font-['PRETENDARD-REGULAR'] mx-[67px]= mb-[23px] text-center text-white"
+                className="cursor-default absolute bottom-0 w-full text-[13px] font-['PRETENDARD-REGULAR'] mx-[67px]= mb-[23px] text-center text-white"
                 to="/admin/sign-in"
             >
                 ⓒ Fire AO. 2024 All rights reserved

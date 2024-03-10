@@ -19,8 +19,12 @@ const InitialSetup = () => {
 
     return (
         <>
+            <div className='fixed w-screen h-screen bg-white dark:bg-black -z-10' />
+
             {/* <Header /> */}
             <Outlet />
+
+            <div className='fixed w-screen h-screen bg-white dark:bg-black -z-10' />
         </>
     )
 }

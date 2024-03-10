@@ -1,7 +1,6 @@
 import "@/pages/home/page/assets/css/Executives.css";
 import { useState, useEffect } from "react";
 import CardNews from "@/pages/home/page/components/CardNews";
-import { Link } from "react-router-dom";
 
 import jongChanBae from "@/pages/home/page/assets/images/smallbea.png";
 import jeHeeChun from "@/pages/home/page/assets/images/smallchun.png";

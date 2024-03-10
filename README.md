@@ -4,11 +4,11 @@
 
 # AO Official Website
 
-### Url: https://fireao.com/ (unavailable link for now)  
+### Url: https://www.fireao.com/
   
 2024-01-01 ~ 2024-02-29  
-두 팀으로 나뉘어 서로 다른 컨셉, 디자인을 바탕으로 프로젝트 진행됨 
-현재 Repository는 두 웹사이트를 하나로 병합한 결과  
+두 팀으로 나뉘어 서로 다른 컨셉, 디자인을 바탕으로 프로젝트 진행됨.  
+현재 Repository는 두 웹사이트를 하나로 병합한 결과.  
 
 [Team 1의 Repo](https://github.com/AO-PROJECT-TEAM-1/FIRE-AO-SITE)  
 [Team 2의 Repo](https://github.com/AO-WEB-TEAM-2/AO-official-website)  

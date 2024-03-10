@@ -102,7 +102,7 @@ const index = () => {
             </main>
 
             <Helmet>
-                <title>archive | Fire AO</title>
+                <title>Archive | Fire AO</title>
                 <link rel="canonical" href={`/archive`} />
                 <meta name="description" content="Fire AO archive" />
                 <meta name="keywords" content={`fire, AO, Myongji, Univ., MJ, computer, science, major, archive`} />

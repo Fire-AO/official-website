@@ -29,19 +29,21 @@ const InitialSetup = () => {
 
 
             {
-                isDarkMode
-                    ? <Helmet>
-                        <meta name='theme-color' content='#ffffff' />
-                        <meta name='apple-mobile-web-app-status-bar-style' content='#ffffff' />
-                        <meta name='msapplication-navbutton-color' content='#ffffff' />
-                        <meta name="theme-color" content="#ffffff" />
-                    </Helmet>
-                    : <Helmet>
+                <Helmet>
+                    isDarkMode
+                    ?<>
                         <meta name='theme-color' content='#000000' />
                         <meta name='apple-mobile-web-app-status-bar-style' content='#000000' />
                         <meta name='msapplication-navbutton-color' content='#000000' />
                         <meta name="theme-color" content="#000000" />
-                    </Helmet>
+                    </>
+                    :<>
+                        <meta name='theme-color' content='#ffffff' />
+                        <meta name='apple-mobile-web-app-status-bar-style' content='#ffffff' />
+                        <meta name='msapplication-navbutton-color' content='#ffffff' />
+                        <meta name="theme-color" content="#ffffff" />
+                    </>
+                </Helmet>
             }
         </>
     )

@@ -86,7 +86,7 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
                     About
                 </Link>
                 <Link
-                    to="/about"
+                    to="/apply"
                     className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
                 >
                     지원하기!

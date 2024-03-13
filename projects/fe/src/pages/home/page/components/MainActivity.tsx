@@ -162,7 +162,7 @@ function MainActivity() {
                         )
                         : (
                             <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce-stronger flex flex-row justify-center" onClick={() => handleActivityClick(activity)}>
-                                <div className="actext border-b-2 border-dotted">
+                                <div className="actext border-b-2">
                                     <p id="actitle" className="text-white animate-text-bounce-stronger font-['PRETENDARD-ExtraBold']">{activity.title}</p>
                                 </div>
                                 {/* <img src={nextButton} alt="vector" id="vector"></img> */}

@@ -154,18 +154,16 @@ function MainActivity() {
                             <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919]" onClick={() => handleActivityClick(activity)}>
                                 <img src={activity.image} alt={activity.title} id="activitypic" />
                                 <div className="actext text-black dark:text-white">
-                                    <p id="actitle">{activity.title}</p>
-                                    <p id="acdetail">{activity.detail}</p>
+                                    <p id="actitle" className="font-['PRETENDARD-LIGHT']">{activity.title}</p>
+                                    <p id="acdetail" className="font-['PRETENDARD-LIGHT']">{activity.detail}</p>
                                 </div>
                                 <img src={nextButton} alt="vector" id="vector"></img>
                             </button>
                         )
                         : (
-                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce-stronger" onClick={() => handleActivityClick(activity)}>
-                                <span className="actext w-full flex flex-row justify-center">
-                                    <span className="border-b-2 border-dotted">
-                                        <p id="actitle" className="text-white animate-text-bounce-stronger">{activity.title}</p>
-                                    </span>
+                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce-stronger actext w-full flex flex-row justify-center" onClick={() => handleActivityClick(activity)}>
+                                <span className="border-b-2 border-dotted">
+                                    <p id="actitle" className="text-white animate-text-bounce-stronger font-['PRETENDARD-ExtraBold']">{activity.title}</p>
                                 </span>
                                 {/* <img src={nextButton} alt="vector" id="vector"></img> */}
                             </button>

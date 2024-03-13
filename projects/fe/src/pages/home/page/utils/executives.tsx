@@ -27,7 +27,7 @@ import { Executive } from "@/pages/home/page/types/executive";
 export const executives: Executive[] = [
   {
     name: "배종찬",
-    id: "1",
+    id: 1,
     description: (
       <>
         안녕하십니까! AO의 배종찬입니다.
@@ -48,7 +48,7 @@ export const executives: Executive[] = [
   },
   {
     name: "천제희",
-    id: "2",
+    id: 2,
     description: (
       <>
         안녕하십니까!
@@ -68,7 +68,7 @@ export const executives: Executive[] = [
   },
   {
     name: "박세진",
-    id: "3",
+    id: 3,
     description: (
       <>
         안녕하세요~~ 19학번 석유 박세진입니다! <br />
@@ -88,7 +88,7 @@ export const executives: Executive[] = [
   },
   {
     name: "신초은",
-    id: "4",
+    id: 4,
     description: (
       <>
         안녕하세요 FIRE AO 20학번 신초은입니다☺
@@ -105,7 +105,7 @@ export const executives: Executive[] = [
   },
   {
     name: "최윤아",
-    id: "5",
+    id: 5,
     description: (
       <>
         안녕하세요 스터디 AO 21학번 최윤아입니다!!

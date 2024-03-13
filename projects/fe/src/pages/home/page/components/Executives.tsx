@@ -19,7 +19,7 @@ function Executives() {
 
   return (
     <>
-      <div className="executive-container dark:bg-black">
+      <div className="executive-container dark:bg-black clip">
         <div className="exeEng">
           <p>Fire AO</p>
         </div>
@@ -30,7 +30,7 @@ function Executives() {
           {executives.map((executive) => (
             <div
               key={executive.id}
-              className="executive cursor-pointer"
+              className={`executive cursor-pointer ${selectedExecutive?.id  === executive.id - 1 && "animate-bounce"}`}
               onClick={() => setSelectedExecutive(executive)}
             >
               <img
@@ -38,7 +38,7 @@ function Executives() {
                 alt={executive.name}
                 className="people"
               />
-              <p className="executive-name text-black/80 dark:text-white font-['PRETENDARD-SEMIBOLD']">{executive.name}</p>
+              <p className="executive-name text-black/70 dark:text-white font-['PRETENDARD-SEMIBOLD']">{executive.name}</p>
             </div>
           ))}
         </div>

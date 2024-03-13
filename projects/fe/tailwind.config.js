@@ -66,7 +66,7 @@ export default {
     animation: {
       'spin': 'spin 0.7s ease-in-out infinite',
       'flipped': 'rotate 0.4s ease-in-out 1',
-      'bounce': 'bounce 1s infinite',
+      'bounce': 'bounce 1.1s infinite',
       'bounce-stronger': 'bounce-stronger 1s infinite',
       'text-bounce-stronger': 'text-bounce-stronger 1s infinite',
       'fade-in': 'fade-in 0.5s ease-in-out forwards',

@@ -49,7 +49,7 @@ const index = () => {
     return (
         <div className="overflow-y-auto w-screen">
             <table
-                className="table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
+                className="mx-auto mb-10 table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
             >
                 <thead>
                     <tr>
@@ -59,15 +59,15 @@ const index = () => {
                         <th>지원 날짜</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-white/50 dark:bg-black/50 divide-y divide-gray-200">
                     {
                         applications && applications.map((application) => {
                             return (
-                                <tr key={application.id} className="border-t-[1px] dark:border-t-slate-300">
-                                    <td className="text-nowrap pr-2">{application.name}</td>
-                                    <td className="text-nowrap pr-2">{application.phoneNum}</td>
-                                    <td className="inline-block w-[300px] pr-2">{application.aWord}</td>
-                                    <td className="text-nowrap">{application.submitedAt.toLocaleString()}</td>
+                                <tr key={application.id}>
+                                    <td className="px-6 py-4 whitespace-nowrap">{application.name}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{application.phoneNum}</td>
+                                    <td className="px-6 py-4">{application.aWord}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{application.submitedAt.toLocaleString()}</td>
                                 </tr>
                             )
                         })

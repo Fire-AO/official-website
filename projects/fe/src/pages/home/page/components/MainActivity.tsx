@@ -161,10 +161,10 @@ function MainActivity() {
                             </button>
                         )
                         : (
-                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce-stronger actext w-full flex flex-row justify-center" onClick={() => handleActivityClick(activity)}>
-                                <span className="border-b-2 border-dotted">
+                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce-stronger flex flex-row justify-center" onClick={() => handleActivityClick(activity)}>
+                                <div className="actext border-b-2 border-dotted">
                                     <p id="actitle" className="text-white animate-text-bounce-stronger font-['PRETENDARD-ExtraBold']">{activity.title}</p>
-                                </span>
+                                </div>
                                 {/* <img src={nextButton} alt="vector" id="vector"></img> */}
                             </button>
                         )

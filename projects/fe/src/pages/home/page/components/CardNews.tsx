@@ -26,8 +26,8 @@ const CardNews: React.FC<CardNewsProps> = ({ name, description, image }) => {
             </p>
             <img src={image} alt={`${name} thumbnail`} className="w-[119px] mb-[19px]" />
             <p
-                className="dark:font-normal dark:text-white font-['PRETENDARD-REGULAR'] font-semibold text-black/70
-                mt-[8px] text-[0.7rem] w-[292px] leading-[1rem]"
+                className="dark:font-normal dark:text-white font-['PRETENDARD-REGULAR'] text-black/80
+                mt-[8px] text-[11.5px] w-[292px] leading-[1rem]"
             >
                 {description}
             </p>

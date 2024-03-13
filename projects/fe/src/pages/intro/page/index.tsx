@@ -331,7 +331,7 @@ const index = () => {
           // style="box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);"
           style={{ boxShadow: "0px 0px 10px 1px rgba(0,0,0,0.1)" }}
         >
-          <p className="font-['PRETENDARD-REGULAR'] font-semiboldgap-[3px] flex flex-col flex-grow-0 flex-shrink-0 text-[10px] text-center text-black">
+          <p className="font-['PRETENDARD-REGULAR'] flex flex-col flex-grow-0 flex-shrink-0 text-[10px] md:text-[12px] text-center text-black">
             {selectedProfile.words}
           </p>
         </div>

@@ -43,11 +43,21 @@ export default {
           'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
         },
       },
-      'rainbow': {
+      'text-bounce-stronger': {
         '0%, 100%': {
-          'background-color': '#8473f2',
+          'transform': 'translateY(-40%)',
+          'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)'
         },
         '50%': {
+          'transform': 'translateY(0)',
+          'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
+        },
+      },
+      'rainbow': {
+        '0%': {
+          'background-color': '#8473f2',
+        },
+        '100%': {
           'background-color': '#4dd2b9',
         },
       }
@@ -58,10 +68,11 @@ export default {
       'flipped': 'rotate 0.4s ease-in-out 1',
       'bounce': 'bounce 1s infinite',
       'bounce-stronger': 'bounce-stronger 1s infinite',
+      'text-bounce-stronger': 'text-bounce-stronger 1s infinite',
       'fade-in': 'fade-in 0.5s ease-in-out forwards',
       'fade-out': 'fade-out 0.5s ease-in-out forwards',
-      'rainbow': 'rainbow 10s infinite',
-      'rainbow-bounce': 'rainbow 10s infinite, bounce-stronger 1s infinite'
+      'rainbow': 'rainbow 5s infinite',
+      'rainbow-bounce-stronger': 'rainbow 5s infinite, bounce-stronger 1s infinite'
     }
   },
   plugins: [],

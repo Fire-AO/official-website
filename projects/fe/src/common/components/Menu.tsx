@@ -8,19 +8,19 @@ interface MenuProps {
 
 const links = [
     {
-        title: "HOME",
+        title: "home",
         path: "/",
     },
     {
-        title: "Archive",
+        title: "archive",
         path: "/archive",
     },
     {
-        title: "Introduction",
+        title: "introduction",
         path: "/intro",
     },
     {
-        title: "About",
+        title: "about",
         path: "/about",
     },
     {
@@ -67,7 +67,7 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
                 </Link>
             </header>
 
-            <div className="flex flex-col mx-[18px] text-2xl">
+            <div className="flex flex-col mx-[18px] text-2xl uppercase">
                 {
                     links.map((link, index) => (
                         <Link

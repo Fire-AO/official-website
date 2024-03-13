@@ -5,7 +5,7 @@ interface DeveloperGroupProps {
     names: string[];
 }
 
-const DeveloperGroup: React.FC<DeveloperGroupProps> = ({ groupName, names }) => {
+const DeveloperGroup: React.FC<DeveloperGroupProps> = React.memo(({ groupName, names }) => {
     return (
         <div className="flex w-64 justify-left items-start">
             <div className="w-[135px] text-[13px] font-['PRETENDARD-MEDIUM'] text-black dark:text-neutral-50">
@@ -24,6 +24,6 @@ const DeveloperGroup: React.FC<DeveloperGroupProps> = ({ groupName, names }) => 
             </div>
         </div>
     )
-}
+});
 
 export default DeveloperGroup

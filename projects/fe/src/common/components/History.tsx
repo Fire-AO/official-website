@@ -117,9 +117,11 @@ const History = () => {
                         </p>
                     </div>
 
-                    <p className="text-[13px] text-neutral-900 dark:text-[#E5E5E5] font-['PRETENDARD-REGULAR'] mt-[6px] ml-[18px]">
+                    <Link
+                        to="/admin"
+                        className="cursor-text text-[13px] text-neutral-900 dark:text-[#E5E5E5] font-['PRETENDARD-REGULAR'] mt-[6px] ml-[18px]">
                         ⓒ Fire AO. 2024 All rights reserved
-                    </p>
+                    </Link>
                 </div>
             </div>
         </>

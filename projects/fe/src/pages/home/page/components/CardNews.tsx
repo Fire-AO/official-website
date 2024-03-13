@@ -2,6 +2,7 @@ import UpperSide from "@/pages/home/page/assets/images/UpperSide.png"
 import UpperSideDark from "@/pages/home/page/assets/images/UpperSide-dark.png"
 import { RootState } from "@/common/redux/store";
 import { useSelector } from "react-redux";
+import React from "react";
 
 interface CardNewsProps {
     name: string;
@@ -9,7 +10,7 @@ interface CardNewsProps {
     image: string;
 }
 
-const CardNews: React.FC<CardNewsProps> = ({ name, description, image }) => {
+const CardNews: React.FC<CardNewsProps> = React.memo(({ name, description, image }) => {
     const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
 
     return (
@@ -33,6 +34,6 @@ const CardNews: React.FC<CardNewsProps> = ({ name, description, image }) => {
             </p>
         </div>
     );
-}
+});
 
 export default CardNews;

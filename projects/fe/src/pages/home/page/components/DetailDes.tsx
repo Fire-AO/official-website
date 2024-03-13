@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "@/pages/home/pageassets/css/DetailDes.css";
+import React from 'react';
 
 interface DetailDosProps {
     title: string;
@@ -9,7 +10,7 @@ interface DetailDosProps {
     Nimage: string[];
 }
 
-const DetailDes: React.FC<DetailDosProps> = ({ title, Ntitle, Nimage }) => {
+const DetailDes: React.FC<DetailDosProps> = React.memo(({ title, Ntitle, Nimage }) => {
     // Carousel 설정
     const settings = {
         dots: true,
@@ -54,6 +55,6 @@ const DetailDes: React.FC<DetailDosProps> = ({ title, Ntitle, Nimage }) => {
             </Slider>
         </div>
     );
-}
+});
 
 export default DetailDes;

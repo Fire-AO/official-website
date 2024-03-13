@@ -1,9 +1,11 @@
+import React from "react";
+
 interface CompleteModalProps {
     isVisible: boolean;
     onClose: () => void;
 }
 
-const CompleteModal: React.FC<CompleteModalProps> = ({ isVisible, onClose }) => {
+const CompleteModal: React.FC<CompleteModalProps> = React.memo(({ isVisible, onClose }) => {
     return (
         isVisible &&
         <div className="fixed inset-0 flex items-center justify-center">
@@ -44,6 +46,6 @@ const CompleteModal: React.FC<CompleteModalProps> = ({ isVisible, onClose }) => 
             </div>
         </div>
     )
-}
+});
 
 export default CompleteModal

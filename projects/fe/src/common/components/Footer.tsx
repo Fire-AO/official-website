@@ -1,5 +1,6 @@
 import "@/pages/home/page/assets/css/Footer.css";
 import call from "@/pages/home/page/assets/images/call.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
@@ -14,9 +15,11 @@ function Footer() {
                         &nbsp;
                         <p id="number" className="text-black dark:text-white">010-4939-1971</p>
                     </div>
-                    <div className="copyright text-black dark:text-white">
-                        <p>ⓒ Fire AO. 2024 All rights reserved</p>
-                    </div>
+                    <Link
+                        className="copyright text-black dark:text-white cursor-text "
+                        to="/admin/sign-in">
+                        ⓒ Fire AO. 2024 All rights reserved
+                    </Link>
                 </div>
 
             </footer>

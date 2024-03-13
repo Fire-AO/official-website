@@ -138,7 +138,6 @@ function MainActivity() {
     // };
 
     return (
-
         <>
             <div className='main-container dark:bg-black'>
                 <div className="animation">

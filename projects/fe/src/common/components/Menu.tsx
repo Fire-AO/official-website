@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface MenuProps {
@@ -29,7 +29,7 @@ const links = [
     }
 ];
 
-const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
+const Menu: React.FC<MenuProps> = React.memo(({ menuVisible, toggleMenuVisible }) => {
     const menuRef = useRef<HTMLDivElement>(null);
 
     const [hasInteracted, setHasInteracted] = useState(false);
@@ -81,14 +81,11 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
                 }
             </div>
 
-            <Link
-                className="cursor-default text-[13px] font-['PRETENDARD-REGULAR'] mx-auto my-auto flex flex-col justify-end h-full mb-[27px]"
-                to="/admin/sign-in"
-            >
+            <p className="text-[13px] font-['PRETENDARD-REGULAR'] mx-auto my-auto mb-[27px]">
                 ⓒ Fire AO. 2024 All rights reserved
-            </Link>
+            </p>
         </div>
     )
-}
+});
 
 export default Menu

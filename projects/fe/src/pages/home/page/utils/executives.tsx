@@ -47,28 +47,8 @@ export const executives: Executive[] = [
     biggerAvatarDark: bigJongChanBaeDark,
   },
   {
-    name: "천제희",
-    id: 2,
-    description: (
-      <>
-        안녕하십니까!
-        <br />
-        Fire🔥 AO 18학번 천제희입니다.
-        <br />
-        AO만큼 활발한 스터디! 여기 말고 절대 없어요.
-        <br />
-        같이 능력있는 선배들 피만🩸 쪽쪽🦟 빨아 보아요.
-        <br />
-      </>
-    ),
-    avatar: jeHeeChun,
-    biggerAvatar: bigJeHeeChun,
-    avatarDark: jeHeeChunDark,
-    biggerAvatarDark: bigJeHeeChunDark,
-  },
-  {
     name: "박세진",
-    id: 3,
+    id: 2,
     description: (
       <>
         안녕하세요~~ 19학번 석유 박세진입니다! <br />
@@ -85,6 +65,26 @@ export const executives: Executive[] = [
     biggerAvatar: bigSeJinPark,
     avatarDark: seJinParkDark,
     biggerAvatarDark: bigSeJinParkDark,
+  },
+  {
+    name: "천제희",
+    id: 3,
+    description: (
+      <>
+        안녕하십니까!
+        <br />
+        Fire🔥 AO 18학번 천제희입니다.
+        <br />
+        AO만큼 활발한 스터디! 여기 말고 절대 없어요.
+        <br />
+        같이 능력있는 선배들 피만🩸 쪽쪽🦟 빨아 보아요.
+        <br />
+      </>
+    ),
+    avatar: jeHeeChun,
+    biggerAvatar: bigJeHeeChun,
+    avatarDark: jeHeeChunDark,
+    biggerAvatarDark: bigJeHeeChunDark,
   },
   {
     name: "신초은",

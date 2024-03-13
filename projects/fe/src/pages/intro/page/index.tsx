@@ -61,6 +61,22 @@ const profiles: Profile[] = [
   },
   {
     id: 2,
+    name: "박세진",
+    position: "코딩얼굴마담",
+    phone: "",
+    insta: "re_alworld",
+    image: Aosj,
+    avatar: SjIcon,
+    words: <>
+      <span>“안녕하세요~~ 19학번 석유 박세진입니다!</span>
+      <span>A(lcohol)O(nly)는 여러분 인생에서 처음일 수 있는</span>
+      <span> 신입생 생활을 책임져 드립니다!!</span>
+      <span>또한 컴공 관련 정보도 많이 얻을 수 있어요. </span>
+      <span>안 올 이유가 없다고 볼 수 있죠. AO에서 같이 성장해 보아요!"</span>
+    </>
+  },
+  {
+    id: 3,
     name: "천제희",
     position: "AO GPT",
     phone: "",
@@ -71,21 +87,6 @@ const profiles: Profile[] = [
       <span>“Fire🔥 AO 18학번 천제희입니다. </span>
       <span>AO만큼 활발한 스터디! 여기 말고 절대 없어요</span>
       <span>같이 능력있는 선배들 피만🩸 쪽쪽🦟 빨아 보아요" </span>
-    </>
-  }, {
-    id: 3,
-    name: "박세진",
-    position: "코딩얼굴마담",
-    phone: "",
-    insta: "re-alworld",
-    image: Aosj,
-    avatar: SjIcon,
-    words: <>
-      <span>“안녕하세요~~ 19학번 석유 박세진입니다!</span>
-      <span>A(lcohol)O(nly)는 여러분 인생에서 처음일 수 있는</span>
-      <span> 신입생 생활을 책임져 드립니다!!</span>
-      <span>또한 컴공 관련 정보도 많이 얻을 수 있어요. </span>
-      <span>안 올 이유가 없다고 볼 수 있죠. AO에서 같이 성장해 보아요!"</span>
     </>
   },
   {

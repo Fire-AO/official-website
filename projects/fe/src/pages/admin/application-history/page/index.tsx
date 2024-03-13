@@ -49,9 +49,9 @@ const index = () => {
     return (
         <>
             <ScrollRestoration />
-            <div className="overflow-y-auto w-screen">
+            <div className="overflow-y-auto w-screen mb-10">
                 <table
-                    className="mx-auto mb-10 table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
+                    className="mx-auto table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
                 >
                     <thead>
                         <tr>

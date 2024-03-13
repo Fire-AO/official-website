@@ -52,8 +52,8 @@ const profiles: Profile[] = [
       <span>“안녕하십니까! AO의 배종찬입니다. 삼촌 아니고 형입니다. </span>
       <span>정승처럼 공부하고 개처럼 마시는 스터디 AO! </span>
       <span>군대 다녀온 복학생도 어리버리 신입생도 모두 환영합니다. </span>
-      <span>MT면 MT, 스터디면 스터디, 회식이면 회식! 뭐 하나 빠지지 않는</span>
-      <span>저희 AO 스터디에서 바라왔던 대학생활 보내시면 좋겠습니다 🔥🔥”</span>
+      <span>MT면 MT, 스터디면 스터디, 회식이면 회식!</span>
+      <span>뭐 하나 빠지지 않는 저희 AO 스터디에서 바라왔던 대학생활 보내시면 좋겠습니다 🔥🔥”</span>
     </>
   },
   {
@@ -84,7 +84,8 @@ const profiles: Profile[] = [
       <span>또한 컴공 관련 정보도 많이 얻을 수 있어요. </span>
       <span>안 올 이유가 없다고 볼 수 있죠. AO에서 같이 성장해 보아요!"</span>
     </>
-  }, {
+  }, 
+  {
     id: 4,
     name: "신초은",
     position: "코드킹메이커",
@@ -98,7 +99,8 @@ const profiles: Profile[] = [
         많아요!</span>
       <span>밥 잘 사주는 스터디 AO에서 슬기로운 대학생활 해보아요" </span>
     </>
-  }, {
+  }, 
+  {
     id: 5,
     name: "최윤아",
     position: "고민상담사",
@@ -329,7 +331,7 @@ const index = () => {
           // style="box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);"
           style={{ boxShadow: "0px 0px 10px 1px rgba(0,0,0,0.1)" }}
         >
-          <p className="font-['PRETENDARD-MEDIUM'] gap-[3px] flex flex-col flex-grow-0 flex-shrink-0 text-[10px] text-center text-black">
+          <p className="font-['PRETENDARD-REGULAR'] font-semiboldgap-[3px] flex flex-col flex-grow-0 flex-shrink-0 text-[10px] text-center text-black">
             {selectedProfile.words}
           </p>
         </div>

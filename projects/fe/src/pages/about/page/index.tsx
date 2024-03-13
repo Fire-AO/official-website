@@ -156,10 +156,10 @@ const About = () => {
                                     boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                                 }}
                             >
-                                <p className="font-['PRETENDARD-SEMIBOLD'] text-[17px] md:text-[20px]">
+                                <p className="font-['PRETENDARD-SEMIBOLD'] text-[16px] md:text-[18px]">
                                     {activity.title}
                                 </p>
-                                <p className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px]">
+                                <p className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[11px] md:text-[14px]">
                                     {activity.detail}
                                 </p>
                             </div>

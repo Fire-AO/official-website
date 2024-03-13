@@ -28,14 +28,17 @@ const index = () => {
                 return res.json();
             })
             .then((data: Application[]) => {
-                setApplications(
-                    data.map((application) => {
-                        return {
-                            ...application,
-                            submitedAt: new Date(application.submitedAt)
-                        }
+                const apps = data.map((application) => {
+                    return {
+                        ...application,
+                        submitedAt: new Date(application.submitedAt)
                     }
-                    )
+                });
+
+                setApplications(
+                    apps.sort((a, b) => {
+                        return b.submitedAt.getTime() - a.submitedAt.getTime()
+                    })
                 )
             })
             .catch(err => {
@@ -44,9 +47,9 @@ const index = () => {
     }, [])
 
     return (
-        <>
+        <div className="overflow-y-auto w-screen">
             <table
-                className="table-auto w-full text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
+                className="table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl overflow-hidden shadow-lg mt-10 max-w-[1000px]"
             >
                 <thead>
                     <tr>
@@ -63,15 +66,15 @@ const index = () => {
                                 <tr key={application.id} className="border-t-[1px] dark:border-t-slate-300">
                                     <td className="text-nowrap pr-2">{application.name}</td>
                                     <td className="text-nowrap pr-2">{application.phoneNum}</td>
-                                    <td className="pr-2">{application.aWord}</td>
-                                    <td className="text-nowrap">{application.submitedAt.toLocaleDateString()}</td>
+                                    <td className="inline-block w-[300px] pr-2">{application.aWord}</td>
+                                    <td className="text-nowrap">{application.submitedAt.toLocaleString()}</td>
                                 </tr>
                             )
                         })
                     }
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
 

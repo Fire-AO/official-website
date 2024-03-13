@@ -23,13 +23,13 @@ const index = () => {
                 <input
                     type="text"
                     placeholder="이름을 입려해주세요."
-                    className="rounded-md py-1 px-2 focus:outline-none bg-black/10 dark:bg-white/10 focus:ring-2 focus:ring-[rgb(13,192,222)]"
+                    className="rounded-md py-1 px-2 focus:outline-none bg-black/50 dark:bg-white/80 focus:ring-2 focus:ring-[rgb(13,192,222)]"
                     onInput={(e) => setName(e.currentTarget.value)}
                 />
                 <input
                     type="password"
                     placeholder="비밀번호를 입력해주세요."
-                    className="rounded-md py-1 px-2 focus:outline-none bg-black/10 dark:bg-white/10 focus:ring-2 focus:ring-[rgb(13,192,222)]"
+                    className="rounded-md py-1 px-2 focus:outline-none bg-black/50 dark:bg-white/80 focus:ring-2 focus:ring-[rgb(13,192,222)]"
                     onInput={(e) => setPw(e.currentTarget.value)}
                 />
                 <button

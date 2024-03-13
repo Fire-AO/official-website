@@ -4,6 +4,8 @@ import { RootState } from "@/common/redux/store";
 import { setIsDarkMode } from '../redux/themeSlice';
 import { useEffect, useRef, useState } from 'react';
 import Menu from './Menu';
+import Moon from '../assets/images/Moon';
+import Sun from '../assets/images/Sun';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -46,7 +48,7 @@ const Header = () => {
 
     return (
         <>
-            <div className='fixed z-[100] w-full'
+            <div className='fixed z-[100] w-[100vw]'
                 style={{
                     top: `${headerTop}px`
                 }}
@@ -55,98 +57,8 @@ const Header = () => {
                     className="flex justify-between items-center w-full relative px-5 h-[50px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 dark:border-[#0d0d0d]"
                 >
                     <button onClick={handleDarkModeButtonClicked}>
-                        <svg
-                            width="27"
-                            height="28"
-                            viewBox="0 0 27 28"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="hidden dark:block flex-grow-0 flex-shrink-0 w-[27px] h-[27px]"
-                            preserveAspectRatio="none"
-                        >
-                            <circle cx="13.5" cy="14" r="13.5" fill="white"></circle>
-                            <path
-                                d="M13.5 17.5454C15.4581 17.5454 17.0455 15.958 17.0455 13.9999C17.0455 12.0418 15.4581 10.4545 13.5 10.4545C11.5419 10.4545 9.95459 12.0418 9.95459 13.9999C9.95459 15.958 11.5419 17.5454 13.5 17.5454Z"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M19.4089 14H19.9998"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M13.5 8.09091V7.5"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M13.5 20.5V19.9091"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M18.2273 18.7273L17.6364 18.1364"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M18.2273 9.27271L17.6364 9.86361"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M8.77283 18.7273L9.36374 18.1364"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M8.77283 9.27271L9.36374 9.86361"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                            <path
-                                d="M7 14H7.59091"
-                                stroke="black"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                        </svg>
-                        <svg
-                            width="27"
-                            height="28"
-                            viewBox="0 0 27 28"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="dark:hidden w-[27px] h-[27px]"
-                            preserveAspectRatio="xMidYMid meet"
-                        >
-                            <circle cx="13.5" cy="13.5" r="13.5" fill="black"></circle>
-                            <path
-                                d="M8 12.6711C8 16.1665 10.8336 19 14.3289 19C16.8139 19 18.9644 17.5679 20 15.4839C14.3289 15.4839 11.5161 12.6711 11.5161 7C9.43214 8.03563 8 10.1861 8 12.6711Z"
-                                stroke="white"
-                                strokeWidth="1.3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                        </svg>
+                        <Moon />
+                        <Sun />
                     </button>
 
                     <Link

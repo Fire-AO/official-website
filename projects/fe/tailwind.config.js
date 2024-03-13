@@ -54,10 +54,10 @@ export default {
         },
       },
       'rainbow': {
-        '0%': {
+        '0%, 100%': {
           'background-color': '#8473f2',
         },
-        '100%': {
+        '50%': {
           'background-color': '#4dd2b9',
         },
       }
@@ -71,8 +71,8 @@ export default {
       'text-bounce-stronger': 'text-bounce-stronger 1s infinite',
       'fade-in': 'fade-in 0.5s ease-in-out forwards',
       'fade-out': 'fade-out 0.5s ease-in-out forwards',
-      'rainbow': 'rainbow 5s infinite',
-      'rainbow-bounce-stronger': 'rainbow 5s infinite, bounce-stronger 1s infinite'
+      'rainbow': 'rainbow 10s infinite',
+      'rainbow-bounce-stronger': 'rainbow 10s infinite, bounce-stronger 1s infinite'
     }
   },
   plugins: [],

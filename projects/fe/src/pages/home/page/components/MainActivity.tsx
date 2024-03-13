@@ -117,12 +117,12 @@ function MainActivity() {
         },
         {
             id: 7,
-            title: '스터디원 소개',
+            title: '자세히 보기',
             detail: '',
             image: '',
             // Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
             Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
-            next: "/intro"
+            next: "/about"
         },
     ];
 
@@ -152,31 +152,30 @@ function MainActivity() {
                 <div className='figure6'></div>
                 {activities.map((activity: Activity) => (
 
-                    <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919]" onClick={() => handleActivityClick(activity)}>
-                        {
-                            activity.image ?
-                                <>
-                                    <img src={activity.image} alt={activity.title} id="activitypic" />
-                                    <div className="actext text-black dark:text-white">
-                                        <p id="actitle">{activity.title}</p>
-                                        <p id="acdetail">{activity.detail}</p>
-                                    </div>
-                                    <img src={nextButton} alt="vector" id="vector"></img>
-                                </>
-                                :
-                                <>
-                                    <div className="actext ml-6">
-                                        <p id="actitle" className="text-black dark:text-white">{activity.title}</p>
-                                    </div>
-                                    <img src={nextButton} alt="vector" id="vector"></img>
-                                </>
-                        }
-                    </button>
+                    activity.image
+                        ? (
+                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919]" onClick={() => handleActivityClick(activity)}>
+                                <img src={activity.image} alt={activity.title} id="activitypic" />
+                                <div className="actext text-black dark:text-white">
+                                    <p id="actitle">{activity.title}</p>
+                                    <p id="acdetail">{activity.detail}</p>
+                                </div>
+                                <img src={nextButton} alt="vector" id="vector"></img>
+                            </button>
+                        )
+                        : (
+                            <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce" onClick={() => handleActivityClick(activity)}>
+                                <span className="actext w-full flex flex-row justify-center animate-bounce">
+                                    <p id="actitle" className="text-black dark:text-white">{activity.title}</p>
+                                </span>
+                                {/* <img src={nextButton} alt="vector" id="vector"></img> */}
+                            </button>
+                        )
                 ))}
 
                 <div className='figure7'></div>
                 <div className='figure8'></div>
-            </div>
+            </div >
             {/* <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={handleCloseModal}

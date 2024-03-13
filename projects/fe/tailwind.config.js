@@ -32,6 +32,24 @@ export default {
           'transform': 'translateY(0)',
           'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
         },
+      },
+      'bounce-stronger': {
+        '0%, 100%': {
+          'transform': 'translateY(-10%)',
+          'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)'
+        },
+        '30%': {
+          'transform': 'translateY(0)',
+          'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
+        },
+      },
+      'rainbow': {
+        '0%, 100%': {
+          'background-color': '#8473f2',
+        },
+        '50%': {
+          'background-color': '#4dd2b9',
+        },
       }
     },
     extend: {},
@@ -39,8 +57,11 @@ export default {
       'spin': 'spin 0.7s ease-in-out infinite',
       'flipped': 'rotate 0.4s ease-in-out 1',
       'bounce': 'bounce 1s infinite',
+      'bounce-stronger': 'bounce-stronger 1s infinite',
       'fade-in': 'fade-in 0.5s ease-in-out forwards',
-      'fade-out': 'fade-out 0.5s ease-in-out forwards'
+      'fade-out': 'fade-out 0.5s ease-in-out forwards',
+      'rainbow': 'rainbow 10s infinite',
+      'rainbow-bounce': 'rainbow 10s infinite, bounce-stronger 1s infinite'
     }
   },
   plugins: [],

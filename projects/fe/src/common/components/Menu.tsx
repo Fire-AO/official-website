@@ -74,7 +74,7 @@ const Menu: React.FC<MenuProps> = React.memo(({ menuVisible, toggleMenuVisible }
                             key={index}
                             to={link.path}
                             className="uppercase border-b border-white dark:border-white py-[27px] font-['PRETENDARD-REGULAR']
-                            text-xl pl-[14px] md:pl-[33px] md:text-2xl"
+                            text-xl pl-[14px] md:pl-[33px] md:text-2xl font-bold"
                         >
                             {link.title}
                         </Link>

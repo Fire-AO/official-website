@@ -40,7 +40,7 @@ interface Activity {
     detail: string;
     image: string;
     Ntitle?: string[];
-    Nimage: string[];
+    Nimage?: string[];
     next: string;
 }
 
@@ -60,14 +60,14 @@ function MainActivity() {
     //     }
     // }, [modalIsOpen]);
 
-    const activities = [
+    const activities: Activity[] = [
         {
             id: 1,
             title: '스터디 활동',
             detail: '알고리즘, 책 스터디 등',
             image: ico1,
-            Ntitle: ['깃허브로 관리되는 체계적인 스터디', '깃허브로 관리되는 체계적인 스터디', '서버파트 스터디', '서버파트 스터디', '알고리즘 스터디'],
-            Nimage: ['@/common/assets/images/github1.png', '@/common/assets/images/github2.png', '@/common/assets/images/serverstudy.jpg', '@/common/assets/images/serverstudy2.png', '@/common/assets/images/study3.png'],
+            // Ntitle: ['깃허브로 관리되는 체계적인 스터디', '깃허브로 관리되는 체계적인 스터디', '서버파트 스터디', '서버파트 스터디', '알고리즘 스터디'],
+            // Nimage: ['@/common/assets/images/github1.png', '@/common/assets/images/github2.png', '@/common/assets/images/serverstudy.jpg', '@/common/assets/images/serverstudy2.png', '@/common/assets/images/study3.png'],
             next: "/about"
         },
         {
@@ -75,8 +75,8 @@ function MainActivity() {
             title: '세미나',
             detail: '개발 관련 주제 선정 후 발표',
             image: ico2,
-            Ntitle: ['깃허브 세미나'],
-            Nimage: ['@/common/assets/images/seminar.png'],
+            // Ntitle: ['깃허브 세미나'],
+            // Nimage: ['@/common/assets/images/seminar.png'],
             next: "/about"
         },
         {
@@ -84,8 +84,8 @@ function MainActivity() {
             title: '프로젝트',
             detail: '직접 앱이나 웹을 멘토링 받으면서 만들어보기',
             image: ico3,
-            Ntitle: ['웹 프로젝트', '경쟁식 프로젝트'],
-            Nimage: ['@/common/assets/images/webproject.png', '@/common/assets/images/webproject2.png'],
+            // Ntitle: ['웹 프로젝트', '경쟁식 프로젝트'],
+            // Nimage: ['@/common/assets/images/webproject.png', '@/common/assets/images/webproject2.png'],
             next: "/about"
         },
         {
@@ -93,8 +93,8 @@ function MainActivity() {
             title: '파티',
             detail: '학기별 개강파티 + 종강파티',
             image: ico4,
-            Ntitle: ['개강파티', '종강파티'],
-            Nimage: ['@/common/assets/images/drink1.jpg', '@/common/assets/images/drink2.png'],
+            // Ntitle: ['개강파티', '종강파티'],
+            // Nimage: ['@/common/assets/images/drink1.jpg', '@/common/assets/images/drink2.png'],
             next: "/archive"
         },
         {
@@ -102,8 +102,8 @@ function MainActivity() {
             title: 'MT',
             detail: '4월 중순 쯤',
             image: ico5,
-            Ntitle: ['단체 사진', '게임', '바베큐'],
-            Nimage: ['@/common/assets/images/mt2.png', '@/common/assets/images/mt1.jpg', '@/common/assets/images/mt3.png'],
+            // Ntitle: ['단체 사진', '게임', '바베큐'],
+            // Nimage: ['@/common/assets/images/mt2.png', '@/common/assets/images/mt1.jpg', '@/common/assets/images/mt3.png'],
             next: "/archive"
         },
         {
@@ -111,8 +111,8 @@ function MainActivity() {
             title: '총회',
             detail: '11월 말 쯤',
             image: ico6,
-            Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
-            Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
+            // Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
+            // Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
             next: "/archive"
         },
         {
@@ -120,8 +120,6 @@ function MainActivity() {
             title: '자세히 보기',
             detail: '',
             image: '',
-            // Ntitle: ['연말에 진행되는 총회', '선배님들과 함께하는 총회', '선배님들과 함께하는 총회'],
-            Nimage: ['@/common/assets/images/meeting1.jpg', '@/common/assets/images/meeting2.jpg', '@/common/assets/images/meeting3.jpg'],
             next: "/about"
         },
     ];
@@ -151,7 +149,6 @@ function MainActivity() {
                 <div className='figure5'></div>
                 <div className='figure6'></div>
                 {activities.map((activity: Activity) => (
-
                     activity.image
                         ? (
                             <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919]" onClick={() => handleActivityClick(activity)}>
@@ -166,7 +163,7 @@ function MainActivity() {
                         : (
                             <button key={activity.id} className="activity bg-[#fafafa] dark:bg-[#191919] mt-10 animate-rainbow-bounce" onClick={() => handleActivityClick(activity)}>
                                 <span className="actext w-full flex flex-row justify-center animate-bounce">
-                                    <p id="actitle" className="text-white dark:text-white">{activity.title}</p>
+                                    <p id="actitle" className="text-black dark:text-white">{activity.title}</p>
                                 </span>
                                 {/* <img src={nextButton} alt="vector" id="vector"></img> */}
                             </button>

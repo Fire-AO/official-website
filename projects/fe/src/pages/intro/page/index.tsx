@@ -150,23 +150,16 @@ const index = () => {
           </div>
 
           <div
-            className="flex flex-col w-auto justify-center items-center gap-[18px] ml-[60px] -mt-[100px]"
+            className="flex flex-col w-auto justify-center items-start ml-[60px] -mt-[100px]"
           >
-
-            <p
-              className="flex-grow-0 flex-shrink-0 w-auto text-[13px] font-['PRETENDARD-BOLD'] text-left text-black dark:text-white"
-            >
+            <p className="text-[13px] font-['PRETENDARD-BOLD'] text-black dark:text-white">
               {selectedProfile.name}
             </p>
-            <p
-              className="flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-stone-300"
-            >
+            <p className="text-[10px] font-['PRETENDARD-MEDIUM'] text-[#747474] dark:text-stone-300">
               {selectedProfile.position}
             </p>
             {selectedProfile.phone && (
-              <p
-                className="mt-[6px] flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-white/80"
-              >
+              <p className="mt-[6px] text-[10px] font-['PRETENDARD-MEDIUM'] text-[#747474] dark:text-white/80">
                 {selectedProfile.phone}
               </p>
             )}
@@ -183,7 +176,6 @@ const index = () => {
 
         <div
           className="flex flex-col justify-center items-center w-[87%] relative overflow-hidden px-[25px] py-[28px] rounded-[20px] bg-white mt-[30px] mx-auto"
-          // style="box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);"
           style={{ boxShadow: "0px 0px 10px 1px rgba(0,0,0,0.1)" }}
         >
           <p className="font-['PRETENDARD-REGULAR'] flex flex-col flex-grow-0 flex-shrink-0 text-[10px] md:text-[12px] text-center text-black">

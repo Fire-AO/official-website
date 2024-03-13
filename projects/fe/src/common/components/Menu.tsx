@@ -67,13 +67,14 @@ const Menu: React.FC<MenuProps> = React.memo(({ menuVisible, toggleMenuVisible }
                 </Link>
             </header>
 
-            <div className="flex flex-col mx-[18px] text-2xl uppercase">
+            <div className="flex flex-col mx-[18px]">
                 {
                     links.map((link, index) => (
                         <Link
                             key={index}
                             to={link.path}
-                            className="border-b border-white dark:border-white pl-[33px] py-[27px] font-['PRETENDARD-REGULAR']"
+                            className="uppercase border-b border-white dark:border-white py-[27px] font-['PRETENDARD-REGULAR']
+                            text-xl pl-[14px] md:pl-[33px] md:text-2xl"
                         >
                             {link.title}
                         </Link>

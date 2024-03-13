@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, ScrollRestoration } from "react-router-dom"
 import CompleteModal from "./components/CompleteModal"
 import { useState } from "react";
 import { Helmet } from "react-helmet";
@@ -92,6 +92,8 @@ const index = () => {
 
   return (
     <>
+      <ScrollRestoration />
+
       <div className="bg-white dark:bg-black h-screen">
         <div
           className="w-full overflow-hidden pr-4 pl-4 bg-white dark:bg-black mx-auto"
@@ -169,8 +171,8 @@ const index = () => {
                   type="tel"
                   onInput={(event) => {
                     event.currentTarget.value = event.currentTarget.value
-                        .replace(/[^0-9]/g, "")
-                        .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
+                      .replace(/[^0-9]/g, "")
+                      .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
                     setPhoneNum(
                       event.currentTarget.value
                         .replace(/[^0-9]/g, "")

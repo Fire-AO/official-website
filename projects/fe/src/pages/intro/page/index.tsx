@@ -27,6 +27,9 @@ import { useState } from "react";
 
 import ao from "@/common/assets/images/AO-symbol.png";
 import { Helmet } from "react-helmet";
+import AvatarLayer from "./assets/images/AvatarLayer";
+import InstaIcon from "./assets/images/InstaIcon";
+import DeveloperGroup from "./components/DeveloperGroup";
 
 interface Profile {
   id: number;
@@ -84,7 +87,7 @@ const profiles: Profile[] = [
       <span>또한 컴공 관련 정보도 많이 얻을 수 있어요. </span>
       <span>안 올 이유가 없다고 볼 수 있죠. AO에서 같이 성장해 보아요!"</span>
     </>
-  }, 
+  },
   {
     id: 4,
     name: "신초은",
@@ -99,7 +102,7 @@ const profiles: Profile[] = [
         많아요!</span>
       <span>밥 잘 사주는 스터디 AO에서 슬기로운 대학생활 해보아요" </span>
     </>
-  }, 
+  },
   {
     id: 5,
     name: "최윤아",
@@ -130,127 +133,11 @@ const index = () => {
   return (
     <>
       <div className="">
-        <div className="w-[131px] h-[129px] pt-[40px] pb-[150px]" />
+        <div className="w-full h-[1] pb-[190px]" />
 
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <div className="w-[131px] h-[129px] absolute top-[250px] mr-[180px]">
-            <svg
-              width="86"
-              height="86"
-              viewBox="0 0 86 86"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[86px] h-[86px] relative left-[45px] top-0"
-              preserveAspectRatio="none"
-            >
-              <g clipPath="url(#clip0_5742_1324)">
-                <circle cx="1.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="1.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="10.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="19.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="28.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="37.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="46.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="55.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="64.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="73.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="1.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="10.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="19.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="28.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="37.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="46.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="55.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="64.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="73.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-                <circle cx="82.5" cy="82.5" r="1.5" fill="#C9C9C9"></circle>
-              </g>
-              <defs>
-                <clipPath id="clip0_5742_1324"
-                ><rect width="86" height="86" fill="white"></rect></clipPath
-                >
-              </defs>
-            </svg>
+            <AvatarLayer />
             <button onClick={showChange}>
               <img
                 src={isFlipped ? selectedProfile.avatar : selectedProfile.image}
@@ -265,66 +152,34 @@ const index = () => {
           <div
             className="flex flex-col w-auto justify-center items-center gap-[18px] ml-[60px] -mt-[100px]"
           >
-            <div
-              className="flex flex-col justify-center items-start flex-grow-0 flex-shrink-0 relative"
-            >
-              <p
-                className="flex-grow-0 flex-shrink-0 w-auto text-[13px] font-['PRETENDARD-BOLD'] text-left text-black dark:text-white"
-              >
-                {selectedProfile.name}
-              </p>
-              <p
-                className="flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-stone-300"
-              >
-                {selectedProfile.position}
-              </p>
-              {selectedProfile.phone && (
-                <p
-                  className="mt-[6px] flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-white/80"
-                >
-                  {selectedProfile.phone}
-                </p>
-              )}
 
-              <a
-                href={`https://www.instagram.com/${selectedProfile.insta}`}
-                className=" flex justify-center items-center flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474]"
+            <p
+              className="flex-grow-0 flex-shrink-0 w-auto text-[13px] font-['PRETENDARD-BOLD'] text-left text-black dark:text-white"
+            >
+              {selectedProfile.name}
+            </p>
+            <p
+              className="flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-stone-300"
+            >
+              {selectedProfile.position}
+            </p>
+            {selectedProfile.phone && (
+              <p
+                className="mt-[6px] flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474] dark:text-white/80"
               >
-                <svg
-                  width="12"
-                  height="13"
-                  viewBox="0 0 12 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="flex-grow-0 flex-shrink-0 w-2.5 h-2.5"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <path
-                    d="M6.00005 8.72222C7.22733 8.72222 8.22228 7.72727 8.22228 6.49999C8.22228 5.27269 7.22733 4.27777 6.00005 4.27777C4.77275 4.27777 3.77783 5.27269 3.77783 6.49999C3.77783 7.72727 4.77275 8.72222 6.00005 8.72222Z"
-                    stroke="#747474"
-                    strokeWidth="1.16632"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M1 8.72222V4.27778C1 2.74366 2.24366 1.5 3.77778 1.5H8.22222C9.75633 1.5 11 2.74366 11 4.27778V8.72222C11 10.2563 9.75633 11.5 8.22222 11.5H3.77778C2.24366 11.5 1 10.2563 1 8.72222Z"
-                    stroke="#747474"
-                    strokeWidth="1.16632"
-                  ></path>
-                  <path
-                    d="M9.0556 3.44999L9.06116 3.44382"
-                    stroke="#747474"
-                    strokeWidth="1.16632"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-                <span className="ml-[2.5px]">{selectedProfile.insta}</span>
-              </a>
-            </div>
+                {selectedProfile.phone}
+              </p>
+            )}
+
+            <a
+              href={`https://www.instagram.com/${selectedProfile.insta}`}
+              className=" flex justify-center items-center flex-grow-0 flex-shrink-0 w-auto text-[10px] font-['PRETENDARD-MEDIUM'] text-left text-[#747474]"
+            >
+              <InstaIcon />
+              <span className="ml-[2.5px]">{selectedProfile.insta}</span>
+            </a>
           </div>
         </div>
-
 
         <div
           className="flex flex-col justify-center items-center w-[87%] relative overflow-hidden px-[25px] py-[28px] rounded-[20px] bg-white mt-[30px] mx-auto"
@@ -338,9 +193,7 @@ const index = () => {
       </div>
 
       <div className="flex mt-[35px] flex-col w-[87%] mx-auto ">
-        <p
-          className="text-base font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-white"
-        >
+        <p className="text-base font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-white">
           AO Team Members
         </p>
 
@@ -369,7 +222,7 @@ const index = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center w-[87%] mx-auto mt-[40px] mb-[40px]">
-        <div className="flex-col w-full mx-auto">
+        <div className="w-full mx-auto">
           <p className="w-full text-base font-['PRETENDARD-SEMIBOLD'] text-left text-black dark:text-white">
             Developers of AO WEB
           </p>
@@ -392,58 +245,23 @@ const index = () => {
           <DeveloperAvatar src={AoSeohyunBang} />
         </div>
 
-        <div className="px-[15%] justify-center flex">
-          <div
-            className="flex flex-col justify-center items-center mt-[37px] gap-[10px]"
-          >
-            <div className="flex w-64 justify-left items-start">
-              <p
-                className="w-[135px] text-[13px] justify-left font-['PRETENDARD-MEDIUM'] text-left text-black dark:text-neutral-50"
-              >
-                Mentor &#x26; infra.
-              </p>
-              <p
-                className="w-[135px] ml-[57px] flex flex-col justify-start text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
-              >
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">박세진 Sejin Park</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">천제희 Jehee Cheon</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">배종찬 Jongchan Bae</span>
-              </p>
-            </div>
+        <div
+          className="px-[15%] flex flex-col justify-center items-center mt-[37px] gap-[10px]"
+        >
+          <DeveloperGroup
+            groupName="Infra."
+            names={["박세진 Sejin Park", "천제희 Jehee Cheon", "배종찬 Jongchan Bae"]}
+          />
 
-            <div className="flex w-64 justify-left items-start">
-              <p
-                className="w-[135px] text-[13px] flex justify-left font-['PRETENDARD-MEDIUM'] text-left text-black dark:text-neutral-50"
-              >
-                Frontend.
-              </p>
-              <div
-                className="w-[135px] ml-[57px] flex flex-col justify-start text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
-              >
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">박기현 Kihyun Park</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">김초은 Choeun Kim</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">유용석 Yongseok Yoo</span>
-                <span className="w-auto text-[10px] mt-[1px] flex justify-left font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">이창민 Changmin Lee</span>
-              </div>
-            </div>
+          <DeveloperGroup
+            groupName="Frontend."
+            names={["박기현 Kihyun Park", "김초은 Choeun Kim", "유용석 Yongseok Yoo", "이창민 Changmin Lee"]}
+          />
 
-            <div className="flex w-64 justify-left items-start">
-              <div
-                className="w-[135px] text-[13px] font-['PRETENDARD-MEDIUM'] text-left text-black dark:text-neutral-50"
-              >
-                Backend.
-              </div>
-              <div
-                className="flex flex-col ml-[57px] justify-start w-[135px] text-[10px] font-['PRETENDARD-LIGHT'] text-left text-black"
-              >
-                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">송정민 Jeongmin Song</span>
-                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">노유빈 Yunin No</span>
-                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">정익재 Ikjae Jeong</span>
-                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">방준혁 Junhyuk Bang</span>
-                <span className="w-auto  text-[10px] mt-[1px] font-['PRETENDARD-LIGHT'] text-left text-black dark:text-neutral-200">안서현 Seohyun An</span>
-              </div>
-            </div>
-          </div>
+          <DeveloperGroup
+            groupName="Backend."
+            names={["송정민 Jeongmin Song", "노유빈 Yunin No", "정익재 Ikjae Jeong", "방준혁 Junhyuk Bang", "안서현 Seohyun An"]}
+          />
         </div>
       </div>
 

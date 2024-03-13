@@ -11,6 +11,33 @@ import Image3 from "@/pages/about/page/assets/images/3.png";
 import ao from "@/common/assets/images/AO-symbol.png";
 import { Helmet } from "react-helmet";
 
+const activities = [
+    {
+        title: '1. 스터디 활동',
+        detail: '알고리즘, 책 스터디 등',
+    },
+    {
+        title: '2. 세미나',
+        detail: '개발 관련 주제 선정 후 발표',
+    },
+    {
+        title: '3. 프로젝트',
+        detail: '직접 앱이나 웹을 멘토링 받으면서 만들어보기',
+    },
+    {
+        title: '4. 파티',
+        detail: '학기 별 개강 파티 및 종강 파티',
+    },
+    {
+        title: '5. MT',
+        detail: '4월 중순 쯤 전체 MT 진행',
+    },
+    {
+        title: '6. 총회',
+        detail: '11월 말 쯤 선배님들과의 총회 진행',
+    }
+]
+
 const About = () => {
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -119,102 +146,27 @@ const About = () => {
                     </span>
                 </div>
                 <div className="flex flex-col ml-[25px] mr-[25px] mt-[25px] gap-[13px]">
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            1. 스터디 활동
-                        </p>
-                        <p
-                            className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px] text-left text-black"
-                        >
-                            알고리즘, 책 스터디등
-                        </p>
-                    </div>
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            2. 세미나
-                        </p>
-                        <p
-                            className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px] text-left text-black"
-                        >
-                            개발 관련 주제 선정 후 발표 (2주에 한 번)
-                        </p>
-                    </div>
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            3. 프로젝트
-                        </p>
-                        <p
-                            className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px] text-left text-black"
-                        >
-                            직접 앱이나 웹을 멘토링 받으면서 만들어보기 (2학기)
-                        </p>
-                    </div>
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            4. 학기 별 개강 파티 및 종강 파티
-                        </p>
-                    </div>
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            5. MT
-                        </p>
-                        <p
-                            className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px] text-left text-black"
-                        >
-                            4월 중순 쯤 AO 전체 MT 진행
-                        </p>
-                    </div>
-                    <div
-                        className="w-[100%] h-auto rounded-[20px] bg-white/70 px-[25px] py-[12px]"
-                        // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
-                        style={{
-                            boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
-                        }}
-                    >
-                        <p className="font-['PRETENDARD-SEMIBOLD'] text-[20px] text-left text-black">
-                            6. 총회
-                        </p>
-                        <p
-                            className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px] text-left text-black"
-                        >
-                            11월 말 쯤 AO 선배님들과의 총회 진행
-                        </p>
-                    </div>
+                    {
+                        activities.map((activity) => (
+                            <div
+                                key={activity.title}
+                                className="w-full rounded-[20px] bg-white/70 px-[25px] py-[12px] text-black"
+                                // style="box-shadow: 0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1);"
+                                style={{
+                                    boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
+                                }}
+                            >
+                                <p className="font-['PRETENDARD-SEMIBOLD'] text-[17px] md:text-[20px]">
+                                    {activity.title}
+                                </p>
+                                <p className="ml-[20px] font-['PRETENDARD-LIGHT'] text-[14px]">
+                                    {activity.detail}
+                                </p>
+                            </div>
+                        ))
+                    }
                 </div>
-
             </div>
-
-            <div className="mt-[65px]"></div>
 
             <Helmet>
                 <title>About | Fire AO</title>

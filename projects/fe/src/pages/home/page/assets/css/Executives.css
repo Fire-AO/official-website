@@ -11,18 +11,11 @@
   white-space: nowrap; /* 줄 바꿈 방지 */
   width: 100%; /* 부모 컨테이너의 가로 너비를 100%로 설정 */
   scrollbar-color: transparent transparent;
-  justify-content: center;
-}
-
-/* 화면이 모바일 크기일 때 */
-@media only screen and (max-width: 767px) {
-  .scroll-container {
-    justify-content: flex-start;
-  }
+  justify-content: flex-start;
 }
 
 /* 화면이 태블릿, 웹 크기일 때 */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 479px) {
   .scroll-container {
     justify-content: center;
   }
@@ -66,6 +59,8 @@
 }
 
 .executive-name {
+  color: #fff;
+  font-family: Pretendard-ExtraLight;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -73,5 +68,3 @@
   text-align: center;
   margin-bottom: 30px;
 }
-
-

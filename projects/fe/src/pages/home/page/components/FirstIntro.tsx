@@ -3,7 +3,7 @@ import "@/pages/home/page/assets/css/FirstIntro.css";
 function FirstIntro() {
   return (
     <div className="firstIntro-container dark:bg-black">
-      <div className="Text text-black/60 dark:text-white">
+      <div className="Text text-black/70 dark:text-white">
         <div className="text">
           <p id="FIFire" className="text-[#121212]/90 dark:text-white">
             Fire&nbsp;

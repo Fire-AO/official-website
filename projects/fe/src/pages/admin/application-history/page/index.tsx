@@ -68,7 +68,7 @@ const index = () => {
                                     <tr key={application.id}>
                                         <td className="px-6 py-4 whitespace-nowrap">{application.name}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{application.phoneNum}</td>
-                                        <td className="px-6 py-4">{application.aWord}</td>
+                                        <td className="px-6 py-4 text-left">{application.aWord}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{application.submitedAt.toLocaleString()}</td>
                                     </tr>
                                 )

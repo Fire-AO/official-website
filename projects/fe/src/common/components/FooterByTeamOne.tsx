@@ -2,7 +2,7 @@ import "@/pages/home/page/assets/css/Footer.css";
 import call from "@/pages/home/page/assets/images/call.png";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function FooterByTeamOne() {
     return (
         <>
             <footer>
@@ -27,4 +27,4 @@ function Footer() {
     )
 }
 
-export default Footer;
+export default FooterByTeamOne;

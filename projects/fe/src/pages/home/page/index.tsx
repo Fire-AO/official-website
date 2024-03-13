@@ -1,6 +1,6 @@
 import FirstIntro from "@/pages/home/page/components/FirstIntro";
 import Detail from "@/pages/home/page/components/Detail";
-import Footer from "@/common/components/Footer";
+import FooterByTeamOne from "@/common/components/FooterByTeamOne";
 import MainActivity from "@/pages/home/page/components/MainActivity";
 import Executives from "@/pages/home/page/components/Executives";
 import Header from '@/common/components/Header';
@@ -17,7 +17,7 @@ const Root = () => {
                 <Detail />
                 <MainActivity />
                 <Executives />
-                <Footer />
+                <FooterByTeamOne />
             </div>
 
             <Helmet>

@@ -1,4 +1,4 @@
-import { Link, ScrollRestoration, useLocation } from 'react-router-dom'
+import { ScrollRestoration, useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ import Header from '@/common/components/Header';
 
 import "@/common/assets/css/history.css"
 import ApplyButton from '@/common/components/ApplyButton';
-import Phone from '@/common/assets/images/Phone';
+import FooterByTeamTwo from '@/common/components/FooterByTeamTwo';
 
 type NavLinkRenderProps = {
     isActive: boolean;
@@ -84,26 +84,7 @@ const History = () => {
                     </div>
                 </div>
 
-                {/* Footer */}
-                <div className="max-w-[1024px] w-full h-[138px] bg-white dark:bg-black text-left mt-auto">
-                    <Link
-                        className="text-xl font-['Montserrat'] font-black text-black dark:text-white mt-[25px] ml-[19px] mb-[6px]"
-                        to="/"
-                    >
-                        Fire AO
-                    </Link>
-
-                    <div className="flex items-center ml-[19px] mt-5 text-neutral-900 dark:text-[#e5e5e5] font-['PRETENDARD-REGULAR'] text-[13px]">
-                        <Phone />
-                        010-4939-1971
-                    </div>
-
-                    <Link
-                        to="/admin"
-                        className="cursor-text text-[13px] text-neutral-900 dark:text-[#E5E5E5] font-['PRETENDARD-REGULAR'] mt-[6px] ml-[18px]">
-                        ⓒ Fire AO. 2024 All rights reserved
-                    </Link>
-                </div>
+                <FooterByTeamTwo />
             </div>
         </>
     )

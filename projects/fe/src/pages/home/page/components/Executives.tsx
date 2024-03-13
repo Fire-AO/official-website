@@ -1,4 +1,5 @@
 import "@/pages/home/page/assets/css/Executives.css";
+
 import { useState, useEffect } from "react";
 import CardNews from "@/pages/home/page/components/CardNews";
 
@@ -19,7 +20,7 @@ function Executives() {
 
   return (
     <>
-      <div className="executive-container dark:bg-black clip">
+      <div className="executive-container dark:bg-black bg-white">
         <div className="exeEng">
           <p>Fire AO</p>
         </div>
@@ -31,7 +32,7 @@ function Executives() {
             <div
               key={executive.id}
               className={`executive cursor-pointer 
-              ${selectedExecutive?.id  === executive.id - 1 && "animate-bounce"}
+              ${selectedExecutive?.id === executive.id - 1 && "animate-bounce"}
               ${selectedExecutive?.id === executives.length && executive.id === 1 && "animate-bounce"}`}
               onClick={() => setSelectedExecutive(executive)}
             >
@@ -51,8 +52,10 @@ function Executives() {
             image={isDarkMode ? selectedExecutive.biggerAvatarDark : selectedExecutive.biggerAvatar}
           />
         )}
+        <ApplyButton />
+        <div className='figure2 -z-[1]'></div>
+        <div className='figure6 -z-[1]'></div>
       </div>
-      <ApplyButton />
     </>
   );
 }

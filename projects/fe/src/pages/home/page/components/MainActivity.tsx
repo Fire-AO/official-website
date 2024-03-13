@@ -137,17 +137,15 @@ function MainActivity() {
 
     return (
         <>
-            <div className='main-container dark:bg-black'>
+            <div className='main-container dark:bg-black bg-white'>
                 <div className="animation">
                     <div className="marquee-container">
                         <p className="marquee-text">FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;FireAO&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     </div>
                 </div>
-                <div className="mainEng"><p>Fire AO</p></div>
-                <div className="mainKor"><p>주요 활동 내용</p></div>
-                <div className='figure4'></div>
-                <div className='figure5'></div>
-                <div className='figure6'></div>
+                <div className="mainEng text-black dark:text-white"><p>Fire AO</p></div>
+                <div className="mainKor text-black dark:text-white"><p>주요 활동 내용</p></div>
+
                 {activities.map((activity: Activity) => (
                     activity.image
                         ? (
@@ -170,6 +168,9 @@ function MainActivity() {
                         )
                 ))}
 
+                <div className='figure4'></div>
+                <div className='figure5'></div>
+                <div className='figure6'></div>
                 <div className='figure7'></div>
                 <div className='figure8'></div>
             </div >

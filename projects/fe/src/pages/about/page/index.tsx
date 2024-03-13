@@ -92,9 +92,7 @@ const About = () => {
                         boxShadow: "0px 0px 15px 0.20000000298023224px rgba(0,0,0,0.1)",
                     }}
                 >
-                    <p
-                        className="text-xs font-['PRETENDARD-SemiBold'] font-semibold text-black/70 flex flex-col justify-center items-center leading-5"
-                    >
+                    <p className="text-xs font-['PRETENDARD-Regular'] font-semibold text-black/70 flex flex-col justify-center items-center leading-5">
                         AO는 85, 86학번 주축으로 1986년 부터 2024년까지 이어져 온 전통있는 스터디이며
                         아직까지도 80, 90, 00, 10년대 선배님들과 교류를 왕성히
                         하고 있습니다. AO에 들어오시면 어렵고 복잡한 학교생활

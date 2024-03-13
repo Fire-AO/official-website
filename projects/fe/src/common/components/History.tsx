@@ -51,8 +51,6 @@ const History = () => {
             <div className="bg-white dark:bg-black overflow-hidden min-h-[100vh] flex flex-col items-center z-[50] history-bg pt-[30px]">
                 <div className="figure1 -z-[1]"></div>
                 <div className="figure2 -z-[1]"></div>
-                <div className="figure3 -z-[1]"></div>
-
                 <div className=''>
                     <div className="flex-grow flex flex-col justify-center max-w-[1000px] w-[100vw] text-left pl-[19px] 
                         bg-black/5 bg-opacity-100 dark:bg-[#303030] dark:bg-opacity-75 rounded-xl px-[20px] py-[15px]"

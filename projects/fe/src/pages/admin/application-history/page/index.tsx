@@ -6,6 +6,7 @@ interface Application {
     id: string;
     name: string;
     phoneNum: string;
+    submitedAt: Date;
 }
 
 const index = () => {
@@ -27,7 +28,15 @@ const index = () => {
                 return res.json();
             })
             .then((data: Application[]) => {
-                setApplications(data);
+                setApplications(
+                    data.map((application) => {
+                        return {
+                            ...application,
+                            submitedAt: new Date(application.submitedAt)
+                        }
+                    }
+                    )
+                )
             })
             .catch(err => {
                 console.error(err)
@@ -44,23 +53,23 @@ const index = () => {
                         <th>이름</th>
                         <th>전화번호</th>
                         <th>한 마디</th>
+                        <th>지원 날짜</th>
                     </tr>
                 </thead>
-                {
-                    applications && applications.map((application) => {
-                        return (
-                            <tbody
-                                key={application.id}
-                            >
-                                <tr>
-                                    <td>{application.name}</td>
-                                    <td>{application.phoneNum}</td>
-                                    <td>{application.aWord}</td>
+                <tbody>
+                    {
+                        applications && applications.map((application) => {
+                            return (
+                                <tr key={application.id} className="border-t-[1px] dark:border-t-slate-300">
+                                    <td className="text-nowrap pr-2">{application.name}</td>
+                                    <td className="text-nowrap pr-2">{application.phoneNum}</td>
+                                    <td className="pr-2">{application.aWord}</td>
+                                    <td className="text-nowrap">{application.submitedAt.toLocaleDateString()}</td>
                                 </tr>
-                            </tbody>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                </tbody>
             </table>
         </>
     )

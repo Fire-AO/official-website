@@ -53,7 +53,7 @@ export const postApplication = asyncHandler(async (req, res) => {
 
         // DB에 저장
         const applyer = await Application.create({
-            id, name, phoneNum, aWord
+            id, name, phoneNum, aWord, submitedAt: Date.now()
         });
 
         // 성공시 200 반환

@@ -17,6 +17,10 @@ const applicationSchema = new mongoose.Schema({
     aWord: {
         type: String,
         required: true
+    },
+    submitedAt: {
+        type: Date,
+        default: null
     }
 });
 

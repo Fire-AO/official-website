@@ -71,7 +71,7 @@ const History = () => {
                 >
                     {/* Nav buttons */}
 
-                    <div className="z-50 flex w-full justify-around px-8 text-center gap-4 pt-5 font-['Pretendard-ExtraBold']">
+                    <div className="z-50 flex w-full justify-around px-8 text-center gap-4 pt-5 font-['Montserrat']">
                         <NavLink className={handleNavClass} to="/about">About</NavLink>
                         <NavLink className={handleNavClass} to="/archive">Archive</NavLink>
                         <NavLink className={handleNavClass} to="/intro">Intro</NavLink>

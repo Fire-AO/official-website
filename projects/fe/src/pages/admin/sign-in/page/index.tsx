@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { ScrollRestoration, useNavigate } from "react-router-dom";
 
 const index = () => {
     const navigate = useNavigate();
@@ -15,6 +15,8 @@ const index = () => {
 
     return (
         <>
+            <ScrollRestoration />
+
             <h1 className="text-2xl font-bold  dark:text-white mb-7">관리자 전용</h1>
             <form
                 className="flex flex-col gap-3 w-full max-w-[250px]"

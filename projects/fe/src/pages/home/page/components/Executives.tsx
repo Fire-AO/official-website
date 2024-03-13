@@ -30,7 +30,9 @@ function Executives() {
           {executives.map((executive) => (
             <div
               key={executive.id}
-              className={`executive cursor-pointer ${selectedExecutive?.id  === executive.id - 1 && "animate-bounce"}`}
+              className={`executive cursor-pointer 
+              ${selectedExecutive?.id  === executive.id - 1 && "animate-bounce"}
+              ${selectedExecutive?.id === executives.length && executive.id === 1 && "animate-bounce"}`}
               onClick={() => setSelectedExecutive(executive)}
             >
               <img

@@ -12,8 +12,7 @@
     url("@/pages/home/page/assets/images/ellipse24.png"),
     url("@/pages/home/page/assets/images/ellipse25.png"),
     url("@/pages/home/page/assets/images/ellipse25.png");
-  background-position: 10% 1%, 80% 3%, 7% 38%, 88% 40%,
-    7% 97%, 30% 86%;
+  background-position: 10% 1%, 80% 3%, 7% 38%, 88% 40%, 7% 97%, 30% 86%;
   background-repeat: no-repeat;
 }
 
@@ -52,8 +51,7 @@
 
 .exeEng {
   margin-top: 90px;
-  color: #fff;
-  font-family: Pretendard-ExtraBold;
+  font-family: PaytoneOne;
   font-size: 30px;
   font-style: normal;
   font-weight: 900;
@@ -62,13 +60,12 @@
 
 .exeKor {
   margin-top: 8px;
-  color: #fff;
-  font-family: Pretendard-ExtraLight;
+  font-family: Pretendard-Light;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 37px;
+  margin-bottom: 60px;
 }
 
 .executive-name {

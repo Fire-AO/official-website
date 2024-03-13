@@ -21,10 +21,10 @@ function Executives() {
   return (
     <>
       <div className="executive-container dark:bg-black bg-white">
-        <div className="exeEng">
+        <div className="exeEng text-black dark:text-white">
           <p>Fire AO</p>
         </div>
-        <div className="exeKor">
+        <div className="exeKor text-black dark:text-white">
           <p>Fire AO와 함께하는 임원진</p>
         </div>
         <div className="scroll-container">

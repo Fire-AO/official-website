@@ -43,10 +43,7 @@
 }
 
 #fotfro {
-  background: linear-gradient(101deg, #21ecc7 59.41%, #8672f3 82.47%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #21ECC7;
   font-family: "PaytoneOne";
   font-size: 30px;
   font-style: normal;
@@ -55,7 +52,7 @@
 }
 
 #fotback {
-  background: linear-gradient(180deg, #21ecc7 0%, #8672f3 100%);
+  background: linear-gradient(104deg, #21ecc7 56.11%, #8473f2 91.51%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

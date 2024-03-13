@@ -6,6 +6,29 @@ interface MenuProps {
     toggleMenuVisible: () => void;
 }
 
+const links = [
+    {
+        title: "HOME",
+        path: "/",
+    },
+    {
+        title: "Archive",
+        path: "/archive",
+    },
+    {
+        title: "Introduction",
+        path: "/intro",
+    },
+    {
+        title: "About",
+        path: "/about",
+    },
+    {
+        title: "지원하기",
+        path: "/apply",
+    }
+];
+
 const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
     const menuRef = useRef<HTMLDivElement>(null);
 
@@ -34,66 +57,32 @@ const Menu: React.FC<MenuProps> = ({ menuVisible, toggleMenuVisible }) => {
         hasInteracted &&
         <div
             ref={menuRef}
-            className="menu overflow-hidden animate-fade-in fixed top-0 left-0 bg-[#38D0D1] dark:bg-[#C771FB] w-screen h-screen text-white z-50"
+            className="overflow-y-auto animate-fade-in fixed top-0 left-0 
+            bg-[#8473f2] dark:bg-black w-screen h-screen text-white dark:text-white z-50 flex flex-col"
             onClick={toggleMenuVisible}
         >
-            <header className="mb-[27px]">
-                <div
-                    className="flex justify-between items-center w-screen relative overflow-hidden px-5 py-[11px]"
-                >
-                    <div className="w-[27px] h-[28px]"></div>
-
-                    <Link to="/">
-                        <p className="flex-grow-0 flex-shrink-0 text-3xl text-left font-['PaytoneOne']">
-                            <span
-                                className="flex-grow-0 flex-shrink-0 text-3xl font-black text-left text-white">
-                                Fire&nbsp;
-                            </span>
-                            <span
-                                className="flex-grow-0 flex-shrink-0 text-3xl font-black text-left text-white"
-                            >
-                                AO
-                            </span>
-                        </p>
-                    </Link>
-                    <div className="w-[22px] h-[22px]"></div>
-                </div>
+            <header className="px-5 py-[11px] mb-[27px] inline-block text-center">
+                <Link to="/" className="text-3xl mx-auto font-['PaytoneOne']">
+                    Fire AO
+                </Link>
             </header>
 
-            <div className="flex flex-col items-start justify-start h-full ml-[18px] font-">
-                <Link
-                    to="/"
-                    className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
-                >
-                    Home
-                </Link>
-                <Link
-                    to="/archive"
-                    className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
-                >
-                    Archive
-                </Link>
-                <Link
-                    to="/intro"
-                    className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
-                >
-                    Intro
-                </Link>
-                <Link
-                    to="/about"
-                    className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
-                >
-                    About
-                </Link>
-                <Link
-                    to="/apply"
-                    className="w-[95%] font-['PRETENDARD-REGULAR'] text-2xl border-t-0 border-r-0 border-b border-l-0 border-[#FFFFFF] pl-[33px] py-[30px] active:font-semibold"
-                >
-                    지원하기!
-                </Link>
+            <div className="flex flex-col mx-[18px] text-2xl">
+                {
+                    links.map((link, index) => (
+                        <Link
+                            key={index}
+                            to={link.path}
+                            className="border-b border-white dark:border-white pl-[33px] py-[27px] font-['PRETENDARD-REGULAR']"
+                        >
+                            {link.title}
+                        </Link>
+                    ))
+                }
             </div>
+
             <Link
-                className="cursor-default absolute bottom-0 w-full text-[13px] font-['PRETENDARD-REGULAR'] mx-[67px]= mb-[23px] text-center text-white"
+                className="cursor-default text-[13px] font-['PRETENDARD-REGULAR'] mx-auto my-auto flex flex-col justify-end h-full mb-[27px]"
                 to="/admin/sign-in"
             >
                 ⓒ Fire AO. 2024 All rights reserved

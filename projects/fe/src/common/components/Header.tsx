@@ -149,25 +149,11 @@ const Header = () => {
                         </svg>
                     </button>
 
-                    <Link to="/">
-                        <div className="flex-grow-0 flex-shrink-0 text-[24px] flex flex-row font-['PaytoneOne'] text-[rgb(33,236,222)] dark:text-white font-bold">
-                            <p>Fire</p>
-                            &nbsp;
-                            <p style={{
-                                background: "linear-gradient(101deg, #21ecc7 59.41%, #8672f3 82.47%)",
-                                backgroundClip: "text",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: 'transparent',
-                            }}>A</p>
-                            <p
-                                style={{
-                                    background: "linear-gradient(180deg, #21ecc7 0%, #8672f3 100%)",
-                                    backgroundClip: "text",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: 'transparent',
-                                }}
-                            >O</p>
-                        </div>
+                    <Link
+                        to="/"
+                        className="flex-grow-0 flex-shrink-0 text-[24px] flex flex-row font-['PaytoneOne'] font-bold text-[#121212]/90 dark:text-white"
+                    >
+                        Fire AO
                     </Link>
 
                     {/* dummy tag */}

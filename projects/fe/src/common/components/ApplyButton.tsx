@@ -9,7 +9,7 @@ const ApplyButton = () => {
             <div
                 className="active:bg-[#4dd2b9] active:scale-95 transition duration-100 ease-in-out text-center 
                 flex justify-center relative overflow-hidden px-5 py-3.5 rounded-[50px] 
-                text-base text-white/85 dark:text-black/90 bg-[#21ecc7]"
+                text-base text-white/95 dark:text-white bg-[#8473f2]"
             >
                 <span
                     className="font-['Montserrat'] font-black flex-grow-0 flex-shrink-0 text-base text-center "

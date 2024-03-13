@@ -225,37 +225,6 @@
     src: url("@/common/assets/fonts/team1/Pretendard-Light.woff") format("woff");
   }
 
-  @font-face {
-    font-family: "PaytoneOne";
-    src: url("@/common/assets/fonts/team1/AnyConv.com__PaytoneOne-Regular.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: "Noto Sans KR";
-    font-style: normal;
-    font-weight: normal;
-    src: url("@/common/assets/fonts/team1/AnyConv.com__NotoSansKR-Regular.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: Pretendard-ExtraBold;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraBold.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: Pretendard-ExtraLight;
-    src: url("@/common/assets/fonts/team1/Pretendard-ExtraLight.woff")
-      format("woff");
-  }
-
-  @font-face {
-    font-family: Pretendard-Light;
-    src: url("@/common/assets/fonts/team1/Pretendard-Light.woff") format("woff");
-  }
-
   /* fonts from team2 */
   html > body {
     font-family: "Noto Sans KR", sans-serif;

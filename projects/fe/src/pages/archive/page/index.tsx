@@ -91,13 +91,13 @@ const index = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-end items-center gap-[10px] flex-wrap mb-5">
+                <div className="w-[60vw] ml-auto flex justify-end items-center gap-[10px] flex-wrap mb-5">
                     <Tag tag="#AO 전체 회식" />
                     <Tag tag="#전체 MT" />
                     <Tag tag="#서버파트 스터디" />
                     <Tag tag="#알고리즘 스터디" />
                     <Tag tag="#AO 총회" />
-                    <Tag tag="Alpha부터 Omega까지!" />
+                    <Tag tag="#Alpha부터_Omega까지!" />
                 </div>
             </main>
 

@@ -29,7 +29,7 @@ const Detail = () => {
         <>
             <div className='detail-container dark:bg-black text-[rgb(43,142,120)] dark:text-white/80'>
                 <div className="Rectangle-Large" style={{ opacity }}>
-                    <div className="Rectangle-small dark:border-[1px] dark:border-white dark:text-white">
+                    <div className="Rectangle-small border-[1px] border-[rgb(43,142,120)] dark:border-white dark:text-white">
                         <p>Fire AO</p>
                     </div>
                     <div className="firstex">

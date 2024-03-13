@@ -6,9 +6,9 @@ function Footer() {
         <>
             <footer>
                 <div className='footer bg-[#f9f9f9] dark:bg-[#171717]'>
-                    <div className="footername text-[rgb(33,236,222)] dark:text-white">
-                        <p>Fire</p>&nbsp;<p id="fotfro">A</p><p id="fotback">O</p>
-                    </div>
+                    <p className="footername text-[#121212]/90 dark:text-white">
+                        Fire AO
+                    </p>
                     <div className="call">
                         <img className="callimg" src={call} />
                         &nbsp;

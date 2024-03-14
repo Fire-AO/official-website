@@ -60,7 +60,7 @@ jobs:
       github.event_name == 'push' && (github.ref == 'refs/heads/publish-be' || github.ref == 'refs/heads/publish-all') || 
       github.event_name == 'workflow_dispatch'
     needs: build-be
-    runs-on: [self-hosted]
+    runs-on: [ao]
     defaults:
       run:
         working-directory: ./projects/be

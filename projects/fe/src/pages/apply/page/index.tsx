@@ -112,19 +112,18 @@ const index = () => {
     <>
       <ScrollRestoration />
 
-      <div className="w-full min-h-screen bg-white dark:bg-black px-4 flex flex-col">
+      <div className="w-full min-h-screen bg-white dark:bg-black px-4 flex flex-col items-center">
         {/* <ApplyMain /> */}
-        <div className="flex mb-[42px] py-[11px] border-b border-[#0d0d0d]">
           <Link
             to="/"
-            className="mx-auto text-black dark:text-white font-['Montserrat'] font-black text-3xl"
+            className="w-full text-center border-b border-[#0d0d0d] mb-[42px] py-[11px] mx-auto text-black dark:text-white font-['Montserrat'] font-black text-3xl"
           >
             Fire AO
           </Link>
-        </div>
 
         <form
           onSubmit={(e) => e.preventDefault()}
+          className="max-w-[339px]"
         >
           <label
             className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
@@ -277,7 +276,7 @@ const index = () => {
               }}
             />
             <button
-              className="bg-[#333] active:bg-[#555] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200"
+              className="bg-[#333] active:bg-[#555] text-neutral-200 active:scale-95 w-full mt-3 rounded-3xl py-2 "
               onClick={() => {
                 if (sentVerificationCode === false) {
                   setModalText("인증번호를 먼저 받아주세요.")
@@ -354,7 +353,7 @@ const index = () => {
           </p>
           <button
             type="submit"
-            className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#8473f2] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-white"
+            className="my-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center active:bg-[#555] text-neutral-200"
             onClick={handleSubmit}
           >
             지원하기

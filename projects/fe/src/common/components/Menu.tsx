@@ -51,6 +51,9 @@ const Menu: React.FC<MenuProps> = React.memo(({ menuVisible, toggleMenuVisible }
             menuRef.current?.classList.add("pointer-events-none");
             menuRef.current?.classList.remove("animate-fade-in");
         }
+        return () => {
+            document.body.style.overflow = 'auto';
+        }
     }, [menuVisible]);
 
     return (

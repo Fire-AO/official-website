@@ -112,13 +112,9 @@ const index = () => {
     <>
       <ScrollRestoration />
 
-      <div
-        className="w-full bg-white dark:bg-black px-4 flex flex-col"
-      >
+      <div className="w-full min-h-screen bg-white dark:bg-black px-4 flex flex-col">
         {/* <ApplyMain /> */}
-        <div
-          className="flex mb-[42px] py-[11px] border-b border-[#0d0d0d]"
-        >
+        <div className="flex mb-[42px] py-[11px] border-b border-[#0d0d0d]">
           <Link
             to="/"
             className="mx-auto text-black dark:text-white font-['Montserrat'] font-black text-3xl"
@@ -146,9 +142,7 @@ const index = () => {
               placeholder="학번을 입력해주세요."
             />
           </div>
-          <p
-            className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
-          >
+          <p className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]">
             {stuIdErrorMessage}
           </p>
           <label

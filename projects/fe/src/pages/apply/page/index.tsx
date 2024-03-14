@@ -211,7 +211,7 @@ const index = () => {
               </div>
               <button className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2"
                 onClick={() => {
-                  fetch("https://api.fireao.com/dev/auth/send-one/test", {
+                  fetch("https://api.shallwes.com/dev/auth/send-one/test", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",

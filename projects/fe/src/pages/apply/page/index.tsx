@@ -16,11 +16,11 @@ const index = () => {
   const [nameErrorMessage, setNameErrorMessage] = useState('');
   const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
   const [awordErrorMessage, setAwordErrorMessage] = useState('');
-  const [isVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
   const [verifiedErrorMessage, setVerifiedErrorMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
-  const [modalText] = useState('');
+  const [modalText, setModalText] = useState('');
 
   const resetForm = () => {
     setStudentId('');
@@ -37,6 +37,7 @@ const index = () => {
     console.log("한 마디:", aWord);
 
     if (isVerified === true) {
+      setModalText("지원이 완료되었습니다.")
       setVerifiedErrorMessage("");
       fetch("/api/application", {
         method: "POST",
@@ -106,14 +107,14 @@ const index = () => {
     <>
       <ScrollRestoration />
 
-      <div className="bg-white dark:bg-black h-screen">
+      <div className="bg-white dark:bg-black">
         <div
-          className="w-full overflow-hidden pr-4 pl-4 bg-white dark:bg-black mx-auto"
+          className="w-full  pr-4 pl-4 bg-white dark:bg-black mx-auto"
         >
           <div className="mb-[42px] flex justify-center">
             {/* <ApplyMain /> */}
             <div
-              className="flex justify-center items-center w-screen relative overflow-hidden py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
+              className="flex justify-center items-center w-screen relative  py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
             >
               <p className="font-['Montserrat'] font-black text-3xl">
                 <Link to="/">
@@ -135,7 +136,7 @@ const index = () => {
               <div
                 className={`mt-[6px] 
               mb-[${stuIdErrorMessage ? '3px' : '26px'}]
-              flex justify-start items-center w-[339px] h-[47px] relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0d0d0d]`}
+              flex justify-start items-center w-[339px] h-[47px] relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0d0d0d]`}
               >
                 <input
                   type="text"
@@ -156,7 +157,7 @@ const index = () => {
               <div
                 className={`mt-[6px] 
                 mb-[${nameErrorMessage ? '3px' : '26px'}]
-               flex justify-start items-center w-[339px] h-[47px] [relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
+               flex justify-start items-center w-[339px] h-[47px] [relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
               >
                 <input
                   type="text"
@@ -227,11 +228,11 @@ const index = () => {
                 인증번호 받기
               </button>
               <p
-                className="mb-[10px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
+                className="mb-[50px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
               >
                 {phoneErrorMessage}
               </p>
-              {/* https://api.fireao.com/dev/auth/valid-verification-code */}
+
               <div className="flex flex-col mt-[30px]">
                 <label
                   className="text-nowrap w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC] focus:outline-none"
@@ -239,13 +240,19 @@ const index = () => {
                   전화번호 인증
                 </label>
                 <input
-                  className="bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none"
-                  onInput={(e) => setVerificationCode(e.currentTarget.value)}
+                  className="mt-[6px] bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none text-neutral-500 dark:[#7f7f7f]"
+                  placeholder="인증번호를 입력해주세요."
+                  onInput={(e) => {
+                    if (e.currentTarget.value.length <= 6)
+                      setVerificationCode(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = verificationCode
+                  }}
                 />
                 <button
                   className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200"
                   onClick={() => {
-                    fetch("https://api.fireao.com/dev/auth/valid-verification-code",
+                    fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
                       {
                         method: "POST",
                         headers: {
@@ -258,29 +265,37 @@ const index = () => {
                       })
                       .then((res) => {
                         if (res.ok) {
-                          console.log("인증 성공");
+                          setIsVerified(true);
+                          setModalText("인증이 완료되었습니다.")
+                          setModalOpen(true);
                         }
                         else {
-                          console.log("인증 실패");
+                          setIsVerified(false);
+                          setModalText("인증 실패...")
+                          setModalOpen(true);
                         }
                       })
                   }}
                 >
                   인증번호 확인
                 </button>
-                <div className="h-[40px] w-full">
-                  {verifiedErrorMessage && <p className="text-[#d64142]">{verifiedErrorMessage}</p>}
-                </div>
+
+                <p
+                  className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
+                >
+                  {verifiedErrorMessage}
+                </p>
+
               </div>
 
               <label
-                className=" w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+                className="inline-block mt-[50px] w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
                 htmlFor="message">한 마디 남기기</label
               >
               <div
                 className={`mt-[10px] 
                 mb-[${awordErrorMessage ? '3px' : '26px'}] 
-                flex justify-start items-start w-[339px] h-24 relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
+                flex justify-start items-start w-[339px] h-24 relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
               >
                 <textarea
                   id="message"
@@ -294,7 +309,7 @@ const index = () => {
               </p>
               <button
                 type="submit"
-                className="mt-[63px] flex justify-center items-center relative overflow-hidden px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
+                className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
                 onClick={handleSubmit}
               >
                 지원하기

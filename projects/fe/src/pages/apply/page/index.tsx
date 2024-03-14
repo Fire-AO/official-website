@@ -16,7 +16,7 @@ const index = () => {
   const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
   const [awordErrorMessage, setAwordErrorMessage] = useState('');
   const [isVerified, setIsVerified] = useState(false);
-  const [verificationCodeErrorMessage, setVerificationErrorMessage] = useState('');
+  const [verifiedErrorMessage, setVerifiedErrorMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [modalText, setModalText] = useState('');
@@ -36,7 +36,7 @@ const index = () => {
 
     if (isVerified === true) {
       setModalText("지원이 완료되었습니다.")
-      setVerificationErrorMessage("");
+      setVerifiedErrorMessage("");
       fetch("/api/application", {
         method: "POST",
         headers: {
@@ -95,7 +95,7 @@ const index = () => {
               json.verificationCodeErrorMessage !== null &&
               json.verificationCodeErrorMessage !== ""
             ) {
-              setVerificationErrorMessage(json.verificationCodeErrorMessage);
+              setVerificationCode(json.verificationCodeErrorMessage);
             }
           }
         })
@@ -104,7 +104,7 @@ const index = () => {
         });
     }
     else {
-      setVerificationErrorMessage("전화번호 인증을 해주세요.");
+      setVerifiedErrorMessage("전화번호 인증을 해주세요.");
     }
   }
 
@@ -313,7 +313,7 @@ const index = () => {
                 <p
                   className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
                 >
-                  {verificationCodeErrorMessage}
+                  {verifiedErrorMessage}
                 </p>
 
               </div>

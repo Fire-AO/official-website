@@ -16,7 +16,7 @@ const index = () => {
   const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
   const [awordErrorMessage, setAwordErrorMessage] = useState('');
   const [isVerified, setIsVerified] = useState(false);
-  const [verifiedErrorMessage, setVerifiedErrorMessage] = useState('');
+  const [verificationCodeErrorMessage, setVerificationErrorMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [modalText, setModalText] = useState('');
@@ -36,7 +36,7 @@ const index = () => {
 
     if (isVerified === true) {
       setModalText("지원이 완료되었습니다.")
-      setVerifiedErrorMessage("");
+      setVerificationErrorMessage("");
       fetch("/api/application", {
         method: "POST",
         headers: {
@@ -95,7 +95,7 @@ const index = () => {
               json.verificationCodeErrorMessage !== null &&
               json.verificationCodeErrorMessage !== ""
             ) {
-              setVerificationCode(json.verificationCodeErrorMessage);
+              setVerificationErrorMessage(json.verificationCodeErrorMessage);
             }
           }
         })
@@ -104,10 +104,9 @@ const index = () => {
         });
     }
     else {
-      setVerifiedErrorMessage("전화번호 인증을 해주세요.");
+      setVerificationErrorMessage("전화번호 인증을 해주세요.");
     }
   }
-
 
   return (
     <>
@@ -186,12 +185,17 @@ const index = () => {
                 <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/4 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
                   placeholder="010"
                   onInput={(e) => {
-                    if (e.currentTarget.value.length <= 3) {
-                      console.log(e.currentTarget.value.length)
-                      setPhoneNum1(e.currentTarget.value)
+                    if (isVerified === true) {
+                      e.currentTarget.value = phoneNum1;
                     }
                     else {
-                      e.currentTarget.value = phoneNum1
+                      if (e.currentTarget.value.length <= 3) {
+                        console.log(e.currentTarget.value.length)
+                        setPhoneNum1(e.currentTarget.value)
+                      }
+                      else {
+                        e.currentTarget.value = phoneNum1
+                      }
                     }
                   }}
                 />
@@ -199,20 +203,30 @@ const index = () => {
                 <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
                   placeholder="1234"
                   onInput={(e) => {
-                    if (e.currentTarget.value.length <= 4)
-                      setPhoneNum2(e.currentTarget.value)
-                    else
-                      e.currentTarget.value = phoneNum2
+                    if (isVerified === true) {
+                      e.currentTarget.value = phoneNum2;
+                    }
+                    else {
+                      if (e.currentTarget.value.length <= 4)
+                        setPhoneNum2(e.currentTarget.value)
+                      else
+                        e.currentTarget.value = phoneNum2
+                    }
                   }}
                 />
                 -
                 <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
                   placeholder="5678"
                   onInput={(e) => {
-                    if (e.currentTarget.value.length <= 4)
-                      setPhoneNum3(e.currentTarget.value)
-                    else
-                      e.currentTarget.value = phoneNum3
+                    if (isVerified === true) {
+                      e.currentTarget.value = phoneNum2;
+                    }
+                    else {
+                      if (e.currentTarget.value.length <= 4)
+                        setPhoneNum3(e.currentTarget.value)
+                      else
+                        e.currentTarget.value = phoneNum3
+                    }
                   }}
                 />
               </div>
@@ -262,10 +276,15 @@ const index = () => {
                   className="mt-[6px] bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none text-neutral-500 dark:[#7f7f7f]"
                   placeholder="인증번호를 입력해주세요."
                   onInput={(e) => {
-                    if (e.currentTarget.value.length <= 6)
-                      setVerificationCode(e.currentTarget.value)
-                    else
-                      e.currentTarget.value = verificationCode
+                    if (isVerified === true) {
+                      e.currentTarget.value = verificationCode;
+                    }
+                    else {
+                      if (e.currentTarget.value.length <= 6)
+                        setVerificationCode(e.currentTarget.value)
+                      else
+                        e.currentTarget.value = verificationCode
+                    }
                   }}
                 />
                 <button
@@ -275,36 +294,43 @@ const index = () => {
                       setModalText("인증번호를 먼저 받아주세요.")
                       setModalOpen(true);
                     }
-                    else
-                      fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
-                        {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({
-                            verificationCode: verificationCode,
-                            phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                    else {
+                      if (isVerified === false) {
+                        fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                              verificationCode: verificationCode,
+                              phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                            })
                           })
-                        })
-                        .then((res) => {
-                          if (res.ok) {
-                            setIsVerified(true);
-                            setModalText("인증이 완료되었습니다.")
-                            setModalOpen(true);
-                          }
-                          else {
+                          .then((res) => {
+                            if (res.ok) {
+                              setIsVerified(true);
+                              setModalText("인증이 완료되었습니다.")
+                              setModalOpen(true);
+                            }
+                            else {
+                              setIsVerified(false);
+                              setModalText("인증이 실패되었습니다.")
+                              setModalOpen(true);
+                            }
+                          })
+                          .catch((err) => {
+                            console.error(err);
                             setIsVerified(false);
-                            setModalText("인증이 실패되었습니다.")
+                            setModalText("인증 실패되었습니다.")
                             setModalOpen(true);
-                          }
-                        })
-                        .catch((err) => {
-                          console.error(err);
-                          setIsVerified(false);
-                          setModalText("인증 실패되었습니다.")
-                          setModalOpen(true);
-                        })
+                          })
+                      }
+                      else {
+                        setModalText("이미 인증이 완료되었습니다.")
+                        setModalOpen(true);
+                      }
+                    }
                   }}
                 >
                   인증번호 확인
@@ -313,7 +339,7 @@ const index = () => {
                 <p
                   className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
                 >
-                  {verifiedErrorMessage}
+                  {verificationCodeErrorMessage}
                 </p>
 
               </div>

@@ -16,11 +16,11 @@ const index = () => {
   const [nameErrorMessage, setNameErrorMessage] = useState('');
   const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
   const [awordErrorMessage, setAwordErrorMessage] = useState('');
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified] = useState(false);
   const [verifiedErrorMessage, setVerifiedErrorMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
-  const [modalText, setModalText] = useState('');
+  const [modalText] = useState('');
 
   const resetForm = () => {
     setStudentId('');

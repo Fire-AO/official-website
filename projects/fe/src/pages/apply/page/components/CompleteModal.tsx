@@ -3,9 +3,10 @@ import React from "react";
 interface CompleteModalProps {
     isVisible: boolean;
     onClose: () => void;
+    text: string;
 }
 
-const CompleteModal: React.FC<CompleteModalProps> = React.memo(({ isVisible, onClose }) => {
+const CompleteModal: React.FC<CompleteModalProps> = React.memo(({ isVisible, onClose, text }) => {
     return (
         isVisible &&
         <div className="fixed inset-0 flex items-center justify-center">
@@ -23,7 +24,7 @@ const CompleteModal: React.FC<CompleteModalProps> = React.memo(({ isVisible, onC
                             <p
                                 className="flex-grow-0 flex-shrink-0 text-lg font-medium text-center text-neutral-950 dark:text-[#F2F2F2]"
                             >
-                                성공적으로 지원되었습니다!
+                                {text}
                             </p>
                         </div>
                         <div

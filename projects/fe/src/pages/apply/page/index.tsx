@@ -8,13 +8,19 @@ const index = () => {
   const [studentId, setStudentId] = useState('');
   const [name, setName] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
+  const [phoneNum1, setPhoneNum1] = useState('');
+  const [phoneNum2, setPhoneNum2] = useState('');
+  const [phoneNum3, setPhoneNum3] = useState('');
   const [aWord, setAWord] = useState('');
   const [stuIdErrorMessage, setStuIdErrorMessage] = useState('');
   const [nameErrorMessage, setNameErrorMessage] = useState('');
   const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
   const [awordErrorMessage, setAwordErrorMessage] = useState('');
-
+  const [isVerified, setIsVerified] = useState(false);
+  const [verifiedErrorMessage, setVerifiedErrorMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [verificationCode, setVerificationCode] = useState('');
+  const [modalText, setModalText] = useState('');
 
   const resetForm = () => {
     setStudentId('');
@@ -23,70 +29,76 @@ const index = () => {
     setAWord('');
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("학번:", studentId);
     console.log("이름:", name);
     console.log("전화번호:", phoneNum);
     console.log("한 마디:", aWord);
 
-    fetch("/api/application", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: studentId,
-        name,
-        phoneNum,
-        aWord,
-      }),
-    })
-      .then((res) => {
-        console.log(res);
-        if (res.status === 400) {
-          return res.json(); //body에 있는 것을 js 객체로 바꿔서 반환. 반환값은 프로미스객체라 다시 받을수 있음.
-        } else if (res.ok) {
-          resetForm();
-          setModalOpen(true);
-        }
+    if (isVerified === true) {
+      setVerifiedErrorMessage("");
+      fetch("/api/application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: studentId,
+          name,
+          phoneNum,
+          aWord,
+        }),
       })
-      .then((json) => {
-        if (json !== undefined && json !== null) {
-          console.log(json);
-          if (
-            json.stuIdErrorMessage !== undefined &&
-            json.stuIdErrorMessage !== null &&
-            json.stuIdErrorMessage !== ""
-          ) {
-            setStuIdErrorMessage(json.stuIdErrorMessage);
+        .then((res) => {
+          console.log(res);
+          if (res.status === 400) {
+            return res.json(); //body에 있는 것을 js 객체로 바꿔서 반환. 반환값은 프로미스객체라 다시 받을수 있음.
+          } else if (res.ok) {
+            resetForm();
+            setModalOpen(true);
           }
-          if (
-            json.nameErrorMessage !== undefined &&
-            json.nameErrorMessage !== null &&
-            json.nameErrorMessage !== ""
-          ) {
-            setNameErrorMessage(json.nameErrorMessage);
+        })
+        .then((json) => {
+          if (json !== undefined && json !== null) {
+            console.log(json);
+            if (
+              json.stuIdErrorMessage !== undefined &&
+              json.stuIdErrorMessage !== null &&
+              json.stuIdErrorMessage !== ""
+            ) {
+              setStuIdErrorMessage(json.stuIdErrorMessage);
+            }
+            if (
+              json.nameErrorMessage !== undefined &&
+              json.nameErrorMessage !== null &&
+              json.nameErrorMessage !== ""
+            ) {
+              setNameErrorMessage(json.nameErrorMessage);
+            }
+            if (
+              json.phoneNumErrorMessage !== undefined &&
+              json.phoneNumErrorMessage !== null &&
+              json.phoneNumErrorMessage !== ""
+            ) {
+              setPhoneErrorMessage(json.phoneNumErrorMessage);
+            }
+            if (
+              json.aWordErrorMessage !== undefined &&
+              json.aWordErrorMessage !== null &&
+              json.aWordErrorMessage !== ""
+            ) {
+              setAwordErrorMessage(json.aWordErrorMessage);
+            }
           }
-          if (
-            json.phoneNumErrorMessage !== undefined &&
-            json.phoneNumErrorMessage !== null &&
-            json.phoneNumErrorMessage !== ""
-          ) {
-            setPhoneErrorMessage(json.phoneNumErrorMessage);
-          }
-          if (
-            json.aWordErrorMessage !== undefined &&
-            json.aWordErrorMessage !== null &&
-            json.aWordErrorMessage !== ""
-          ) {
-            setAwordErrorMessage(json.aWordErrorMessage);
-          }
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+    else {
+      setVerifiedErrorMessage("전화번호 인증을 해주세요.");
+    }
   }
 
 
@@ -115,12 +127,13 @@ const index = () => {
             {/* <ApplyForm /> */}
 
             <form
-              onSubmit={handleSubmit}>
+              onSubmit={(e) => e.preventDefault()}
+            >
               <label
                 className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
                 htmlFor="studentId">학번</label>
               <div
-                className={`mt-[10px] 
+                className={`mt-[6px] 
               mb-[${stuIdErrorMessage ? '3px' : '26px'}]
               flex justify-start items-center w-[339px] h-[47px] relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0d0d0d]`}
               >
@@ -141,7 +154,7 @@ const index = () => {
                 className=" font-['PRETENDARD-SEMIBOLD'] w-[32px] text-base text-left text-[#000] dark:text-[#CCC]"
                 htmlFor="name">이름</label>
               <div
-                className={`mt-[10px] 
+                className={`mt-[6px] 
                 mb-[${nameErrorMessage ? '3px' : '26px'}]
                flex justify-start items-center w-[339px] h-[47px] [relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
               >
@@ -160,36 +173,105 @@ const index = () => {
               </p>
               <label
                 className=" w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-                htmlFor="phoneNumber">전화번호</label
-              >
-              <div
-                className={`mt-[10px] 
-              mb-[${phoneErrorMessage ? '3px' : '26px'}] 
-              flex justify-start items-center w-[339px] h-[47px] relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-              >
-                <input
-                  type="tel"
-                  onInput={(event) => {
-                    event.currentTarget.value = event.currentTarget.value
-                      .replace(/[^0-9]/g, "")
-                      .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
-                    setPhoneNum(
-                      event.currentTarget.value
-                        .replace(/[^0-9]/g, "")
-                        .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`)
-                    );
+                htmlFor="phoneNumber">전화번호
+              </label>
+              <div className="mt-[6px] flex flex-row gap-1 w-[339px] text-[#000] dark:text-[#CCC]">
+                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/4 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                  placeholder="010"
+                  onInput={(e) => {
+                    if (e.currentTarget.value.length <= 3) {
+                      console.log(e.currentTarget.value.length)
+                      setPhoneNum1(e.currentTarget.value)
+                    }
+                    else {
+                      e.currentTarget.value = phoneNum1
+                    }
                   }}
-                  maxLength={13}
-                  id="phoneNumber"
-                  className="w-full flex-grow-0 flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                  placeholder="전화번호를 입력해주세요."
+                />
+                -
+                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                  placeholder="1234"
+                  onInput={(e) => {
+                    if (e.currentTarget.value.length <= 4)
+                      setPhoneNum2(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = phoneNum2
+                  }}
+                />
+                -
+                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                  placeholder="5678"
+                  onInput={(e) => {
+                    if (e.currentTarget.value.length <= 4)
+                      setPhoneNum3(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = phoneNum3
+                  }}
                 />
               </div>
+              <button className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2"
+                onClick={() => {
+                  fetch("https://api.fireao.com/dev/auth/send-one/test", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      receivePhoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                    }),
+                  })
+                    .catch((err) => {
+                      console.error(err);
+                    });
+                }}>
+                인증번호 받기
+              </button>
               <p
                 className="mb-[10px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
               >
                 {phoneErrorMessage}
               </p>
+              {/* https://api.fireao.com/dev/auth/valid-verification-code */}
+              <div className="flex flex-col mt-[30px]">
+                <label
+                  className="text-nowrap w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC] focus:outline-none"
+                  htmlFor="phoneNumber">
+                  전화번호 인증
+                </label>
+                <input
+                  className="bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none"
+                  onInput={(e) => setVerificationCode(e.currentTarget.value)}
+                />
+                <button
+                  className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200"
+                  onClick={() => {
+                    fetch("https://api.fireao.com/dev/auth/valid-verification-code",
+                      {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          verificationCode: verificationCode,
+                          phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                        })
+                      })
+                      .then((res) => {
+                        if (res.ok) {
+                          console.log("인증 성공");
+                        }
+                        else {
+                          console.log("인증 실패");
+                        }
+                      })
+                  }}
+                >
+                  인증번호 확인
+                </button>
+                <div className="h-[40px] w-full">
+                  {verifiedErrorMessage && <p className="text-[#d64142]">{verifiedErrorMessage}</p>}
+                </div>
+              </div>
 
               <label
                 className=" w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
@@ -197,13 +279,13 @@ const index = () => {
               >
               <div
                 className={`mt-[10px] 
-              mb-[${awordErrorMessage ? '3px' : '26px'}] 
-              flex justify-start items-start w-[339px] h-24 relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
+                mb-[${awordErrorMessage ? '3px' : '26px'}] 
+                flex justify-start items-start w-[339px] h-24 relative overflow-hidden px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
               >
                 <textarea
                   id="message"
                   onInput={(e) => setAWord(e.currentTarget.value)}
-                  className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none focus:outline-none resize-none"
+                  className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none :focusoutline-none resize-none"
                   placeholder="자유롭게 한 마디를 남겨주세요."
                 ></textarea>
               </div>
@@ -213,6 +295,7 @@ const index = () => {
               <button
                 type="submit"
                 className="mt-[63px] flex justify-center items-center relative overflow-hidden px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
+                onClick={handleSubmit}
               >
                 지원하기
               </button>
@@ -222,8 +305,8 @@ const index = () => {
           <CompleteModal
             isVisible={modalOpen}
             onClose={() => setModalOpen(false)}
+            text={modalText}
           />
-
         </div>
       </div >
 

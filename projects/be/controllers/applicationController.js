@@ -45,6 +45,26 @@ export const postApplication = asyncHandler(async (req, res) => {
             errors.phoneNumErrorMessage = "중복된 전화번호입니다.";
         }
 
+        try {
+            await fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        verificationCode,
+                        phoneNum,
+                    })
+                })
+                .then((res) => {
+                    if (res.status !== 200) 
+                        errors.verificationCodeErrorMessage = "인증번호를 확인해 주세요.";
+                })
+        }
+        catch (err) {
+            errors.verificationCodeErrorMessage = "인증번호를 확인해 주세요.";
+        }
 
         // 에러가 하나라도 존재하면 400 반환
         if (Object.keys(errors).length !== 0) {

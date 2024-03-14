@@ -32,7 +32,7 @@ const CompleteModal: React.FC<CompleteModalProps> = React.memo(({ isVisible, onC
                         >
                             <button
                                 type="button"
-                                className="flex justify-center items-center flex-grow relative overflow-hidden gap-2.5 px-5 py-3.5 rounded-lg bg-[#684def] dark:bg-[#FF4A3F]"
+                                className="flex justify-center items-center flex-grow relative overflow-hidden gap-2.5 px-5 py-3.5 rounded-lg bg-[#8473f2]"
                                 onClick={onClose}
                             >
                                 <p

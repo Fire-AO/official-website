@@ -7,7 +7,6 @@ import ao from "@/common/assets/images/AO-symbol.png";
 const index = () => {
   const [studentId, setStudentId] = useState('');
   const [name, setName] = useState('');
-  const [phoneNum, setPhoneNum] = useState('');
   const [phoneNum1, setPhoneNum1] = useState('');
   const [phoneNum2, setPhoneNum2] = useState('');
   const [phoneNum3, setPhoneNum3] = useState('');
@@ -21,11 +20,11 @@ const index = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [modalText, setModalText] = useState('');
+  const [sentVerificationCode, setSentVerificationCode] = useState(false);
 
   const resetForm = () => {
     setStudentId('');
     setName('');
-    setPhoneNum('');
     setAWord('');
   }
 
@@ -33,7 +32,6 @@ const index = () => {
     e.preventDefault();
     console.log("학번:", studentId);
     console.log("이름:", name);
-    console.log("전화번호:", phoneNum);
     console.log("한 마디:", aWord);
 
     if (isVerified === true) {
@@ -47,14 +45,15 @@ const index = () => {
         body: JSON.stringify({
           id: studentId,
           name,
-          phoneNum,
+          phoneNum: `${phoneNum1}-${phoneNum2}-${phoneNum3}`,
           aWord,
+          verificationCode: verificationCode,
         }),
       })
         .then((res) => {
           console.log(res);
           if (res.status === 400) {
-            return res.json(); //body에 있는 것을 js 객체로 바꿔서 반환. 반환값은 프로미스객체라 다시 받을수 있음.
+            return res.json();
           } else if (res.ok) {
             resetForm();
             setModalOpen(true);
@@ -90,6 +89,13 @@ const index = () => {
               json.aWordErrorMessage !== ""
             ) {
               setAwordErrorMessage(json.aWordErrorMessage);
+            }
+            if (
+              json.verificationCodeErrorMessage !== undefined &&
+              json.verificationCodeErrorMessage !== null &&
+              json.verificationCodeErrorMessage !== ""
+            ) {
+              setVerificationCode(json.verificationCodeErrorMessage);
             }
           }
         })
@@ -210,7 +216,7 @@ const index = () => {
                   }}
                 />
               </div>
-              <button className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2"
+              <button className="bg-[#333] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2 active:bg-[#555]"
                 onClick={() => {
                   fetch("https://api.shallwes.com/dev/auth/send-one/test", {
                     method: "POST",
@@ -221,8 +227,21 @@ const index = () => {
                       receivePhoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
                     }),
                   })
+                    .then((res) => {
+                      if (res.ok) {
+                        setModalText("인증번호가 전송 되었습니다.")
+                        setModalOpen(true);
+                        setSentVerificationCode(true);
+                      }
+                      else {
+                        setModalText("인증번호 전송이 실패되었습니다.")
+                        setModalOpen(true);
+                      }
+                    })
                     .catch((err) => {
                       console.error(err);
+                      setModalText("인증번호 전송이 실패되었습니다.")
+                      setModalOpen(true);
                     });
                 }}>
                 인증번호 받기
@@ -250,31 +269,42 @@ const index = () => {
                   }}
                 />
                 <button
-                  className="bg-[#333] w-full mt-3 rounded-3xl py-2 text-neutral-200"
+                  className="bg-[#333] active:bg-[#555] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200"
                   onClick={() => {
-                    fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
-                      {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                          verificationCode: verificationCode,
-                          phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                    if (sentVerificationCode === false) {
+                      setModalText("인증번호를 먼저 받아주세요.")
+                      setModalOpen(true);
+                    }
+                    else
+                      fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
+                        {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify({
+                            verificationCode: verificationCode,
+                            phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                          })
                         })
-                      })
-                      .then((res) => {
-                        if (res.ok) {
-                          setIsVerified(true);
-                          setModalText("인증이 완료되었습니다.")
-                          setModalOpen(true);
-                        }
-                        else {
+                        .then((res) => {
+                          if (res.ok) {
+                            setIsVerified(true);
+                            setModalText("인증이 완료되었습니다.")
+                            setModalOpen(true);
+                          }
+                          else {
+                            setIsVerified(false);
+                            setModalText("인증이 실패되었습니다.")
+                            setModalOpen(true);
+                          }
+                        })
+                        .catch((err) => {
+                          console.error(err);
                           setIsVerified(false);
-                          setModalText("인증 실패...")
+                          setModalText("인증 실패되었습니다.")
                           setModalOpen(true);
-                        }
-                      })
+                        })
                   }}
                 >
                   인증번호 확인
@@ -309,7 +339,7 @@ const index = () => {
               </p>
               <button
                 type="submit"
-                className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#333] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-neutral-200"
+                className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#8473f2] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-white"
                 onClick={handleSubmit}
               >
                 지원하기

@@ -112,274 +112,273 @@ const index = () => {
     <>
       <ScrollRestoration />
 
-      <div className="bg-white dark:bg-black">
-        <div
-          className="w-full  pr-4 pl-4 bg-white dark:bg-black mx-auto"
-        >
-          <div className="mb-[42px] flex justify-center">
-            {/* <ApplyMain /> */}
-            <div
-              className="flex justify-center items-center w-screen relative  py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
-            >
-              <p className="font-['Montserrat'] font-black text-3xl">
-                <Link to="/">
-                  <span className="text-black dark:text-white">Fire AO</span>
-                </Link>
-              </p>
-            </div>
-
+      <div
+        className="w-full pr-4 pl-4 bg-white dark:bg-black mx-auto"
+      >
+        <div className="mb-[42px] flex justify-center">
+          {/* <ApplyMain /> */}
+          <div
+            className="flex justify-center items-center w-screen relative  py-[11px] bg-white dark:bg-black border-t-0 border-r-0 border-b border-l-0 border-[#0d0d0d]"
+          >
+            <p className="font-['Montserrat'] font-black text-3xl">
+              <Link to="/">
+                <span className="text-black dark:text-white">Fire AO</span>
+              </Link>
+            </p>
           </div>
-          <div className="mb-[34px] flex justify-center">
-            {/* <ApplyForm /> */}
 
-            <form
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <label
-                className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-                htmlFor="studentId">학번</label>
-              <div
-                className={`mt-[6px] 
+        </div>
+        <div className="mb-[34px] flex justify-center">
+          {/* <ApplyForm /> */}
+
+          <form
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <label
+              className="w-[32px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+              htmlFor="studentId">학번</label>
+            <div
+              className={`mt-[6px] 
               mb-[${stuIdErrorMessage ? '3px' : '26px'}]
               flex justify-start items-center w-[339px] h-[47px] relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0d0d0d]`}
+            >
+              <input
+                type="text"
+                id="studentId"
+                onInput={(e) => setStudentId(e.currentTarget.value)}
+                className="flex-grow-0 w-full flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
+                placeholder="학번을 입력해주세요."
+              />
+            </div>
+            <p
+              className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
+            >
+              {stuIdErrorMessage}
+            </p>
+            <label
+              className=" font-['PRETENDARD-SEMIBOLD'] w-[32px] text-base text-left text-[#000] dark:text-[#CCC]"
+              htmlFor="name">이름</label>
+            <div
+              className={`mt-[6px] 
+                mb-[${nameErrorMessage ? '3px' : '26px'}]
+               flex justify-start items-center w-[339px] h-[47px] [relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
+            >
+              <input
+                type="text"
+                id="name"
+                onInput={(e) => setName(e.currentTarget.value)}
+                className="flex-grow-0 flex-shrink-0 w-full font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
+                placeholder="이름을 입력해주세요."
+              />
+            </div>
+            <p
+              className="mb-[10px] font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]"
+            >
+              {nameErrorMessage}
+            </p>
+            <label
+              className=" w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+              htmlFor="phoneNumber">전화번호
+            </label>
+            <div className="mt-[6px] flex flex-row gap-1 w-[339px] text-[#000] dark:text-[#CCC]">
+              <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/4 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                placeholder="010"
+                onInput={(e) => {
+                  if (isVerified === true) {
+                    e.currentTarget.value = phoneNum1;
+                  }
+                  else {
+                    if (e.currentTarget.value.length <= 3) {
+                      console.log(e.currentTarget.value.length)
+                      setPhoneNum1(e.currentTarget.value)
+                    }
+                    else {
+                      e.currentTarget.value = phoneNum1
+                    }
+                  }
+                }}
+              />
+              -
+              <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                placeholder="1234"
+                onInput={(e) => {
+                  if (isVerified === true) {
+                    e.currentTarget.value = phoneNum2;
+                  }
+                  else {
+                    if (e.currentTarget.value.length <= 4)
+                      setPhoneNum2(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = phoneNum2
+                  }
+                }}
+              />
+              -
+              <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
+                placeholder="5678"
+                onInput={(e) => {
+                  if (isVerified === true) {
+                    e.currentTarget.value = phoneNum2;
+                  }
+                  else {
+                    if (e.currentTarget.value.length <= 4)
+                      setPhoneNum3(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = phoneNum3
+                  }
+                }}
+              />
+            </div>
+            <button className="bg-[#333] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2 active:bg-[#555]"
+              onClick={() => {
+                fetch("https://api.shallwes.com/dev/auth/send-one/test", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    receivePhoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                  }),
+                })
+                  .then((res) => {
+                    if (res.ok) {
+                      setModalText("인증번호가 전송 되었습니다.")
+                      setModalOpen(true);
+                      setSentVerificationCode(true);
+                    }
+                    else {
+                      setModalText("인증번호 전송이 실패되었습니다.")
+                      setModalOpen(true);
+                    }
+                  })
+                  .catch((err) => {
+                    console.error(err);
+                    setModalText("인증번호 전송이 실패되었습니다.")
+                    setModalOpen(true);
+                  });
+              }}>
+              인증번호 받기
+            </button>
+            <p
+              className="mb-[50px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
+            >
+              {phoneErrorMessage}
+            </p>
+
+            <div className="flex flex-col mt-[30px]">
+              <label
+                className="text-nowrap font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC] focus:outline-none"
+                htmlFor="phoneNumber">
+                전화번호 인증
+              </label>
+              <input
+                className="mt-[6px] bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none text-neutral-500 dark:[#7f7f7f]"
+                placeholder="인증번호를 입력해주세요."
+                onInput={(e) => {
+                  if (isVerified === true) {
+                    e.currentTarget.value = verificationCode;
+                  }
+                  else {
+                    if (e.currentTarget.value.length <= 6)
+                      setVerificationCode(e.currentTarget.value)
+                    else
+                      e.currentTarget.value = verificationCode
+                  }
+                }}
+              />
+              <button
+                className="bg-[#333] active:bg-[#555] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200"
+                onClick={() => {
+                  if (sentVerificationCode === false) {
+                    setModalText("인증번호를 먼저 받아주세요.")
+                    setModalOpen(true);
+                  }
+                  else {
+                    if (isVerified === false) {
+                      fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
+                        {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify({
+                            verificationCode: verificationCode,
+                            phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
+                          })
+                        })
+                        .then((res) => {
+                          if (res.ok) {
+                            setIsVerified(true);
+                            setModalText("인증이 완료되었습니다.")
+                            setModalOpen(true);
+                          }
+                          else {
+                            setIsVerified(false);
+                            setModalText("인증이 실패되었습니다.")
+                            setModalOpen(true);
+                          }
+                        })
+                        .catch((err) => {
+                          console.error(err);
+                          setIsVerified(false);
+                          setModalText("인증 실패되었습니다.")
+                          setModalOpen(true);
+                        })
+                    }
+                    else {
+                      setModalText("이미 인증이 완료되었습니다.")
+                      setModalOpen(true);
+                    }
+                  }
+                }}
               >
-                <input
-                  type="text"
-                  id="studentId"
-                  onInput={(e) => setStudentId(e.currentTarget.value)}
-                  className="flex-grow-0 w-full flex-shrink-0 font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                  placeholder="학번을 입력해주세요."
-                />
-              </div>
+                인증번호 확인
+              </button>
+
               <p
                 className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
               >
-                {stuIdErrorMessage}
-              </p>
-              <label
-                className=" font-['PRETENDARD-SEMIBOLD'] w-[32px] text-base text-left text-[#000] dark:text-[#CCC]"
-                htmlFor="name">이름</label>
-              <div
-                className={`mt-[6px] 
-                mb-[${nameErrorMessage ? '3px' : '26px'}]
-               flex justify-start items-center w-[339px] h-[47px] [relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-              >
-                <input
-                  type="text"
-                  id="name"
-                  onInput={(e) => setName(e.currentTarget.value)}
-                  className="flex-grow-0 flex-shrink-0 w-full font-['PRETENDARD-LIGHT'] text-base text-left text-neutral-500 dark:[#7f7f7f] bg-transparent border-none focus:outline-none"
-                  placeholder="이름을 입력해주세요."
-                />
-              </div>
-              <p
-                className="mb-[10px] font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]"
-              >
-                {nameErrorMessage}
-              </p>
-              <label
-                className=" w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-                htmlFor="phoneNumber">전화번호
-              </label>
-              <div className="mt-[6px] flex flex-row gap-1 w-[339px] text-[#000] dark:text-[#CCC]">
-                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/4 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
-                  placeholder="010"
-                  onInput={(e) => {
-                    if (isVerified === true) {
-                      e.currentTarget.value = phoneNum1;
-                    }
-                    else {
-                      if (e.currentTarget.value.length <= 3) {
-                        console.log(e.currentTarget.value.length)
-                        setPhoneNum1(e.currentTarget.value)
-                      }
-                      else {
-                        e.currentTarget.value = phoneNum1
-                      }
-                    }
-                  }}
-                />
-                -
-                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
-                  placeholder="1234"
-                  onInput={(e) => {
-                    if (isVerified === true) {
-                      e.currentTarget.value = phoneNum2;
-                    }
-                    else {
-                      if (e.currentTarget.value.length <= 4)
-                        setPhoneNum2(e.currentTarget.value)
-                      else
-                        e.currentTarget.value = phoneNum2
-                    }
-                  }}
-                />
-                -
-                <input className="bg-[#CCC] dark:bg-[#0d0d0d] w-1/3 rounded text-center focus:outline-none py-1 text-neutral-500 dark:[#7f7f7f]"
-                  placeholder="5678"
-                  onInput={(e) => {
-                    if (isVerified === true) {
-                      e.currentTarget.value = phoneNum2;
-                    }
-                    else {
-                      if (e.currentTarget.value.length <= 4)
-                        setPhoneNum3(e.currentTarget.value)
-                      else
-                        e.currentTarget.value = phoneNum3
-                    }
-                  }}
-                />
-              </div>
-              <button className="bg-[#333] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200 px-2 active:bg-[#555]"
-                onClick={() => {
-                  fetch("https://api.shallwes.com/dev/auth/send-one/test", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      receivePhoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
-                    }),
-                  })
-                    .then((res) => {
-                      if (res.ok) {
-                        setModalText("인증번호가 전송 되었습니다.")
-                        setModalOpen(true);
-                        setSentVerificationCode(true);
-                      }
-                      else {
-                        setModalText("인증번호 전송이 실패되었습니다.")
-                        setModalOpen(true);
-                      }
-                    })
-                    .catch((err) => {
-                      console.error(err);
-                      setModalText("인증번호 전송이 실패되었습니다.")
-                      setModalOpen(true);
-                    });
-                }}>
-                인증번호 받기
-              </button>
-              <p
-                className="mb-[50px] font-['PRETENDARD-REGULAR'] font- text-[11px] text-left text-[#d64142]"
-              >
-                {phoneErrorMessage}
+                {verificationCodeErrorMessage}
               </p>
 
-              <div className="flex flex-col mt-[30px]">
-                <label
-                  className="text-nowrap w-[64px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC] focus:outline-none"
-                  htmlFor="phoneNumber">
-                  전화번호 인증
-                </label>
-                <input
-                  className="mt-[6px] bg-[#CCC] dark:bg-[#0d0d0d] rounded-lg py-2 pl-2 focus:outline-none text-neutral-500 dark:[#7f7f7f]"
-                  placeholder="인증번호를 입력해주세요."
-                  onInput={(e) => {
-                    if (isVerified === true) {
-                      e.currentTarget.value = verificationCode;
-                    }
-                    else {
-                      if (e.currentTarget.value.length <= 6)
-                        setVerificationCode(e.currentTarget.value)
-                      else
-                        e.currentTarget.value = verificationCode
-                    }
-                  }}
-                />
-                <button
-                  className="bg-[#333] active:bg-[#555] active:scale-95 w-full mt-3 rounded-3xl py-2 text-neutral-200"
-                  onClick={() => {
-                    if (sentVerificationCode === false) {
-                      setModalText("인증번호를 먼저 받아주세요.")
-                      setModalOpen(true);
-                    }
-                    else {
-                      if (isVerified === false) {
-                        fetch("https://api.shallwes.com/dev/auth/valid-verification-code",
-                          {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                              verificationCode: verificationCode,
-                              phoneNumber: phoneNum1 + phoneNum2 + phoneNum3,
-                            })
-                          })
-                          .then((res) => {
-                            if (res.ok) {
-                              setIsVerified(true);
-                              setModalText("인증이 완료되었습니다.")
-                              setModalOpen(true);
-                            }
-                            else {
-                              setIsVerified(false);
-                              setModalText("인증이 실패되었습니다.")
-                              setModalOpen(true);
-                            }
-                          })
-                          .catch((err) => {
-                            console.error(err);
-                            setIsVerified(false);
-                            setModalText("인증 실패되었습니다.")
-                            setModalOpen(true);
-                          })
-                      }
-                      else {
-                        setModalText("이미 인증이 완료되었습니다.")
-                        setModalOpen(true);
-                      }
-                    }
-                  }}
-                >
-                  인증번호 확인
-                </button>
+            </div>
 
-                <p
-                  className="font-['PRETENDARD-REGULAR'] mb-[10px] text-[11px] text-left text-[#d64142]"
-                >
-                  {verificationCodeErrorMessage}
-                </p>
-
-              </div>
-
-              <label
-                className="inline-block mt-[50px] w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
-                htmlFor="message">한 마디 남기기</label
-              >
-              <div
-                className={`mt-[10px] 
+            <label
+              className="inline-block mt-[50px] w-[127px] font-['PRETENDARD-SEMIBOLD'] text-base text-left text-[#000] dark:text-[#CCC]"
+              htmlFor="message">한 마디 남기기</label
+            >
+            <div
+              className={`mt-[10px] 
                 mb-[${awordErrorMessage ? '3px' : '26px'}] 
                 flex justify-start items-start w-[339px] h-24 relative  px-3.5 py-3 rounded-lg bg-[#dcdcdc] dark:bg-[#0D0D0D]`}
-              >
-                <textarea
-                  id="message"
-                  onInput={(e) => setAWord(e.currentTarget.value)}
-                  className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none :focusoutline-none resize-none"
-                  placeholder="자유롭게 한 마디를 남겨주세요."
-                ></textarea>
-              </div>
-              <p className="font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]">
-                {awordErrorMessage}
-              </p>
-              <button
-                type="submit"
-                className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#8473f2] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-white"
-                onClick={handleSubmit}
-              >
-                지원하기
-              </button>
-            </form>
-          </div>
-
-          <CompleteModal
-            isVisible={modalOpen}
-            onClose={() => setModalOpen(false)}
-            text={modalText}
-          />
+            >
+              <textarea
+                id="message"
+                onInput={(e) => setAWord(e.currentTarget.value)}
+                className="w-full flex-grow-0 font-['PRETENDARD-LIGHT'] flex-shrink-0 text-base text-left text-[#7f7f7f] dark:[#7f7f7f] bg-transparent border-none :focusoutline-none resize-none"
+                placeholder="자유롭게 한 마디를 남겨주세요."
+              ></textarea>
+            </div>
+            <p className="font-['PRETENDARD-REGULAR'] text-[11px] text-left text-[#d64142]">
+              {awordErrorMessage}
+            </p>
+            <button
+              type="submit"
+              className="mt-[50px] flex justify-center items-center relative  px-[136px] py-3.5 rounded-3xl bg-[#8473f2] flex-grow-0 flex-shrink-0 font-['PRETENDARD-SEMIBOLD'] active:scale-95 text-[18px] text-center text-white"
+              onClick={handleSubmit}
+            >
+              지원하기
+            </button>
+          </form>
         </div>
-      </div >
+
+        <CompleteModal
+          isVisible={modalOpen}
+          onClose={() => setModalOpen(false)}
+          text={modalText}
+        />
+      </div>
+
 
       <Helmet>
         <title>Apply | Fire AO</title>

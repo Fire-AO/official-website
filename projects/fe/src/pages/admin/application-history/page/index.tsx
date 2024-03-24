@@ -75,7 +75,7 @@ const index = () => {
                     <td className="px-6 py-4 w-full">
                       <p className="text-left text-pretty w-[500px]">{application.aWord}</p>
                     </td>
-                    <td className="px-6 py-4 ">
+                    <td className="px-6 py-4 text-nowrap">
                       {application.submitedAt.toLocaleString()}
                     </td>
                   </tr>

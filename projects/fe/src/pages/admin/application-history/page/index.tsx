@@ -66,13 +66,15 @@ const index = () => {
                 return (
                   <tr key={application.id} className="w-full">
                     <td className="px-6 py-4 w-full">
-                      <p className="text-nowrap">{application.name}</p>
+                      <p className="text-pretty w-[90px]">{application.name}</p>
                     </td>
                     <td className="px-6 py-4 w-full">
-                      <p className="text-nowrap">{application.id}</p>
+                      <p className="text-pretty w-[90px]">{application.id}</p>
                     </td>
                     <td className="px-6 py-4 w-full">
-                      <p className="text-nowrap">{application.phoneNum}</p>
+                      <p className="text-pretty w-[140px]">
+                        {application.phoneNum}
+                      </p>
                     </td>
                     <td className="px-6 py-4 w-full">
                       <p className="text-left text-pretty w-[500px]">
@@ -80,7 +82,7 @@ const index = () => {
                       </p>
                     </td>
                     <td className="px-6 py-4 w-full">
-                      <p className="text-nowrap">
+                      <p className="text-pretty w-[190px]">
                         {application.submitedAt.toLocaleString()}
                       </p>
                     </td>

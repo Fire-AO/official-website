@@ -50,7 +50,7 @@ const index = () => {
     <div>
       <ScrollRestoration />
       <div className="mb-[200px] w-screen overflow-x-auto">
-        <table className="mx-auto table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl shadow-lg mt-10 max-w-[1000px] w-full">
+        <table className="mx-auto table-auto text-black dark:text-white/90 text-center bg-black/10 dark:bg-white/10 rounded-2xl shadow-lg mt-10 max-w-[1000px] w-fit">
           <thead>
             <tr>
               <th>이름</th>
@@ -65,18 +65,24 @@ const index = () => {
               applications.map((application) => {
                 return (
                   <tr key={application.id} className="w-full">
-                    <td className="px-6 py-4 text-nowrap">
-                      {application.name}
-                    </td>
-                    <td className="px-6 py-4 text-nowrap">{application.id}</td>
-                    <td className="px-6 py-4 text-nowrap">
-                      {application.phoneNum}
+                    <td className="px-6 py-4 w-full">
+                      <p className="text-nowrap">{application.name}</p>
                     </td>
                     <td className="px-6 py-4 w-full">
-                      <p className="text-left text-pretty w-[500px]">{application.aWord}</p>
+                      <p className="text-nowrap">{application.id}</p>
                     </td>
-                    <td className="px-6 py-4 text-nowrap">
-                      {application.submitedAt.toLocaleString()}
+                    <td className="px-6 py-4 w-full">
+                      <p className="text-nowrap">{application.phoneNum}</p>
+                    </td>
+                    <td className="px-6 py-4 w-full">
+                      <p className="text-left text-pretty w-[500px]">
+                        {application.aWord}
+                      </p>
+                    </td>
+                    <td className="px-6 py-4 w-full">
+                      <p className="text-nowrap">
+                        {application.submitedAt.toLocaleString()}
+                      </p>
                     </td>
                   </tr>
                 );

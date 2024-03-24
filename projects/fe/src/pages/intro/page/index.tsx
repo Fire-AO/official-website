@@ -1,8 +1,8 @@
-import AoJc from "@/pages/intro/page/assets/images/new종찬형님.png";
-import Aosj from "@/pages/intro/page/assets/images/ao 세진형님.jpg";
-import Aojh from "@/pages/intro/page/assets/images/ao 제희형님.jpg";
-import Aoce from "@/pages/intro/page/assets/images/ao신초은.jpg";
-import Aoyn from "@/pages/intro/page/assets/images/ao최윤아.jpg";
+import AoJc from "@/common/assets/images/종찬이형.jpg";
+import Aosj from "@/common/assets/images/세진이.png";
+import Aojh from "@/common/assets/images/나2.png";
+import Aoce from "@/common/assets/images/신초은.jpg";
+import Aoyn from "@/common/assets/images/최윤아.jpg";
 
 import JcIcon from "@/pages/intro/page/assets/images/ao김종찬아바타.jpg";
 import SjIcon from "@/pages/intro/page/assets/images/ao박세진아바타.jpg";

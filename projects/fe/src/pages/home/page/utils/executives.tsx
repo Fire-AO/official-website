@@ -1,26 +1,8 @@
-import jongChanBae from "@/pages/home/page/assets/images/avatar/종찬이형.png";
-import jeHeeChun from "@/pages/home/page/assets/images/avatar/나.png";
-import seJinPark from "@/pages/home/page/assets/images/avatar/세진이.png";
-import choEunShin from "@/pages/home/page/assets/images/avatar/신초은.png";
-import yunAChoi from "@/pages/home/page/assets/images/avatar/최윤아.png";
-
-import bigJongChanBae from "@/pages/home/page/assets/images/avatar/종찬이형-bigger.png";
-import bigJeHeeChun from "@/pages/home/page/assets/images/avatar/나-bigger.png";
-import bigSeJinPark from "@/pages/home/page/assets/images/avatar/세진이-bigger.png";
-import bigChoEunShin from "@/pages/home/page/assets/images/avatar/신초은-bigger.png";
-import bigYunAChoi from "@/pages/home/page/assets/images/avatar/최윤아-bigger.png";
-
-import jongChanBaeDark from "@/pages/home/page/assets/images/avatar/종찬이형-dark.png";
-import jeHeeChunDark from "@/pages/home/page/assets/images/avatar/나-dark.png";
-import seJinParkDark from "@/pages/home/page/assets/images/avatar/세진이-dark.png";
-import choEunShinDark from "@/pages/home/page/assets/images/avatar/신초은-dark.png";
-import yunAChoiDark from "@/pages/home/page/assets/images/avatar/최윤아-dark.png";
-
-import bigJongChanBaeDark from "@/pages/home/page/assets/images/avatar/종찬이형-bigger-dark.png";
-import bigJeHeeChunDark from "@/pages/home/page/assets/images/avatar/나-bigger-dark.png";
-import bigSeJinParkDark from "@/pages/home/page/assets/images/avatar/세진이-bigger-dark.png";
-import bigChoEunShinDark from "@/pages/home/page/assets/images/avatar/신초은-bigger-dark.png";
-import bigYunAChoiDark from "@/pages/home/page/assets/images/avatar/최윤아-bigger-dark.png";
+import jongChanBae from "@/common/assets/images/종찬이형.jpg";
+import jeHeeCheon from "@/common/assets/images/나2.png";
+import seJinPark from "@/common/assets/images/세진이.png";
+import choEunShin from "@/common/assets/images/신초은.jpg";
+import yunAChoi from "@/common/assets/images/최윤아.jpg";
 
 import { Executive } from "@/pages/home/page/types/executive";
 
@@ -42,9 +24,6 @@ export const executives: Executive[] = [
       </>
     ),
     avatar: jongChanBae,
-    biggerAvatar: bigJongChanBae,
-    avatarDark: jongChanBaeDark,
-    biggerAvatarDark: bigJongChanBaeDark,
   },
   {
     name: "박세진",
@@ -62,9 +41,6 @@ export const executives: Executive[] = [
       </>
     ),
     avatar: seJinPark,
-    biggerAvatar: bigSeJinPark,
-    avatarDark: seJinParkDark,
-    biggerAvatarDark: bigSeJinParkDark,
   },
   {
     name: "천제희",
@@ -81,10 +57,7 @@ export const executives: Executive[] = [
         <br />
       </>
     ),
-    avatar: jeHeeChun,
-    biggerAvatar: bigJeHeeChun,
-    avatarDark: jeHeeChunDark,
-    biggerAvatarDark: bigJeHeeChunDark,
+    avatar: jeHeeCheon,
   },
   {
     name: "신초은",
@@ -99,9 +72,6 @@ export const executives: Executive[] = [
       </>
     ),
     avatar: choEunShin,
-    biggerAvatar: bigChoEunShin,
-    avatarDark: choEunShinDark,
-    biggerAvatarDark: bigChoEunShinDark,
   },
   {
     name: "최윤아",
@@ -118,8 +88,5 @@ export const executives: Executive[] = [
       </>
     ),
     avatar: yunAChoi,
-    biggerAvatar: bigYunAChoi,
-    avatarDark: yunAChoiDark,
-    biggerAvatarDark: bigYunAChoiDark,
   },
 ];

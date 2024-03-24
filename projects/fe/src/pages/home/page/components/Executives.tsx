@@ -37,9 +37,14 @@ function Executives() {
               onClick={() => setSelectedExecutive(executive)}
             >
               <img
-                src={isDarkMode ? executive.avatarDark : executive.avatar}
+                src={executive.avatar}
                 alt={executive.name}
-                className="people"
+                className="people rounded-full w-[80px] border-[3.5px] border-[rgb(255,255,255,0)]"
+                style={{
+                  backgroundImage: `linear-gradient(#fff, #fff), ${isDarkMode ? 'linear-gradient(to bottom, #21ECC7 0%,  #8672F3 100%)' : 'linear-gradient(to bottom, #51D8D8 0%,  #9D26E6 100%)'}`,
+                  backgroundOrigin: 'border-box',
+                  backgroundClip: 'content-box, border-box'
+                }}
               />
               <p className="executive-name text-black/70 dark:text-white font-['PRETENDARD-SEMIBOLD']">{executive.name}</p>
             </div>
@@ -49,7 +54,7 @@ function Executives() {
           <CardNews
             name={selectedExecutive.name}
             description={selectedExecutive.description}
-            image={isDarkMode ? selectedExecutive.biggerAvatarDark : selectedExecutive.biggerAvatar}
+            image={selectedExecutive.avatar}
           />
         )}
         <ApplyButton />

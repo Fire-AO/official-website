@@ -7,7 +7,7 @@ import ao from "@/common/assets/images/AO-symbol.png";
 const index = () => {
   const [studentId, setStudentId] = useState('');
   const [name, setName] = useState('');
-  const [phoneNum1, setPhoneNum1] = useState('');
+  const [phoneNum1, setPhoneNum1] = useState('010');
   const [phoneNum2, setPhoneNum2] = useState('');
   const [phoneNum3, setPhoneNum3] = useState('');
   const [aWord, setAWord] = useState('');

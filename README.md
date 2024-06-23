@@ -19,7 +19,7 @@ Led by [박세진 Sejin Park](https://github.com/sejineer)
 |-----------------|-----------------|
 | Infra & Mentor| [박세진 Sejin Park](https://github.com/sejineer) |
 | Infra & Mentor| [배종찬 Jongchan Bae](https://github.com/ZhongdanBae) |
-| Infra & Mentor| [천제희 Jehee Cheon](https://github.com/jeheecheon) |
+| Infra & Mentor & FE | [천제희 Jehee Cheon](https://github.com/jeheecheon) |
 | FE | [박기현 Kihyun Park](https://github.com/Jackihyun) |
 | FE | [김초은 Choeun Kim](https://github.com/ChoeunKim) |
 | FE | [유용석 Yongseok Yoo](https://github.com/Yoo-yongseok) |

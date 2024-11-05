@@ -1,75 +1,61 @@
-name: CI/CD
+name: Deploy static content to Pages
 
 on:
   push:
-    branches: [ "publish-fe", "publish-be", "publish-all" ]
-    paths: ['.github/workflows/**', 'projects/**']
+    branches:
+      - main
+    paths: [".github/workflows/**", "projects/fe/**"]
   workflow_dispatch:
 
-jobs:
-  build-fe:
-    if: |
-      github.event_name == 'push' && (github.ref == 'refs/heads/publish-fe' || github.ref == 'refs/heads/publish-all') || 
-      github.event_name == 'workflow_dispatch'
-    runs-on: [ao1]
-    defaults:
-      run:
-        working-directory: ./projects/fe
-    strategy:
-      matrix:
-        node-version: [18.13.0]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: projects/fe/package-lock.json
-      - run: npm ci
-      - run: npm run build --if-present
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-  build-be:
-    if: | 
-      github.event_name == 'push' && (github.ref == 'refs/heads/publish-be' || github.ref == 'refs/heads/publish-all') || 
-      github.event_name == 'workflow_dispatch'
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./projects/be
-    strategy:
-      matrix:
-        node-version: [18.13.0]
+        working-directory: ./projects/fe
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: projects/fe/package-lock.json
-      - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build docker image
-        run: docker build -t jeheecheon/fireao .
-      - name: Publish image to docker hub
-        run: docker push jeheecheon/fireao:latest
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  deploy-be:
-    if: | 
-      github.event_name == 'push' && (github.ref == 'refs/heads/publish-be' || github.ref == 'refs/heads/publish-all') || 
-      github.event_name == 'workflow_dispatch'
-    needs: build-be
-    runs-on: [ao1]
-    defaults:
-      run:
-        working-directory: ./projects/be
-    steps:
-      - name: Login to docker hub
-        run: sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Pull image from docker hub
-        run: sudo docker pull jeheecheon/fireao:latest
-      - name: Delete old container
-        run: sudo docker rm -f fireao-be
-      - name: Run docker container
-        run: sudo docker run -d -p 3000:3000 --name fireao-be -e "DB_CONNECT=${{ secrets.MONGO_DB_CONNECTION_STRING }}" jeheecheon/fireao
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Remove node_modules and package-lock.json
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
+      - name: Clear NPM cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./projects/fe/dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
